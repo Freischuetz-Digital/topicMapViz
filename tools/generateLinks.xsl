@@ -34,9 +34,16 @@
             <xsl:value-of select="xtm:triplet2JSON(ancestor::xtm:topic/@id,@href, 'occurence')" separator=","/>
         </xsl:for-each>-->
         <xsl:for-each select="//xtm:association">
+          <!-- membersAndRoles -->
             <xsl:for-each select="xtm:member/xtm:topicRef">
                 <xsl:value-of select="xtm:triplet2JSON(@href,preceding-sibling::xtm:roleSpec/xtm:topicRef/@href,'role')"/>
             </xsl:for-each>
+          <xsl:for-each select="xtm:member">
+            <xsl:variable name="pos" select="position()"/>
+            <xsl:for-each select="parent::xtm:topic/xtm:member[position() != $pos ]">
+              <xsl:value-of select="xtm:triplet2JSON(.//@href,parent::xtm:association/xtm:instanceOf/xtm:topicRef/@href,'instanceOf')"/>
+            </xsl:for-each>
+          </xsl:for-each>
             <!--<xsl:value-of select="xtm:triplet2JSON(xtm:member[1]/xtm:topicRef/@href,xtm:member[2]/xtm:topicRef/@href,xtm:instanceOf/xtm:topicRef/@href)"/>-->
         </xsl:for-each>
     </xsl:template>
