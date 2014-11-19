@@ -1,12 +1,16 @@
-<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Waldschlucht Viz</title>
-        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <script type="text/javascript" src="dist/bower.js" charset="utf-8"></script>
+      
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
         <style type="text/css">
             .graph{border: 1px solid black;}
         </style>
-        <style>
+        <style type="text/css">
 
 .link {
   fill: none;
@@ -28,73 +32,174 @@ text {
 </style>
     </head>
     <body>
-        <div id="graph"></div>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+          </button>
+          <a data-template="config:app-title" class="navbar-brand" href="./index.html">FreiDi-topicMapViz</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!--<li>
+              <a href="about.html">About</a>
+            </li>-->
+            <li>
+              <a href="https://github.com/Freischuetz-Digital/topicMapViz">GitHub Repository</a>
+            </li>
+            <li>
+              <a href="http://www.freischuetz-digital.de/index.html">Project Website</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+      <!--<div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="/index.html">Freischütz<br/>
+              <small>Digital</small>
+            </a>
+          </div>
+        </div>
+      </div>-->
+      
+      <!--<div class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span data-bind="label">select...</span>
+              <span class="caret"/>
+            </button>
+            <input type="text" name="fileResp" style="display:none;" data-bind="form" class="form-control"/>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">arranger</a>
+              </li>
+              <li>
+                <a href="#">author</a>
+              </li>
+              <li>
+                <a href="#">composer</a>
+              </li>
+              <li>
+                <a href="#">editor</a>
+              </li>
+              <li>
+                <a href="#">funder</a>
+              </li>
+              <li>
+                <a href="#">librettist</a>
+              </li>
+              <li>
+                <a href="#">lyricist</a>
+              </li>
+              <li>
+                <a href="#">sponsor</a>
+              </li>
+            </ul>
+          </div><!-\- /btn-group -\->
+          <input type="text" name="fileResp_v" class="form-control" id="input_fileResp" placeholder="file responsibility"/>
+        </div><!-\- /input-group -\->
+      </div>-->
+      
+        <div id="content" class="container">
+          <div class="row">
+            <div class="span12">
+              <div id="graph"></div>
+            </div>
+          </div>
+        </div>
         <script type="text/javascript">
-            var links1 = [{source: "scene", target: "#de", type: "instanceOf"},
-{source: "setting", target: "#de", type: "instanceOf"},
-{source: "related-to", target: "#relatives #relation", type: "instanceOf"},
-{source: "wolfsschluchtszene", target: "#scene", type: "instanceOf"},
-{source: "nacht", target: "#setting", type: "instanceOf"},
-{source: "mond", target: "#setting", type: "instanceOf"},
-{source: "wald", target: "#setting", type: "instanceOf"},
-{source: "kreuzweg", target: "#setting", type: "instanceOf"},
-{source: "kreis", target: "#setting", type: "instanceOf"},
-{source: "glocke", target: "#setting", type: "instanceOf"},
-{source: "kugel", target: "#object-of-use", type: "instanceOf"},
-{source: "sieben", target: "#kugel", type: "instanceOf"},
-{source: "drei", target: "#kugel", type: "instanceOf"},
-{source: "sechs", target: "#kugel", type: "instanceOf"},
-{source: "sechzig", target: "#kugel", type: "instanceOf"},
-{source: "kugelguss", target: "#action", type: "instanceOf"},
-{source: "form", target: "#object-of-use", type: "instanceOf"},
-{source: "kohlen", target: "#object-of-use", type: "instanceOf"},
-{source: "blei", target: "#object-of-use", type: "instanceOf"},
-{source: "erscheinungen", target: "#setting", type: "instanceOf"},
-{source: "wildesHeer", target: "#erscheinungen", type: "instanceOf"},
-{source: "wild", target: "#creature-in-play", type: "instanceOf"},
-{source: "waldvoegel", target: "#creature-in-play", type: "instanceOf"},
-{source: "rabe", target: "#creature-in-play #waldvoegel", type: "instanceOf"},
-{source: "eule", target: "#creature-in-play #waldvoegel", type: "instanceOf"},
-{source: "ross", target: "#creature-in-play", type: "instanceOf"},
-{source: "sammiel", target: "#name #role", type: "instanceOf"},
-{source: "reiter", target: "#role", type: "instanceOf"},
-{source: "schwarzeJaeger", target: "#role", type: "instanceOf"},
-{source: "fremde", target: "#role", type: "instanceOf"},
-{source: "stelzfuss", target: "#role", type: "instanceOf"},
-{source: "teufel", target: "#role", type: "instanceOf"},
-{source: "boese", target: "#role", type: "instanceOf"},
-{source: "max", target: "#role #name", type: "instanceOf"},
-{source: "jaeger", target: "#roleDesc", type: "instanceOf"},
-{source: "wilhelm", target: "#role #name", type: "instanceOf"},
-{source: "schreiber", target: "#roleDesc", type: "instanceOf"},
-{source: "braeutigam", target: "#role", type: "instanceOf"},
-{source: "georgschmid", target: "#person #name", type: "instanceOf"},
-{source: "edward", target: "#role #name", type: "instanceOf"},
-{source: "rudolf", target: "#role #name", type: "instanceOf"},
-{source: "Robert", target: "#role #name", type: "instanceOf"},
-{source: "braut", target: "#role", type: "instanceOf"},
-{source: "brautjungfern", target: "#role", type: "instanceOf"},
-{source: "kranz", target: "object-of-use", type: "instanceOf"},
-{source: "seide", target: "object-of-use", type: "instanceOf"},
-{source: "rosmarin", target: "object-of-use", type: "instanceOf"},
-{source: "myrte", target: "object-of-use", type: "instanceOf"},
-{source: "silber", target: "object-of-use", type: "instanceOf"},
-{source: "lavendel", target: "object-of-use", type: "instanceOf"},
-{source: "thymian", target: "object-of-use", type: "instanceOf"},
-{source: "taube", target: "#creature-in-play", type: "instanceOf"},
-{source: "traum", target: "", type: "instanceOf"},
-{source: "bild", target: "", type: "instanceOf"},
-{source: "opfer", target: "", type: "instanceOf"},
-{source: "blut", target: "", type: "instanceOf"},
-{source: "reigen", target: "", type: "instanceOf"},
-{source: "tanz", target: "", type: "instanceOf"}];
+            var links1 = [{"source": "scene", "target": "#de", "type": "instanceOf"},
+{"source": "setting", "target": "#de", "type": "instanceOf"},
+{"source": "related-to", "target": "#relatives #relation", "type": "instanceOf"},
+{"source": "wolfsschluchtszene", "target": "#scene", "type": "instanceOf"},
+{"source": "nacht", "target": "#setting", "type": "instanceOf"},
+{"source": "mond", "target": "#setting", "type": "instanceOf"},
+{"source": "wald", "target": "#setting", "type": "instanceOf"},
+{"source": "kreuzweg", "target": "#setting", "type": "instanceOf"},
+{"source": "kreis", "target": "#setting", "type": "instanceOf"},
+{"source": "glocke", "target": "#setting", "type": "instanceOf"},
+{"source": "kugel", "target": "#object-of-use", "type": "instanceOf"},
+{"source": "sieben", "target": "#kugel", "type": "instanceOf"},
+{"source": "drei", "target": "#kugel", "type": "instanceOf"},
+{"source": "sechs", "target": "#kugel", "type": "instanceOf"},
+{"source": "sechzig", "target": "#kugel", "type": "instanceOf"},
+{"source": "kugelguss", "target": "#action", "type": "instanceOf"},
+{"source": "form", "target": "#object-of-use", "type": "instanceOf"},
+{"source": "kohlen", "target": "#object-of-use", "type": "instanceOf"},
+{"source": "blei", "target": "#object-of-use", "type": "instanceOf"},
+{"source": "erscheinungen", "target": "#setting", "type": "instanceOf"},
+{"source": "wildesHeer", "target": "#erscheinungen", "type": "instanceOf"},
+{"source": "wild", "target": "#creature-in-play", "type": "instanceOf"},
+{"source": "waldvoegel", "target": "#creature-in-play", "type": "instanceOf"},
+{"source": "rabe", "target": "#creature-in-play #waldvoegel", "type": "instanceOf"},
+{"source": "eule", "target": "#creature-in-play #waldvoegel", "type": "instanceOf"},
+{"source": "ross", "target": "#creature-in-play", "type": "instanceOf"},
+{"source": "sammiel", "target": "#name #role", "type": "instanceOf"},
+{"source": "reiter", "target": "#role", "type": "instanceOf"},
+{"source": "schwarzeJaeger", "target": "#role", "type": "instanceOf"},
+{"source": "fremde", "target": "#role", "type": "instanceOf"},
+{"source": "stelzfuss", "target": "#role", "type": "instanceOf"},
+{"source": "teufel", "target": "#role", "type": "instanceOf"},
+{"source": "boese", "target": "#role", "type": "instanceOf"},
+{"source": "max", "target": "#role #name", "type": "instanceOf"},
+{"source": "jaeger", "target": "#roleDesc", "type": "instanceOf"},
+{"source": "wilhelm", "target": "#role #name", "type": "instanceOf"},
+{"source": "schreiber", "target": "#roleDesc", "type": "instanceOf"},
+{"source": "braeutigam", "target": "#role", "type": "instanceOf"},
+{"source": "georgschmid", "target": "#person #name", "type": "instanceOf"},
+{"source": "edward", "target": "#role #name", "type": "instanceOf"},
+{"source": "rudolf", "target": "#role #name", "type": "instanceOf"},
+{"source": "Robert", "target": "#role #name", "type": "instanceOf"},
+{"source": "braut", "target": "#role", "type": "instanceOf"},
+{"source": "brautjungfern", "target": "#role", "type": "instanceOf"},
+{"source": "kranz", "target": "object-of-use", "type": "instanceOf"},
+{"source": "seide", "target": "object-of-use", "type": "instanceOf"},
+{"source": "rosmarin", "target": "object-of-use", "type": "instanceOf"},
+{"source": "myrte", "target": "object-of-use", "type": "instanceOf"},
+{"source": "silber", "target": "object-of-use", "type": "instanceOf"},
+{"source": "lavendel", "target": "object-of-use", "type": "instanceOf"},
+{"source": "thymian", "target": "object-of-use", "type": "instanceOf"},
+{"source": "taube", "target": "#creature-in-play", "type": "instanceOf"},
+{"source": "traum", "target": "", "type": "instanceOf"},
+{"source": "bild", "target": "", "type": "instanceOf"},
+{"source": "opfer", "target": "", "type": "instanceOf"},
+{"source": "blut", "target": "", "type": "instanceOf"},
+{"source": "reigen", "target": "", "type": "instanceOf"},
+{"source": "tanz", "target": "", "type": "instanceOf"}];
 
-var links2 = [{source: "#nacht", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#mond", target: "#nacht", type: "#part-of"},{source: "#mond", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#wald", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#kreuzweg", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#kreis", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#glocke", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#erscheinungen", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#wildesHeer", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#wild", target: "#wildesHeer", type: "#part-of"},{source: "#waldvoegel", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#kugelguss", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#max", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#sammiel", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#caspar", target: "#wolfsschluchtszene", type: "#part-of"},{source: "#eule", target: "#erscheinungen", type: "#part-of"},{source: "#ross", target: "#reiter", type: "#related-to"},{source: "#drei", target: "#sieben", type: "#same-as"},{source: "#sechzig", target: "#sechs", type: "#same-as"},{source: "#form", target: "#kugelguss", type: "#used-for"},{source: "#kohlen", target: "#kugelguss", type: "#used-for"},{source: "#blei", target: "#kugelguss", type: "#used-for"},{source: "#max", target: "#jaeger", type: "#same-as"},{source: "#max", target: "#wilhelm", type: "#comparable-with"},{source: "#max", target: "#agathe", type: "#related-to"},{source: "#wilhelm", target: "#jaeger", type: "#same-as"},{source: "#wilhelm", target: "#pauline", type: "#related-to"}];
+var links2 = [{"source": "#nacht", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#mond", "target": "#nacht", "type": "#part-of"},{"source": "#mond", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#wald", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#kreuzweg", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#kreis", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#glocke", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#erscheinungen", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#wildesHeer", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#wild", "target": "#wildesHeer", "type": "#part-of"},{"source": "#waldvoegel", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#kugelguss", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#max", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#sammiel", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#caspar", "target": "#wolfsschluchtszene", "type": "#part-of"},{"source": "#eule", "target": "#erscheinungen", "type": "#part-of"},{"source": "#ross", "target": "#reiter", "type": "#related-to"},{"source": "#drei", "target": "#sieben", "type": "#same-as"},{"source": "#sechzig", "target": "#sechs", "type": "#same-as"},{"source": "#form", "target": "#kugelguss", "type": "#used-for"},{"source": "#kohlen", "target": "#kugelguss", "type": "#used-for"},{"source": "#blei", "target": "#kugelguss", "type": "#used-for"},{"source": "#max", "target": "#jaeger", "type": "#same-as"},{"source": "#max", "target": "#wilhelm", "type": "#comparable-with"},{"source": "#max", "target": "#agathe", "type": "#related-to"},{"source": "#wilhelm", "target": "#jaeger", "type": "#same-as"},{"source": "#wilhelm", "target": "#pauline", "type": "#related-to"}];
 
-var links = [{source: "#nacht", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#mond", target: "#setting", type: "role"},{source: "#nacht", target: "#setting", type: "role"},{source: "#mond", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#wald", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#kreuzweg", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#kreis", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#glocke", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#erscheinungen", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#wildesHeer", target: "#setting", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#wild", target: "#creature-in-play", type: "role"},{source: "#wildesHeer", target: "#setting", type: "role"},{source: "#waldvoegel", target: "#creature-in-play", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#kugelguss", target: "#action", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#max", target: "#name", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#sammiel", target: "#name", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#caspar", target: "#name", type: "role"},{source: "#wolfsschluchtszene", target: "#scene", type: "role"},{source: "#eule", target: "#creature-in-play", type: "role"},{source: "#erscheinungen", target: "#creature-in-play", type: "role"},{source: "#ross", target: "#creature-in-play", type: "role"},{source: "#reiter", target: "#role", type: "role"},{source: "#schwarzeJaeger", target: "#role", type: "role"},{source: "#teufel", target: "#role", type: "role"},{source: "#drei", target: "#kugel", type: "role"},{source: "#sieben", target: "#kugel", type: "role"},{source: "#sechzig", target: "#kugel", type: "role"},{source: "#sechs", target: "#kugel", type: "role"},{source: "#form", target: "#object-of-use", type: "role"},{source: "#kugelguss", target: "#action", type: "role"},{source: "#kohlen", target: "#object-of-use", type: "role"},{source: "#kugelguss", target: "#action", type: "role"},{source: "#blei", target: "#object-of-use", type: "role"},{source: "#kugelguss", target: "#action", type: "role"},{source: "#max", target: "#name", type: "role"},{source: "#jaeger", target: "#role", type: "role"},{source: "#braeutigam", target: "#role", type: "role"},{source: "#max", target: "#name", type: "role"},{source: "#wilhelm", target: "#name", type: "role"},{source: "#edward", target: "#name", type: "role"},{source: "#georgschmid", target: "#name", type: "role"},{source: "#max", target: "#name", type: "role"},{source: "#agathe", target: "#name", type: "role"},{source: "#wilhelm", target: "#name", type: "role"},{source: "#jaeger", target: "#role", type: "role"},{source: "#braeutigam", target: "#role", type: "role"},{source: "#wilhelm", target: "#name", type: "role"},{source: "#pauline", target: "#name", type: "role"}];
+var links3 = [{"source": "#nacht", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#mond", "target": "#setting", "type": "role"},{"source": "#nacht", "target": "#setting", "type": "role"},{"source": "#mond", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#wald", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#kreuzweg", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#kreis", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#glocke", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#erscheinungen", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#wildesHeer", "target": "#setting", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#wild", "target": "#creature-in-play", "type": "role"},{"source": "#wildesHeer", "target": "#setting", "type": "role"},{"source": "#waldvoegel", "target": "#creature-in-play", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#kugelguss", "target": "#action", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#max", "target": "#name", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#sammiel", "target": "#name", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#caspar", "target": "#name", "type": "role"},{"source": "#wolfsschluchtszene", "target": "#scene", "type": "role"},{"source": "#eule", "target": "#creature-in-play", "type": "role"},{"source": "#erscheinungen", "target": "#creature-in-play", "type": "role"},{"source": "#ross", "target": "#creature-in-play", "type": "role"},{"source": "#reiter", "target": "#role", "type": "role"},{"source": "#schwarzeJaeger", "target": "#role", "type": "role"},{"source": "#teufel", "target": "#role", "type": "role"},{"source": "#drei", "target": "#kugel", "type": "role"},{"source": "#sieben", "target": "#kugel", "type": "role"},{"source": "#sechzig", "target": "#kugel", "type": "role"},{"source": "#sechs", "target": "#kugel", "type": "role"},{"source": "#form", "target": "#object-of-use", "type": "role"},{"source": "#kugelguss", "target": "#action", "type": "role"},{"source": "#kohlen", "target": "#object-of-use", "type": "role"},{"source": "#kugelguss", "target": "#action", "type": "role"},{"source": "#blei", "target": "#object-of-use", "type": "role"},{"source": "#kugelguss", "target": "#action", "type": "role"},{"source": "#max", "target": "#name", "type": "role"},{"source": "#jaeger", "target": "#role", "type": "role"},{"source": "#braeutigam", "target": "#role", "type": "role"},{"source": "#max", "target": "#name", "type": "role"},{"source": "#wilhelm", "target": "#name", "type": "role"},{"source": "#edward", "target": "#name", "type": "role"},{"source": "#georgschmid", "target": "#name", "type": "role"},{"source": "#max", "target": "#name", "type": "role"},{"source": "#agathe", "target": "#name", "type": "role"},{"source": "#wilhelm", "target": "#name", "type": "role"},{"source": "#jaeger", "target": "#role", "type": "role"},{"source": "#braeutigam", "target": "#role", "type": "role"},{"source": "#wilhelm", "target": "#name", "type": "role"},{"source": "#pauline", "target": "#name", "type": "role"}];
+        
+  var links4 = [
+    {"source": "nacht", "target": "wolfsschlucht", "type": "#part-of"},
+    {"source": "mond", "target": "nacht", "type": "#part-of"},
+    {"source": "kugel", "target": "wolfsschlucht", "type": "#part-of"},
+    {"source": "kugel", "target": "zauber", "type": "#part-of"},
+    {"source": "probeschuss", "target": "schicksal", "type": "#part-of"},
+    {"source": "probeschuss", "target": "jaeger", "type": "#related-to"},
+    {"source": "probeschuss", "target": "scheibe", "type": "#part-of"},
+    {"source": "waidmann", "target": "max", "type": "#related-to"},
+    {"source": "max", "target": "schuld", "type": "#related-to"},
+    {"source": "max", "target": "wolfsschlucht", "type": "#part-of"},
+    {"source": "kugel", "target": "kugelguss", "type": "#related-to"},
+    {"source": "kugel", "target": "max", "type": "#related-to"},
+    {"source": "drei", "target": "sieben", "type": "#same-as"}
+  ];
+//manual {"source": "Jägerbursch", "target": "jaeger", "type": "variant"},{"source": "Jägerpursch", "target": "jaeger", "type": "variant"},{"source": "Jäger", "target": "jaeger", "type": "variant"},{"source": "Bursch", "target": "jaeger", "type": "variant"},{"source": "Schütz", "target": "jaeger", "type": "variant"},{"source": "Schütze", "target": "jaeger", "type": "variant"},{"source": "Schützen", "target": "jaeger", "type": "variant"},
+// {"source": "kreis", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "glocke", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "erscheinungen", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "wildesHeer", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "wild", "target": "wildesHeer", "type": "part-of"},{"source": "waldvoegel", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kugelguss", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "eule", "target": "erscheinungen", "type": "part-of"},
+var links5 = [
+{"source": "nacht", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "mond", "target": "nacht", "type": "part-of"},{"source": "mond", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kugelguss", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "wald", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kreuzweg", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "max", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "sammiel", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "caspar", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "form", "target": "kugelguss", "type": "used-for"},{"source": "kohlen", "target": "kugelguss", "type": "used-for"},{"source": "blei", "target": "kugelguss", "type": "used-for"},{"source": "max", "target": "jaeger", "type": "same-as"},{"source": "max", "target": "wilhelm", "type": "comparable-with"},{"source": "max", "target": "agathe", "type": "related-to"},{"source": "wilhelm", "target": "jaeger", "type": "same-as"},{"source": "wilhelm", "target": "pauline", "type": "related-to"}];
         </script>
         <script type="text/javascript">
 
+var links = links5;
             
         /*      d3.xml('FreiDi_topicMap_2Waldschlucht.xml', 'application/xml', function(xml) {
                 d3.select('#graph').data(xml.documentElement.getElementsByTagName('topic'))
@@ -106,19 +211,19 @@ var links = [{source: "#nacht", target: "#setting", type: "role"},{source: "#wol
             var nodes = {};
 
            // Compute the distinct nodes from the links.
-           links.forEach(function(link) {
+           links.forEach(function(link) {//refer data
              link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
              link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
            });
            
            console.log(links);
 
-           var width = 960,
-               height = 1000;
+           var width = 400,
+               height = 500;
            
            var force = d3.layout.force()
                .nodes(d3.values(nodes))
-               .links(links)
+               .links(links) //refer data
                .size([width, height])
                .linkDistance(60)
                .charge(-300)
