@@ -1,3 +1,10 @@
+#external components
+bower_components
+node_modules
+
+#dist folder 
+dist
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
