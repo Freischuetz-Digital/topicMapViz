@@ -1,6 +1,19 @@
-```node istall
+Freischütz Digital topicMap Visualization
+=========================================
+
+Setup
+-----
+
+```shell
+npm istall
 bower install
 grunt build
-grunt```
+grunt
+```
 
-```grunt run```
+Launching
+---------
+
+```shell
+grunt run
+```
