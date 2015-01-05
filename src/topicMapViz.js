@@ -230,8 +230,8 @@ function selectTopic(id, i){
   console.log(currentTopic);
   var graphDepth = 2;
   
-  $('.topicName').toggleClass('bg-primary',false);
-  $('#topic_'+id).toggleClass('bg-primary', true); //append class selected
+  $('.topicName').toggleClass('active',false);
+  $('#topic_'+id).toggleClass('active', true); //append class selected
   
   clearTopicDetail();
   topicLinks = getNodeLinks(id, distance);
