@@ -318,8 +318,9 @@ $.getJSON("data/FreiDi_topicMap.JSON", function(data){
   
   for (i=0; i < topicsFiltered.length; i++) {
     var topic = topicsFiltered[i];
-    var idString = "'"+topicsFiltered[i].id+"'";
-    var newLi =  $('#topicList').append('<a id="topic_'+idString+'" class="list-group-item topicName" href="#" onclick="selectTopic('+idString+','+i+')">'+ topicsFiltered[i].baseName.baseNameString +'</a>');
+    var topicID = topicsFiltered[i].id;
+    var idString = "'"+topicID+"'";
+    var newLi =  $('#topicList').append('<a id="topic_'+topicID+'" class="list-group-item topicName" href="#" onclick="selectTopic('+idString+','+i+')">'+ topicsFiltered[i].baseName.baseNameString +'</a>');
     
     
     $('#topicList').btsListFilter('#searchinput', {
