@@ -191,7 +191,7 @@ function getTopicDetails(topic, i){
     };
     
     //occurrence(s)
-    if(topic.occurrence && topic.occurrence.resourceRef.length > 0){
+    if(topic.occurrence && topic.occurrence.resourceRef){
       newTopic.append('dt').classed('key', true)
         .text('Nachweise');
       for(i=0; i < topic.occurrence.resourceRef.length; i++){
