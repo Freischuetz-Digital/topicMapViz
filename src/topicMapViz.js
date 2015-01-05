@@ -159,7 +159,7 @@ function filterById (object, value) {
     return $.grep(topicsFiltered, function(element, index){
       
       if(element.id === value){
-        return index
+        return element
       }
       
     });
