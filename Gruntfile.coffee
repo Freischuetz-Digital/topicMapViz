@@ -64,12 +64,12 @@ module.exports = (grunt) ->
     concat:
       bower_js:
         options:
-          separator: "\n"
+          separator: "\n\n/*newfile*/\n\n"
         src: ['bower_components/jquery/dist/jquery.min.js', 
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
               'bower_components/bootstrap/js/tab.js',
-              'bower_components/d3/d3.min.js']
-              #'bower_components/verovio/index.js']
+              'bower_components/d3/d3.min.js',
+              'bower_components/bootstrap-list-filter/bootstrap-list-filter.min.js']
         dest: 'dist/bower.js'
 
     copy:
