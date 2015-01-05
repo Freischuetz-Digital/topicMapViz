@@ -82,10 +82,9 @@ function drawGraph(localLinks){
        .attr("dy", ".35em")
        .text(function(d) {
           console.log(d.name.substring(1));
-          var myDataIndex = filterById(topicsFiltered, d.name.substring(1));
-          var myData = topicsFiltered[myDataIndex];
+          var myData = filterById(topicsFiltered, d.name.substring(1));
           console.log(myData);
-          if(myDataIndex != -1){return myData.baseName.baseNameString;}
+          if(typeof myData[0] !== 'undefined'){return myData[0].baseName.baseNameString;}
           else{return '[fallback]'+d.name}
        });
        
@@ -125,7 +124,7 @@ function drawGraph(localLinks){
 function filterByMember (object, value) {
 
   // The real meat of the solution, you can use this directly if you want.
-  return $.map(object, function (item, key) { 
+  var num = $.map(object, function (item, key) { 
 
       // this is where the check is done
       if (item.member[0].topicRef.href === value || item.member[1].topicRef.href === value) {
@@ -136,12 +135,16 @@ function filterByMember (object, value) {
         return item; 
       }
     });
+    
+    return num
 }
 
 function filterById (object, value) {
 
+    console.log('filter by:');
+    console.log(value);
   // The real meat of the solution, you can use this directly if you want.
-  return $.map(object, function (item, key) { 
+  /*return $.map(object, function (item, key) { 
 
       // this is where the check is done
       if (item.id === value) {
@@ -149,8 +152,16 @@ function filterById (object, value) {
         // if you want the index or property "0", "1", "2"... etc.
         // item._index = key;
 
-        return item._index = key; 
+        return item = key; 
       }
+      
+    });*/
+    return $.grep(topicsFiltered, function(element, index){
+      
+      if(element.id === value){
+        return index
+      }
+      
     });
 }
 
@@ -214,18 +225,9 @@ function selectTopic(id, i){
   console.log('start selectTopic');
   console.log('submitted i: '+ i);
   console.log('submitted id: '+ id);
-  var currentTopic_i = filterById(topicsFiltered, id);
-  /*console.log('topic determined by id: ');
-  console.log(currentTopic1);//hier geht was schief für clicks in den graph
-  if(typeof i === 'undefined'){
-    console.log('i is undefined will be determined');
-    i= $.inArray(currentTopic1,topicsFiltered);
-  };*/
-  console.log('determined i as:');
-  console.log(currentTopic_i);
-  currentTopic2 = topicsFiltered[currentTopic_i]; //warum ist das nötig?
-  console.log('topic determined by i: ');
-  console.log(currentTopic2);
+  var currentTopic = filterById(topicsFiltered, id);
+  console.log('current topic object:');
+  console.log(currentTopic);
   var graphDepth = 2;
   
   $('.topicName').toggleClass('bg-primary',false);
@@ -235,7 +237,7 @@ function selectTopic(id, i){
   topicLinks = getNodeLinks(id, distance);
   links = topicLinks;
   drawGraph(links);
-  getTopicDetails(currentTopic2, i);
+  getTopicDetails(currentTopic[0], i);
   
 }
 
@@ -246,6 +248,23 @@ function getNodeLinks(topicID,distance){
   var filterTopicRef = '#' + topicID;
   //console.log(filterTopicRef);
   var nodes = filterByMember (associations, filterTopicRef);
+  if (nodes.length == 0){
+    nodes.push(
+      {
+        "instanceOf": [{"topicRef": {"href": "#self"}}],
+        "member": [
+          {
+            "roleSpec": {"topicRef": {"href": "#self"}},
+            "topicRef": {"href": filterTopicRef}
+          },
+          {
+            "roleSpec": {"topicRef": {"href": "#self"}},
+            "topicRef": {"href": filterTopicRef}
+          }
+        ]
+      }
+    )
+  }
   console.log(nodes);
   
   if(distance==2){
