@@ -1,9 +1,9 @@
 {
-  "name": "FreiDi-scoreFollowsAudio",
-  "version": "0.3.1",
+  "name": "FreiDi-topicMapViz",
+  "version": "0.5.0alpha",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Freischuetz-Digital/scoreFollowsAudio.git"
+    "url": "git://github.com/Freischuetz-Digital/topicMapViz.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
