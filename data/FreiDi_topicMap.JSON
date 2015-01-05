@@ -1,4 +1,5 @@
 {
+  "version": "1.0",
   "topic": [
     {
       "id": "de",
@@ -124,32 +125,27 @@
     {
       "id": "nacht",
       "instanceOf": [{"topicRef": {"href": "#setting"}}],
-      "baseName": [
-        {
-          "baseNameString": "Nacht",
-          "variant": {"variantName": [
-            "Mitternacht",
-            "Polternacht"
-          ]}
-        },
-        {
-          "baseNameString": "Finsternis",
-          "variant": {"variantName": ["Mondfinsternis"]}
-        }
-      ],
+      "baseName": {
+        "baseNameString": "Nacht",
+        "variant": {"variantName": [
+          "Mitternacht",
+          "Mitternachtsstunde",
+          "Polternacht"
+        ]}
+      },
       "declaration": {
         "lb": null,
         "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 2, 1929/30, Sp. 1514f., 1521)"
       },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#nacht"},
-        {"href": "1793_Geisterinsel.xml#nacht"},
-        {"href": "1778_BürgerLeonore.xml#nacht"},
-        {"href": "1811_Gespensterbuch.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#nacht"},
         {"href": "freischuetz1812.xml#nacht"},
         {"href": "freischuetz1813.xml#nacht"},
-        {"href": "1819_DerSchwarzeJäger.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#nacht"},
         {"href": "1821_RieschFreischuetz.xml#nacht"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#nacht"},
         {"href": "C_07_Handexemplar.xml#nacht"},
         {"href": "C_07_Kind_Druck_2.xml#nacht"}
       ]}
@@ -157,32 +153,27 @@
     {
       "id": "mond",
       "instanceOf": [{"topicRef": {"href": "#setting"}}],
-      "baseName": [
-        {
-          "baseNameString": "Mond",
-          "variant": {"variantName": [
-            "Mondenschein",
-            "Mondeslicht",
-            "Mondlicht",
-            "Mondenglanz",
-            "Mondscheibe",
-            "Mondenscheibe",
-            "Mondstrahl",
-            "Mondstreif",
-            "Mondblicke",
-            "Vollmond"
-          ]}
-        },
-        {
-          "baseNameString": "Finsternis",
-          "variant": {"variantName": ["Mondfinsternis"]}
-        }
-      ],
+      "baseName": {
+        "baseNameString": "Mond",
+        "variant": {"variantName": [
+          "Mondenschein(e)",
+          "Mondeslicht",
+          "Mondlicht",
+          "Mondenschimmer",
+          "Mondscheibe",
+          "Mondenscheibe",
+          "Mondstrahl",
+          "Mondstreif",
+          "Mondblicke",
+          "Vollmond",
+          "Mondfinsternis",
+          "Finsternis"
+        ]}
+      },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#mond/"},
-        {"href": "1778_BürgerLeonore.xml#mond"},
-        {"href": "1811_Gespensterbuch.xml#mond"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#mond"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#mond"},
         {"href": "freischuetz1812.xml#mond"},
         {"href": "freischuetz1813.xml#mond"},
         {"href": "1821_RieschFreischuetz.xml#mond"},
@@ -201,13 +192,14 @@
       ]},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#wald"},
-        {"href": "1793_Geisterinsel.xml#wald"},
-        {"href": "1811_Gespensterbuch.xml#wald"},
+        {"href": "freidi-referenceSource_RD-tx1.xmlwald"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#wald"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wald"},
         {"href": "freischuetz1812.xml#wald"},
         {"href": "freischuetz1813.xml#wald"},
-        {"href": "1819_DerSchwarzeJäger.xml#wald"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#wald"},
         {"href": "1821_RieschFreischuetz.xml#wald"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#wald"},
         {"href": "C_07_Handexemplar.xml#wald"},
         {"href": "C_07_Kind_Druck_2.xml#wald"}
       ]}
@@ -217,19 +209,23 @@
       "instanceOf": [{"topicRef": {"href": "#setting"}}],
       "baseName": {
         "baseNameString": "Kreuzweg",
-        "variant": {"variantName": ["Creutz-Weg"]}
+        "variant": {"variantName": [
+          "Creutz-Weg",
+          "Kreutzweg"
+        ]}
       },
       "declaration": {
         "lb": null,
         "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 5, 1932/33, Sp. 516., 519, 521)"
       },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#kreuzweg"},
-        {"href": "1811_Gespensterbuch.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kreuzweg"},
         {"href": "freischuetz1812.xml#kreuzweg"},
         {"href": "freischuetz1813.xml#kreuzweg"},
-        {"href": "1819_DerSchwarzeJäger.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kreuzweg"},
         {"href": "1821_RieschFreischuetz.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kreuzweg"},
         {"href": "C_07_Handexemplar.xml#kreuzweg"},
         {"href": "C_07_Kind_Druck_2.xml#kreuzweg"}
       ]}
@@ -247,13 +243,13 @@
       ]},
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 5, 1932/33, Sp. 468-470)"},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#kreis"},
-        {"href": "1778_BürgerLeonore.xml#kreis"},
-        {"href": "1811_Gespensterbuch.xml#kreis"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#kreis"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kreis"},
         {"href": "freischuetz1812.xml#kreis"},
         {"href": "freischuetz1813.xml#kreis"},
-        {"href": "1819_DerSchwarzeJäger.xml#kreis"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kreis"},
         {"href": "1821_RieschFreischuetz.xml#kreis"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kreis"},
         {"href": "C_07_Handexemplar.xml#kreis"},
         {"href": "C_07_Kind_Druck_2.xml#kreis"}
       ]}
@@ -265,22 +261,24 @@
       "variant": {"variantName": [
         "Glocke",
         "Glock",
+        "Gloke",
         "Todtenglocke",
         "elf ",
         "eilf ",
         "ellf ",
         "II Uhr ",
-        "zwölf "
+        "zwölf ",
+        "Stunde schlägt"
       ]},
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1930/31, Sp. 555)"},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#glocke"},
-        {"href": "1793_Geisterinsel.xml#glocke"},
-        {"href": "1778_BürgerLeonore.xml#glocke"},
-        {"href": "1811_Gespensterbuch.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#glocke"},
         {"href": "freischuetz1812.xml#glocke"},
         {"href": "freischuetz1813.xml#glocke"},
-        {"href": "1819_DerSchwarzeJäger.xml#glocke"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#glocke"},
         {"href": "1821_RieschFreischuetz.xml#glocke"},
         {"href": "C_07_Handexemplar.xml#glocke"},
         {"href": "C_07_Kind_Druck_2.xml#glocke"}
@@ -306,12 +304,13 @@
         "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1930/31, Sp. 2ff.)"
       },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#kugel"},
-        {"href": "1811_Gespensterbuch.xml#kugel"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#kugel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kugel"},
         {"href": "freischuetz1812.xml#kugel"},
         {"href": "freischuetz1813.xml#kugel"},
-        {"href": "1819_DerSchwarzeJäger.xml#kugel"},
         {"href": "1821_RieschFreischuetz.xml#kugel"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kugel"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kugel"},
         {"href": "C_07_Handexemplar.xml#kugel"},
         {"href": "C_07_Kind_Druck_2.xml#kugel"}
       ]}
@@ -332,9 +331,10 @@
       "baseName": {"baseNameString": "drey"},
       "variant": {"variantName": ["3"]},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#drei"},
-        {"href": "1819_DerSchwarzeJäger.xml#drei"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#drei"},
         {"href": "1821_RieschFreischuetz.xml#drei"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#drei"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#drei"},
         {"href": "C_07_Handexemplar.xml#drei"},
         {"href": "C_07_Kind_Druck_2.xml#drei"}
       ]}
@@ -352,10 +352,11 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#sechs"},
-        {"href": "1811_Gespensterbuch.xml#sechs"},
-        {"href": "1819_DerSchwarzeJäger.xml#sechs"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#sechs"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#sechs"},
         {"href": "1821_RieschFreischuetz.xml#sechs"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#sechs"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#sechs"},
         {"href": "C_07_Handexemplar.xml#sechs"},
         {"href": "C_07_Kind_Druck_2.xml#sechs"}
       ]}
@@ -363,11 +364,15 @@
     {
       "id": "treffen",
       "instanceOf": [{"topicRef": {"href": "#action"}}],
-      "baseName": {"baseNameString": "treffen"},
+      "baseName": {
+        "baseNameString": "treffen",
+        "variant": {"variantName": ["treffenden"]}
+      },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#treffen"},
-        {"href": "1819_DerSchwarzeJäger.xml#treffen"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#treffen"},
         {"href": "1821_RieschFreischuetz.xml#treffen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#treffen"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#treffen"},
         {"href": "C_07_Handexemplar.xml#treffen"},
         {"href": "C_07_Kind_Druck_2.xml#treffen"}
       ]}
@@ -380,9 +385,10 @@
         "variant": {"variantName": ["fehlen"]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#aeffen"},
-        {"href": "1819_DerSchwarzeJäger.xml#aeffen"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#aeffen"},
         {"href": "1821_RieschFreischuetz.xml#aeffen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#aeffen"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#aeffen"},
         {"href": "C_07_Handexemplar.xml#aeffen"},
         {"href": "C_07_Kind_Druck_2.xml#aeffen"}
       ]}
@@ -394,6 +400,7 @@
       "baseName": {
         "baseNameString": "Probeschuß",
         "variant": {"variantName": [
+          "Probschuss",
           "Meisterschuß",
           "Königschuße",
           "Probe",
@@ -406,8 +413,9 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#probeschuss"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#probeschuss"},
         {"href": "1821_RieschFreischuetz.xml#probeschuss"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#probeschuss"},
         {"href": "C_07_Handexemplar.xml#probeschuss"},
         {"href": "C_07_Kind_Druck_2.xml#probeschuss"}
       ]}
@@ -426,12 +434,13 @@
       },
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1930/31, Sp. 2ff.)"},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#kugelguss"},
-        {"href": "1811_Gespensterbuch.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kugelguss"},
         {"href": "freischuetz1812.xml#kugelguss"},
         {"href": "freischuetz1813.xml#kugelguss"},
-        {"href": "1819_DerSchwarzeJäger.xml#kugelguss"},
         {"href": "1821_RieschFreischuetz.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kugelguss"},
         {"href": "C_07_Handexemplar.xml#kugelguss"},
         {"href": "C_07_Kind_Druck_2.xml#kugelguss"}
       ]}
@@ -449,10 +458,11 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#form"},
-        {"href": "1811_Gespensterbuch.xml#form"},
-        {"href": "1819_DerSchwarzeJäger.xml#form"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#form"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#form"},
         {"href": "1821_RieschFreischuetz.xml#form"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#form"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#form"},
         {"href": "C_07_Handexemplar.xml#form"},
         {"href": "C_07_Kind_Druck_2.xml#form"}
       ]}
@@ -466,10 +476,11 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#kohlen"},
-        {"href": "1811_Gespensterbuch.xml#kohlen"},
-        {"href": "1819_DerSchwarzeJäger.xml#kohlen"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#kohlen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kohlen"},
         {"href": "1821_RieschFreischuetz.xml#kohlen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kohlen"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kohlen"},
         {"href": "C_07_Handexemplar.xml#kohlen"},
         {"href": "C_07_Kind_Druck_2.xml#kohlen"}
       ]}
@@ -480,8 +491,8 @@
       "baseName": {"baseNameString": "Blei"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1819_DerSchwarzeJäger.xml#blei"},
         {"href": "1821_RieschFreischuetz.xml#blei"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#blei"},
         {"href": "C_07_Handexemplar.xml#blei"},
         {"href": "C_07_Kind_Druck_2.xml#blei"}
       ]}
@@ -491,11 +502,15 @@
       "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
       "baseName": {
         "baseNameString": "Gießkelle",
-        "variant": {"variantName": ["Kelle"]}
+        "variant": {"variantName": [
+          "Gieß-Kelle",
+          "Kelle"
+        ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#kelle"},
-        {"href": "1819_DerSchwarzeJäger.xml#kelle"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#kelle"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kelle"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kelle"},
         {"href": "C_07_Handexemplar.xml#kelle"},
         {"href": "C_07_Kind_Druck_2.xml#kelle"}
       ]}
@@ -506,8 +521,9 @@
       "baseName": {"baseNameString": "Hirschfänger"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#hirschfaenger"},
-        {"href": "1819_DerSchwarzeJäger.xml#hirschfaenger"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#hirschfaenger"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#hirschfaenger"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#hirschfaenger"},
         {"href": "C_07_Handexemplar.xml#hirschfaenger"},
         {"href": "C_07_Kind_Druck_2.xml#hirschfaenger"}
       ]}
@@ -522,18 +538,19 @@
           "Sturm",
           "böse Winde",
           "Todtenwinde",
+          "Nordwind",
           "Windstoß",
           "Windbrüche"
         ]}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#wind"},
-        {"href": "1778_BürgerLeonore.xml#wind"},
-        {"href": "1793_Geisterinsel.xml#wind"},
-        {"href": "1811_Gespensterbuch.xml#wind"},
-        {"href": "1819_DerSchwarzeJäger.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wind"},
         {"href": "1821_RieschFreischuetz.xml#wind"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#wind"},
         {"href": "C_07_Handexemplar.xml#wind"},
         {"href": "C_07_Kind_Druck_2.xml#wind"}
       ]}
@@ -548,17 +565,19 @@
           "Geister",
           "Geisterstimmen",
           "Geisterchor",
-          "Chor, Chöre"
+          "Chor",
+          "Chöre",
+          "Simme(n)"
         ]}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#erscheinungen"},
-        {"href": "1793_Geisterinsel.xml#erscheinungen"},
-        {"href": "1811_Gespensterbuch.xml#erscheinungen"},
-        {"href": "1778_BürgerLeonore.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#erscheinungen"},
         {"href": "freischuetz1812.xml#erscheinungen"},
         {"href": "freischuetz1813.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#erscheinungen"},
         {"href": "C_07_Handexemplar.xml#erscheinungen"},
         {"href": "C_07_Kind_Druck_2.xml#erscheinungen"}
       ]}
@@ -574,14 +593,18 @@
           "nebliche Gestalten",
           "grause Schreckensbilder",
           "neblicht Ding",
-          "verschleierte Gestalt"
+          "Gestalt",
+          "verschleierte Gestalt",
+          "Leichengestalt",
+          "Popanz"
         ]}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#gestalten"},
-        {"href": "1811_Gespensterbuch.xml#gestalten"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#gestalten"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#gestalten"},
         {"href": "1821_RieschFreischuetz.xml#gestalten"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#gestalten"},
         {"href": "C_07_Handexemplar.xml#gestalten"},
         {"href": "C_07_Kind_Druck_2.xml#gestalten"}
       ]}
@@ -590,7 +613,7 @@
       "id": "wildesHeer",
       "instanceOf": [{"topicRef": {"href": "#erscheinungen"}}],
       "baseName": {
-        "variantName": "wilde Jagd",
+        "variantName": ["wilde Jagd"],
         "variant": {"variantName": [
           "wildes Heer",
           "wütendes Heer",
@@ -603,11 +626,11 @@
       },
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 9, 1938 Sp. 632f.; Bd. 9-Nachtrag, 1941, Sp. 929)"},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#wildesHeer"},
-        {"href": "1811_Gespensterbuch.xml#wildesHeer"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#wildesHeer"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wildesHeer"},
         {"href": "freischuetz1812.xml#wildesHeer"},
         {"href": "freischuetz1813.xml#wildesHeer"},
-        {"href": "1819_DerSchwarzeJäger.xml#wildesHeer"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#wildesHeer"},
         {"href": "C_07_Handexemplar.xml#wildesHeer"},
         {"href": "C_07_Kind_Druck_2.xml#wildesHeer"}
       ]}
@@ -629,28 +652,11 @@
       },
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 9, 1938, Sp. 621)"},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#wild"},
-        {"href": "1811_Gespensterbuch.xml#wild"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#wild"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wild"},
         {"href": "C_07_Handexemplar.xml#wild"},
         {"href": "C_07_Kind_Druck_2.xml#wild"}
       ]}
-    },
-    {
-      "id": "hackel",
-      "#text": [
-        " ",
-        " "
-      ],
-      "instanceOf": [
-        {"topicRef": {"href": "#role"}},
-        {"topicRef": {"href": "#erscheinungen"}}
-      ],
-      "baseName": {"baseNameString": "Hackelberg"},
-      "declaration": {
-        "lb": null,
-        "bibl": {"lb": null}
-      },
-      "occurrence": {"resourceRef": {"href": "1821_RieschFreischuetz.xml#hackel"}}
     },
     {
       "id": "waldvoegel",
@@ -661,14 +667,15 @@
           "Waldvögel",
           "Nachtvögel",
           "Nachtgeflügel",
-          "Nachtgevögel"
+          "Nachtgevögel",
+          "Todtenvögel"
         ]}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#waldvoegel"},
-        {"href": "C_07_Handexemplar.xml#waldvoegel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#waldvoegel"},
         {"href": "1821_RieschFreischuetz.xml#waldvoegel"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#waldvoegel"},
         {"href": "C_07_Handexemplar.xml#waldvoegel"},
         {"href": "C_07_Kind_Druck_2.xml#waldvoegel"}
       ]}
@@ -685,9 +692,8 @@
       },
       "declaration": "Der Rabe, des nordischen Odins Begleiter. Odin hat zwei Raben [\u2026]",
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#rabe"},
-        {"href": "1793_Geisterinsel.xml#rabe"},
-        {"href": "1811_Gespensterbuch.xml#rabe"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#rabe"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#rabe"},
         {"href": "freischuetz1812.xml#rabe"},
         {"href": "freischuetz1813.xml#rabe"},
         {"href": "C_07_Handexemplar.xml#rabe"},
@@ -696,22 +702,24 @@
     },
     {
       "id": "eule",
-      "instanceOf": {"topicRef": [
-        {"href": "#creature-in-play"},
-        {"href": "#waldvoegel"}
-      ]},
+      "instanceOf": [
+        {"topicRef": {"href": "#creature-in-play"}},
+        {"topicRef": {"href": "#waldvoegel"}}
+      ],
       "baseName": {
         "baseNameString": "Eule",
         "variant": {"variantName": [
           "Felseneule ",
+          "Nachteule",
           "Kautz"
         ]}
       },
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1929/30, Sp. 1073f.)"},
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#eule"},
-        {"href": "1811_Gespensterbuch.xml#eule"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#eule"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#eule"},
         {"href": "1821_RieschFreischuetz.xml#eule"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#eule"},
         {"href": "C_07_Handexemplar.xml#eule"},
         {"href": "C_07_Kind_Druck_2.xml#eule"}
       ]}
@@ -731,8 +739,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#ross"},
-        {"href": "1778_BürgerLeonore.xml#ross"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#ross"},
         {"href": "1821_RieschFreischuetz.xml#ross"},
         {"href": "C_07_Handexemplar.xml#ross"},
         {"href": "C_07_Kind_Druck_2.xml#ross"}
@@ -753,7 +760,7 @@
         }}
       ]},
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#sammiel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#sammiel"},
         {"href": "1821_RieschFreischuetz.xml#sammiel"}
       ]}
     },
@@ -775,9 +782,8 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#reiter"},
-        {"href": "1811_Gespensterbuch.xml#reiter"},
-        {"href": "1819_DerSchwarzeJäger.xml#reiter"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#reiter"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#reiter"},
         {"href": "1821_RieschFreischuetz.xml#reiter"},
         {"href": "C_07_Kind_Druck_2.xml#reiter"}
       ]}
@@ -819,15 +825,15 @@
           {"variantName": ["Satan"]},
           {"variantName": ["Luzifer"]}
         ],
-        "variantName": "böse Feind"
+        "variantName": ["böse Feind"]
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#teufel"},
-        "1799 Wallenstein",
-        {"href": "1811_Gespensterbuch.xml#teufel"},
-        {"href": "1819_DerSchwarzeJäger.xml#teufel"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#teufel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#teufel"},
         {"href": "1821_RieschFreischuetz.xml#teufel"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#teufel"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#teufel"},
         {"href": "C_07_Handexemplar.xml#teufel"},
         {"href": "C_07_Kind_Druck_2.xml#teufel"}
       ]}
@@ -839,9 +845,13 @@
         {"topicRef": {"href": "roleDesc"}}
       ],
       "#text": ",\n    ",
-      "baseName": {"baseNameString": "das Böse"},
+      "baseName": {
+        "baseNameString": "das Böse",
+        "variant": {"variantName": ["böse"]}
+      },
       "declaration": null,
       "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#boese"},
         {"href": "C_07_Handexemplar.xml#boese"},
         {"href": "C_07_Kind_Druck_2.xml#boese"}
       ]}
@@ -863,11 +873,14 @@
       "declaration": {"ref": {
         "href": "#abdon",
         "#text": "Abdonstag"
-      }}
+      }},
+      "occurrence": {}
     },
     {
       "id": "abdon",
-      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "instanceOf": [
+        {"topicRef": {"href": "#setting"}}
+      ],
       "baseName": {
         "baseNameString": "Abdonstag",
         "variant": {"variantName": [
@@ -877,15 +890,9 @@
       },
       "declaration": "[siehe Freikugel]",
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#abdon"},
-        {"href": "1819_DerSchwarzeJäger.xml#abdon"}
+        {"href": "freidi-referenceSource_RD-tx1.xml#abdon"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#abdon"}
       ]}
-    },
-    {
-      "id": "sommer",
-      "instanceOf": [{"topicRef": {"href": "#setting"}}],
-      "baseName": {"baseNameString": "Sommer"},
-      "occurrence": {"resourceRef": {"href": "1821_RieschFreischuetz.xml#sommer"}}
     },
     {
       "id": "hoelle",
@@ -893,13 +900,13 @@
       "baseName": {"baseNameString": "Hölle"},
       "variant": {"variantName": [
         "höllisch",
-        "Höllenpfuhl"
+        "Höllenpfuhl",
+        "Höllenfeuer"
       ]},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#hoelle"},
-        {"href": "1778_BürgerLeonore.xml#hoelle"},
-        "1799 Wallenstein",
+        {"href": "freidi-referenceSource_RD-tx1.xml#hoelle"},
         {"href": "1821_RieschFreischuetz.xml#hoelle"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#hoelle"},
         {"href": "C_07_Handexemplar.xml#hoelle"},
         {"href": "C_07_Kind_Druck_2.xml#hoelle"}
       ]}
@@ -923,9 +930,11 @@
         "variant": {"variantName": [
           "Jägerbursch",
           "Jägerpursch",
-          "Jäger",
+          "Jägerjunge",
           "Jagdgesell",
+          "Jagdbube",
           "Waidmann",
+          "Waidjunge",
           "Weidmann",
           "Pursch",
           "Bursch",
@@ -935,9 +944,10 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#jaeger"},
-        {"href": "1819_DerSchwarzeJäger.xml#jaeger"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#jaeger"},
         {"href": "1821_RieschFreischuetz.xml#jaeger"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#jaeger"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#jaeger"},
         {"href": "C_07_Handexemplar.xml#jaeger"},
         {"href": "C_07_Kind_Druck_2.xml#jaeger"}
       ]}
@@ -959,9 +969,10 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#jagd"},
-        {"href": "1819_DerSchwarzeJäger.xml#jagd"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#jagd"},
         {"href": "1821_RieschFreischuetz.xml#jagd"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#jagd"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#jagd"},
         {"href": "C_07_Handexemplar.xml#jagd"},
         {"href": "C_07_Kind_Druck_2.xml#jagd"}
       ]}
@@ -982,7 +993,7 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        "1799 Wallenstein",
+        {"href": "freidi-referenceSource_RMs-tx11.xml#bauer"},
         {"href": "C_07_Handexemplar.xml#bauer"},
         {"href": "C_07_Kind_Druck_2.xml#bauer"}
       ]}
@@ -998,6 +1009,7 @@
         ]}
       },
       "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#camerad"},
         {"href": "C_07_Handexemplar.xml#camerad"},
         {"href": "C_07_Kind_Druck_2.xml#camerad"}
       ]}
@@ -1013,7 +1025,8 @@
         "variant": {"variantName": ["Erbförster"]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#foerster"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#foerster"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#foerster"},
         {"href": "C_07_Handexemplar.xml#foerster"},
         {"href": "C_07_Kind_Druck_2.xml#foerster"}
       ]}
@@ -1026,8 +1039,8 @@
       ],
       "baseName": {"baseNameString": "Wilhelm"},
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#wilhelm"},
-        {"href": "1811_Gespensterbuch.xml#wilhelm"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wilhelm"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#wilhelm"},
         {"href": "freischuetz1812.xml#wilhelm"},
         {"href": "freischuetz1813.xml#wilhelm"}
       ]}
@@ -1047,8 +1060,8 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#georgschmid"},
-        {"href": "1811_Gespensterbuch.xml#georgschmid"}
+        {"href": "freidi-referenceSource_RD-tx1.xml#georgschmid"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#georgschmid"}
       ]}
     },
     {
@@ -1059,7 +1072,7 @@
         {"topicRef": null}
       ],
       "baseName": {"baseNameString": "Edward"},
-      "occurrence": {"resourceRef": {"href": "1793_Geisterinsel.xml#edward"}}
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx3.xml#edward"}]}
     },
     {
       "id": "benno",
@@ -1069,7 +1082,7 @@
         {"topicRef": null}
       ],
       "baseName": {"baseNameString": "Benno"},
-      "occurrence": {"resourceRef": {"href": "1821_Riesch, Freischuetz.xml#benno"}}
+      "occurrence": {"resourceRef": [{"href": "1821_Riesch, Freischuetz.xml#benno"}]}
     },
     {
       "id": "schreiber",
@@ -1082,9 +1095,10 @@
         "Jüngling"
       ]},
       "occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#schreiber"},
-        {"href": "1811_Gespensterbuch.xml#schreiber"},
-        {"href": "1819_DerSchwarzeJäger.xml#schreiber"}
+        {"href": "freidi-referenceSource_RD-tx1.xml#schreiber"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#schreiber"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#schreiber"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#schreiber"}
       ]}
     },
     {
@@ -1098,10 +1112,10 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#braeutigam"},
-        {"href": "1793_Geisterinsel.xml#braeutigam"},
-        {"href": "1811_Gespensterbuch.xml#braeutigam"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#braeutigam"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#braeutigam"},
         {"href": "1821_RieschFreischuetz.xml#braeutigam"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#braeutigam"},
         {"href": "C_07_Handexemplar.xml#braeutigam"},
         {"href": "C_07_Kind_Druck_2.xml#braeutigam"}
       ]}
@@ -1111,9 +1125,15 @@
       "instanceOf": [{"topicRef": {"href": "#role"}}],
       "baseName": {
         "baseNameString": "Freischütz",
-        "variant": {"variantName": ["Freyschütz"]}
+        "variant": {"variantName": [
+          "Freyschütz",
+          "Schütze"
+        ]}
       },
-      "occurrence": {"resourceRef": {"href": "1811_Gespensterbuch.xml#freischuetz"}}
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#freischuetz"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#freischuetz"}
+      ]}
     },
     {
       "id": "caspar",
@@ -1139,9 +1159,9 @@
         ]}
       },
       "occurrence": {"occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#weib"},
-        {"href": "1811_Gespensterbuch.xml#weib"},
-        {"href": "1819_DerSchwarzeJäger.xml#weib"}
+        {"href": "freidi-referenceSource_RMs-tx1.xml#weib"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#weib"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#weib"}
       ]}}
     },
     {
@@ -1160,9 +1180,9 @@
         ]}
       },
       "occurrence": {"occurrence": {"resourceRef": [
-        {"href": "1730_Unterredung.xml#bergjaeger"},
-        {"href": "1811_Gespensterbuch.xml#bergjaeger"},
-        {"href": "1819_DerSchwarzeJäger.xml#bergjaeger"},
+        {"href": "freidi-referenceSource_RMs-tx1.xml#bergjaeger"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#bergjaeger"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#bergjaeger"},
         {"href": "C_07_Handexemplar.xml#bergjaeger"},
         {"href": "C_07_Kind_Druck_2.xml#bergjaeger"}
       ]}}
@@ -1181,7 +1201,10 @@
           "Pferd\u2019fuß"
         ]}
       },
-      "occurrence": {"occurrence": {"resourceRef": {"href": "1811_Gespensterbuch.xml#stelzfuss"}}}
+      "occurrence": {"occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#stelzfuss"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#stelzfuss"}
+      ]}}
     },
     {
       "id": "robert",
@@ -1196,6 +1219,16 @@
       }
     },
     {
+      "id": "klaus",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}}
+      ],
+      "baseName": {"baseNameString": "Klaus"},
+      "variant": {"variantName": ["Der schwarze Klaus."]},
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RMs-tx11.xml#klaus"}]}
+    },
+    {
       "id": "heinze",
       "instanceOf": [
         {"topicRef": {"href": "#role"}},
@@ -1204,7 +1237,7 @@
       ],
       "baseName": {
         "baseNameString": "Heinze",
-        "occurrence": {"resourceRef": {"href": "1821_RieschFreischuetz.xml#heinze"}}
+        "occurrence": {"resourceRef": [{"href": "1821_RieschFreischuetz.xml#heinze"}]}
       }
     },
     {
@@ -1225,12 +1258,12 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#braut"},
-        {"href": "1793_Geisterinsel.xml#braut"},
-        {"href": "1811_Gespensterbuch.xml#braut"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#braut"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#braut"},
         {"href": "freischuetz1812.xml#braut"},
         {"href": "freischuetz1813.xml#braut"},
         {"href": "1821_RieschFreischuetz.xml#braut"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#braut"},
         {"href": "C_07_Handexemplar.xml#braut"},
         {"href": "C_07_Kind_Druck_2.xml#braut"}
       ]}
@@ -1265,7 +1298,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#schleier"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#schleier"},
         {"href": "1821_RieschFreischuetz.xml#schleier"},
         {"href": "C_07_Kind_Druck_2.xml#schleier"}
       ]}
@@ -1277,7 +1310,8 @@
       "variant": {"variantName": ["Hochzeittag"]},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#hochzeit"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#hochzeit"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#hochzeit"},
         {"href": "C_07_Handexemplar.xml#hochzeit"},
         {"href": "C_07_Kind_Druck_2.xml#hochzeit"}
       ]}
@@ -1304,10 +1338,11 @@
         ]
       },
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#kranz"},
-        {"href": "1811_Gespensterbuch.xml#kranz"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#kranz"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kranz"},
         {"href": "freischuetz1812.xml#kranz"},
         {"href": "freischuetz1813.xml#kranz"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kranz"},
         {"href": "C_07_Handexemplar.xml#kranz"},
         {"href": "1821_RieschFreischuetz.xml#kranz"},
         {"href": "C_07_Kind_Druck_2.xml#kranz"}
@@ -1332,7 +1367,7 @@
       "baseName": {"baseNameString": "Rosmarin"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#rosmarin"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#rosmarin"},
         {"href": "freischuetz1812.xml#rosmarin"},
         {"href": "freischuetz1813.xml#rosmarin"}
       ]}
@@ -1343,7 +1378,7 @@
       "baseName": {"baseNameString": "Myrte"},
       "declaration": "Als Brautpflanze ist die Myrte erst im 16. Jh. nachzuweisen; \u2026",
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#myrte"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#myrte"},
         {"href": "C_07_Handexemplar.xml#myrte"},
         {"href": "C_07_Kind_Druck_2.xml#myrte"}
       ]}
@@ -1357,7 +1392,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#silber"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#silber"},
         {"href": "C_07_Handexemplar.xml#silber"},
         {"href": "C_07_Kind_Druck_2.xml#silber"}
       ]}
@@ -1378,7 +1413,7 @@
       "baseName": {"baseNameString": "Thymian"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#thymian"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#thymian"},
         {"href": "C_07_Handexemplar.xml#thymian"},
         {"href": "C_07_Kind_Druck_2.xml#thymian"}
       ]}
@@ -1405,14 +1440,15 @@
       "instanceOf": [{"topicRef": {"href": "#creature-in-play"}}],
       "baseName": {
         "baseNameString": "Taube",
-        "variant": {"variantName": ["Turteltäubchen "]}
+        "variant": {"variantName": ["Turteltäubchen"]}
       },
       "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 8, 1936/37, Sp. 696)"},
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#taube"},
-        {"href": "1811_Gespensterbuch.xml#taube"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#taube"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#taube"},
         {"href": "freischuetz1812.xml#taube"},
         {"href": "freischuetz1813.xml#taube"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#taube"},
         {"href": "C_07_Handexemplar.xml#taube"},
         {"href": "C_07_Kind_Druck_2.xml#taube"}
       ]}
@@ -1429,6 +1465,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#weiss"},
         {"href": "C_07_Handexemplar.xml#weiss"},
         {"href": "C_07_Kind_Druck_2.xml#weiss"}
       ]}
@@ -1448,8 +1485,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#reigen"},
-        {"href": "1811_Gespensterbuch.xml#reigen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#reigen"},
         {"href": "C_07_Handexemplar.xml#reigen"},
         {"href": "freischuetz1812.xml#reigen"},
         {"href": "freischuetz1813.xml#reigen"},
@@ -1469,10 +1505,10 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#tanz"},
         {"href": "1821_RieschFreischuetz.xml#tanz"},
         {"href": "freischuetz1812.xml#tanz"},
         {"href": "freischuetz1813.xml#tanz"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tanz"},
         {"href": "C_07_Handexemplar.xml#tanz"},
         {"href": "C_07_Kind_Druck_2.xml#tanz"}
       ]}
@@ -1492,13 +1528,13 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#traum"},
-        {"href": "1793_Geisterinsel.xml#traum"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#traum"},
         {"href": "1803_Schloß Aklam_Kind.xml#traum"},
-        {"href": "1811_Gespensterbuch.xml#traum"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#traum"},
         {"href": "1805_Malven.xml#traum"},
         {"href": "freischuetz1812.xml#traum"},
         {"href": "freischuetz1813.xml#traum"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#traum"},
         {"href": "1821_RieschFreischuetz.xml#traum"},
         {"href": "C_07_Handexemplar.xml#traum"},
         {"href": "C_07_Kind_Druck_2.xml#traum"}
@@ -1519,9 +1555,10 @@
         "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 1, 1927, Sp. 1269)"
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#bild"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#bild"},
         {"href": "freischuetz1812.xml#bild"},
         {"href": "freischuetz1813.xml#bild"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#bild"},
         {"href": "C_07_Handexemplar.xml#bild"},
         {"href": "C_07_Kind_Druck_2.xml#bild"}
       ]}
@@ -1537,10 +1574,11 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#opfer"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#opfer"},
         {"href": "freischuetz1812.xml#opfer"},
         {"href": "freischuetz1813.xml#opfer"},
         {"href": "1821_RieschFreischuetz.xml#opfer"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#opfer"},
         {"href": "C_07_Handexemplar.xml#opfer"},
         {"href": "C_07_Kind_Druck_2.xml#opfer"}
       ]}
@@ -1558,10 +1596,11 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#blut"},
-        {"href": "1811_Gespensterbuch.xml#blut"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#blut"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#blut"},
         {"href": "freischuetz1812.xml#blut"},
         {"href": "freischuetz1813.xml#blut"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#blut"},
         {"href": "C_07_Handexemplar.xml#blut"},
         {"href": "C_07_Kind_Druck_2.xml#blut"}
       ]}
@@ -1579,8 +1618,9 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#tot"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#tot"},
         {"href": "1821_RieschFreischuetz.xml#tot"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tot"},
         {"href": "C_07_Handexemplar.xml#tot"},
         {"href": "C_07_Kind_Druck_2.xml#tot"}
       ]}
@@ -1598,7 +1638,8 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#tuch"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#tuch"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tuch"},
         {"href": "C_07_Handexemplar.xml#tuch"},
         {"href": "C_07_Kind_Druck_2.xml#tuch"}
       ]}
@@ -1611,10 +1652,10 @@
       ],
       "baseName": {
         "baseNameString": "Agathe",
-        "variant": {"variantName": null}
+        "variant": {"variantName": []}
       },
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "C_07_Handexemplar.xml#agathe"}}
+      "occurrence": {"resourceRef": [{"href": "C_07_Handexemplar.xml#agathe"}]}
     },
     {
       "id": "pauline",
@@ -1630,16 +1671,6 @@
       ]}
     },
     {
-      "id": "leonore",
-      "instanceOf": [
-        {"topicRef": {"href": "#name"}},
-        {"topicRef": {"href": "#role"}}
-      ],
-      "baseName": {"baseNameString": "Leonore"},
-      "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1778_BürgerLeonore.xml#leonore"}}
-    },
-    {
       "id": "kaethchen",
       "instanceOf": [
         {"topicRef": {"href": "#name"}},
@@ -1647,10 +1678,13 @@
       ],
       "baseName": {
         "baseNameString": "Käthchen",
-        "variant": {"variantName": ["(Das) Mädchen"]}
+        "variant": {"variantName": ["Kätchen"]}
       },
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1811_Gespensterbuch.xml#kaethchen"}}
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kaethchen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kaethchen"}
+      ]}
     },
     {
       "id": "elfride",
@@ -1660,7 +1694,7 @@
       ],
       "baseName": {"baseNameString": "Elfride"},
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1793_Geisterinsel.xml#elfride"}}
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx3.xml#elfride"}]}
     },
     {
       "id": "juliane",
@@ -1670,7 +1704,7 @@
       ],
       "baseName": {"baseNameString": "Juliane"},
       "declaration": null,
-      "occurrence": "\n      \n    "
+      "occurrence": {}
     },
     {
       "id": "bertha",
@@ -1696,7 +1730,7 @@
         ]}
       },
       "declaration": null,
-      "occurrence": "\n      \n    "
+      "occurrence": "\n\n    "
     },
     {
       "id": "ilse",
@@ -1706,7 +1740,7 @@
       ],
       "baseName": {"baseNameString": "Ilse"},
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1821_RieschFreischuetz.xml#ilse"}}
+      "occurrence": {"resourceRef": [{"href": "1821_RieschFreischuetz.xml#ilse"}]}
     },
     {
       "id": "mutter",
@@ -1720,8 +1754,8 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#mutter"},
-        {"href": "1811_Gespensterbuch.xml#mutter"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#mutter"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#mutter"},
         {"href": "1821_RieschFreischuetz.xml#mutter"}
       ]}
     },
@@ -1733,7 +1767,10 @@
       ],
       "baseName": {"baseNameString": "Försterin"},
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1811_Gespensterbuch.xml#foersterin"}}
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#foersterin"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#foersterin"}
+      ]}
     },
     {
       "id": "tochter",
@@ -1744,7 +1781,8 @@
       "baseName": {"baseNameString": "Tochter"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#tochter"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#tochter"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tochter"},
         {"href": "C_07_Handexemplar.xml#tochter"},
         {"href": "C_07_Kind_Druck_2.xml#tochter"}
       ]}
@@ -1758,7 +1796,7 @@
       "baseName": {"baseNameString": "Kind"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#kind"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kind"},
         {"href": "C_07_Handexemplar.xml#kind"},
         {"href": "C_07_Kind_Druck_2.xml#kind"}
       ]}
@@ -1771,13 +1809,17 @@
       ],
       "baseName": {
         "baseNameString": "Mädchen",
-        "variant": {"variantName": ["Mägdlein"]}
+        "variant": {"variantName": [
+          "Mägdlein",
+          "Mädel"
+        ]}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#maedchen"},
-        {"href": "1811_Gespensterbuch.xml#maedchen"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#maedchen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#maedchen"},
         {"href": "1821_RieschFreischuetz.xml#maedchen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#maedchen"},
         {"href": "C_07_Handexemplar.xml#maedchen"},
         {"href": "C_07_Kind_Druck_2.xml#maedchen"}
       ]}
@@ -1805,13 +1847,13 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1793_Geisterinsel.xml#schicksal"},
-        "1799 Wallenstein",
+        {"href": "freidi-referenceSource_RD-tx3.xml#schicksal"},
         {"href": "1805_Malven.xml#schicksal"},
-        {"href": "1811_Gespensterbuch.xml#schicksal"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#schicksal"},
         {"href": "Freischütz, Neuner, 1812.xml#schicksal"},
         {"href": "Freischütz, Neuner, 1813.xml#schicksal"},
         {"href": "1821_RieschFreischuetz.xml#schicksal"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#schicksal"},
         {"href": "C_07_Handexemplar.xml#schicksal"},
         {"href": "C_07_Kind_Druck_2.xml#schicksal"}
       ]}
@@ -1823,21 +1865,21 @@
         {"topicRef": {"href": "#fate"}}
       ],
       "baseName": {
-        "baseNameString": "Mächte",
+        "baseNameString": "schwarze Mächte",
         "variant": {"variantName": [
           "Macht",
+          "Mächte",
           "unsichtbare Mächte",
           "finstre Mächte",
-          "schwarze Mächte",
           "böse Mächte",
           "geheime Kräfte"
         ]}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        "1799 Wallenstein",
-        {"href": "1811_Gespensterbuch.xml#schwarzemaechte"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#schwarzemaechte"},
         {"href": "1821_RieschFreischuetz.xml#schwarzemaechte"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#schwarzemaechte"},
         {"href": "C_07_Handexemplar.xml#schwarzemaechte"},
         {"href": "C_07_Kind_Druck_2.xml#schwarzemaechte"}
       ]}
@@ -1853,7 +1895,6 @@
       ]},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        "1799 Wallenstein",
         {"href": "1821_RieschFreischuetz.xml#glueck"},
         {"href": "C_07_Handexemplar.xml#glueck"},
         {"href": "C_07_Kind_Druck_2.xml#glueck"}
@@ -1873,7 +1914,8 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        "1799 Wallenstein",
+        {"href": "freidi-referenceSource_RD-tx1.xml#zauber"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#zauber"},
         {"href": "1821_RieschFreischuetz.xml#zauber"},
         {"href": "C_07_Handexemplar.xml#zauber"},
         {"href": "C_07_Kind_Druck_2.xml#zauber"}
@@ -1887,7 +1929,6 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        "1799 Wallenstein",
         {"href": "1821_RieschFreischuetz.xml#fluch"},
         {"href": "C_07_Handexemplar.xml#fluch"},
         {"href": "C_07_Kind_Druck_2.xml#fluch"}
@@ -1905,8 +1946,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        "1799 Wallenstein",
-        {"href": "1811_Gespensterbuch.xml#himmel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#himmel"},
         {"href": "1821_RieschFreischuetz.xml#himmel"},
         {"href": "C_07_Handexemplar.xml#himmel"},
         {"href": "C_07_Kind_Druck_2.xml#himmel"}
@@ -1918,7 +1958,7 @@
       "baseName": {"baseNameString": "Schuld"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#schuld"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#schuld"},
         {"href": "1821_RieschFreischuetz.xml#schuld"},
         {"href": "C_07_Handexemplar.xml#schuld"},
         {"href": "C_07_Kind_Druck_2.xml#schuld"}
@@ -1945,9 +1985,10 @@
       },
       "declaration": {"bibl": "Bd. 4, 1931/32, Sp. 582"},
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#waidmann"},
-        {"href": "1819_DerSchwarzeJäger.xml#waidmann"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#waidmann"},
         {"href": "1821_RieschFreischuetz.xml#waidmann"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#waidmann"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#waidmann"},
         {"href": "C_07_Handexemplar.xml#waidmann"},
         {"href": "C_07_Kind_Druck_2.xml#waidmann"}
       ]}
@@ -1965,7 +2006,8 @@
         ]}
       },
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#scheibe"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#scheibe"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#scheibe"},
         {"href": "1821_RieschFreischuetz.xml#scheibe"},
         {"href": "C_07_Handexemplar.xml#scheibe"}
       ]}
@@ -1993,8 +2035,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#gebet"},
-        {"href": "1811_Gespensterbuch.xml#gebet"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#gebet"},
         {"href": "1821_RieschFreischuetz.xml#gebet"},
         {"href": "C_07_Handexemplar.xml#gebet"},
         {"href": "C_07_Kind_Druck_2.xml#gebet"}
@@ -2013,9 +2054,9 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1778_BürgerLeonore.xml#gott"},
-        {"href": "1819_DerSchwarzeJäger.xml#gott"},
+        {"href": "freidi-referenceSource_RD-tx1.xml#gott"},
         {"href": "1821_RieschFreischuetz.xml#gott"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#gott"},
         {"href": "C_07_Handexemplar.xml#gott"},
         {"href": "C_07_Kind_Druck_2.xml#gott"}
       ]}
@@ -2025,11 +2066,11 @@
       "instanceOf": [{"topicRef": {"href": "#himmel"}}],
       "baseName": {
         "baseNameString": "Güte",
-        "variant": {"variantName": null}
+        "variant": {"variantName": []}
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#guete"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#guete"},
         {"href": "C_07_Handexemplar.xml#guete"},
         {"href": "C_07_Kind_Druck_2.xml#guete"}
       ]}
@@ -2040,7 +2081,7 @@
       "baseName": {"baseNameString": "Glauben"},
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#glauben"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#glauben"},
         {"href": "C_07_Handexemplar.xml#glauben"},
         {"href": "C_07_Handexemplar.xml#glauben"},
         {"href": "C_07_Kind_Druck_2.xml#glauben"}
@@ -2055,7 +2096,7 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#sterne"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#sterne"},
         {"href": "C_07_Handexemplar.xml#sterne"},
         {"href": "C_07_Kind_Druck_2.xml#sterne"}
       ]}
@@ -2075,15 +2116,16 @@
       },
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#fromm"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#fromm"},
         {"href": "1821_RieschFreischuetz.xml#fromm"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#fromm"},
         {"href": "C_07_Handexemplar.xml#fromm"},
         {"href": "C_07_Kind_Druck_2.xml#fromm"}
       ]}
     },
     {
       "id": "grillen",
-      "instanceOf": "\n    ",
+      "instanceOf": ["\n    "],
       "baseName": {
         "baseNameString": "Grillen",
         "variant": {"variantName": [
@@ -2109,7 +2151,7 @@
       }},
       "occurrence": {"resourceRef": [
         {"href": "1730_Unterredung.xml"},
-        {"href": "1811_Gespensterbuch.xml#story_1"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#story_1"},
         {"href": "1819_DerSchwarzeJäger.xml"},
         {"href": "1821_RieschFreischuetz.xml#story_1"}
       ]}
@@ -2120,7 +2162,7 @@
       "baseNameString": "Geschichte des Probeschusses: Uraltvater Kuno",
       "declaration": null,
       "occurrence": {"resourceRef": [
-        {"href": "1811_Gespensterbuch.xml#story_2"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#story_2"},
         {"href": "1821_RieschFreischuetz.xml#story_2"}
       ]}
     },
@@ -2129,14 +2171,14 @@
       "instanceOf": [{"topicRef": {"href": "#action"}}],
       "baseNameString": "Ahnenbild",
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1811_Gespensterbuch.xml#story_4"}}
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx7.xml#story_4"}]}
     },
     {
       "id": "story_5",
       "instanceOf": [{"topicRef": {"href": "#action"}}],
       "baseNameString": "Traum",
       "declaration": null,
-      "occurrence": {"resourceRef": {"href": "1811_Gespensterbuch.xml#story_5"}}
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx7.xml#story_5"}]}
     }
   ],
   "association": [
@@ -2743,10 +2785,20 @@
       "member": [
         {
           "roleSpec": {"topicRef": {"href": "#kugel"}},
-          "topicRef": [
-            {"href": "#drei"},
-            {"href": "#sieben"}
-          ]
+          "topicRef": {"href": "#drei"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#aeffen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#kugel"}},
+          "topicRef": {"href": "#sieben"}
         },
         {
           "roleSpec": {"topicRef": {"href": "#action"}},
@@ -3366,15 +3418,41 @@
       ]
     },
     {
-      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
       "member": [
         {
-          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
-          "topicRef": {"href": "#ross"}
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
         },
         {
           "roleSpec": {"topicRef": {"href": "#role"}},
-          "topicRef": {"href": "#reiter"}
+          "topicRef": {"href": "#klaus"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#klaus"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#roleDesc"}},
+          "topicRef": {"href": "#stelzfuss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#klaus"}
         }
       ]
     },
@@ -3596,6 +3674,19 @@
         {
           "roleSpec": {"topicRef": {"href": "#role"}},
           "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#blood-related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#kaethchen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#mutter"}
         }
       ]
     },
