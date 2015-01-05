@@ -5,6 +5,7 @@ Setup
 -----
 
 ```shell
+npm install grunt
 npm istall
 bower install
 grunt build
