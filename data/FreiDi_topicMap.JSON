@@ -1,0 +1,4188 @@
+{
+  "version": "1.0",
+  "topic": [
+    {
+      "id": "de",
+      "subjectIdentity": {"subjectIndicatorRef": {"href": "http://www.topicmaps.org/xtm/1.0/language.xtm#en"}}
+    },
+    {
+      "id": "scene",
+      "baseName": {"baseNameString": "Szene"},
+      "variant": {"variantName": ["Auftritt"]}
+    },
+    {
+      "id": "setting",
+      "baseName": {"baseNameString": "Schauplatz"}
+    },
+    {
+      "id": "creature-in-play",
+      "baseName": {
+        "baseNameString": "Wesen",
+        "variant": {"variantName": ["Kreatur"]}
+      }
+    },
+    {
+      "id": "name",
+      "baseName": {"baseNameString": "Name"}
+    },
+    {
+      "id": "role",
+      "baseName": {"baseNameString": "Rolle"}
+    },
+    {
+      "id": "roleDesc",
+      "baseName": {"baseNameString": "Rollenbeschreibung"}
+    },
+    {
+      "id": "person",
+      "baseName": {"baseNameString": "Person"}
+    },
+    {
+      "id": "object-of-use",
+      "baseName": {
+        "baseNameString": "Gegenstand",
+        "variant": {"variantName": ["Werkzeug"]}
+      }
+    },
+    {
+      "id": "action",
+      "baseName": {
+        "baseNameString": "Handeln",
+        "variant": {"variantName": ["Ausführen"]}
+      }
+    },
+    {
+      "id": "attribute",
+      "baseName": {"baseNameString": "Eigenschaft"}
+    },
+    {
+      "id": "part-of",
+      "baseName": {"baseNameString": "teil von"}
+    },
+    {
+      "id": "blood-related-to",
+      "baseName": {"baseNameString": "verwandt mit"}
+    },
+    {
+      "id": "friendly-related-to",
+      "baseName": {"baseNameString": "befreundet mit"}
+    },
+    {
+      "id": "affectionated-to",
+      "baseName": {"baseNameString": "zugeneigt zu"}
+    },
+    {
+      "id": "used-for",
+      "baseName": {"baseNameString": "verwendet für"}
+    },
+    {
+      "id": "undergo",
+      "baseName": {"baseNameString": "erleben"}
+    },
+    {
+      "id": "is-a",
+      "baseName": {"baseNameString": "ist"}
+    },
+    {
+      "id": "comparable-with",
+      "baseName": {"baseNameString": "vergleichbar mit"}
+    },
+    {
+      "id": "same-as",
+      "baseName": {"baseNameString": "gleich wie"}
+    },
+    {
+      "id": "in-contrast-to",
+      "baseName": {"baseNameString": "im Gegensatz zu"}
+    },
+    {
+      "id": "belong-to",
+      "baseName": {"baseNameString": "gehören zu"}
+    },
+    {
+      "id": "performed-by",
+      "baseName": {"baseNameString": "ausgeführt von"}
+    },
+    {
+      "id": "wolfsschlucht",
+      "instanceOf": [
+        {"topicRef": {"href": "#scene"}},
+        {"topicRef": {"href": "#setting"}}
+      ],
+      "baseName": {
+        "baseNameString": "Wolfsschlucht",
+        "variant": {"variantName": [
+          "Wolfschlucht",
+          "Schreckensschlucht",
+          "Schlucht"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#wolfsschlucht"},
+        {"href": "C_07_Kind_Druck_2.xml#wolfsschlucht"}
+      ]}
+    },
+    {
+      "id": "nacht",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {
+        "baseNameString": "Nacht",
+        "variant": {"variantName": [
+          "Mitternacht",
+          "Mitternachtsstunde",
+          "Polternacht"
+        ]}
+      },
+      "declaration": {
+        "lb": null,
+        "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 2, 1929/30, Sp. 1514f., 1521)"
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#nacht"},
+        {"href": "freischuetz1812.xml#nacht"},
+        {"href": "freischuetz1813.xml#nacht"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#nacht"},
+        {"href": "1821_RieschFreischuetz.xml#nacht"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#nacht"},
+        {"href": "C_07_Handexemplar.xml#nacht"},
+        {"href": "C_07_Kind_Druck_2.xml#nacht"}
+      ]}
+    },
+    {
+      "id": "mond",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {
+        "baseNameString": "Mond",
+        "variant": {"variantName": [
+          "Mondenschein(e)",
+          "Mondeslicht",
+          "Mondlicht",
+          "Mondenschimmer",
+          "Mondscheibe",
+          "Mondenscheibe",
+          "Mondstrahl",
+          "Mondstreif",
+          "Mondblicke",
+          "Vollmond",
+          "Mondfinsternis",
+          "Finsternis"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#mond"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#mond"},
+        {"href": "freischuetz1812.xml#mond"},
+        {"href": "freischuetz1813.xml#mond"},
+        {"href": "1821_RieschFreischuetz.xml#mond"},
+        {"href": "C_07_Handexemplar.xml#mond"},
+        {"href": "C_07_Kind_Druck_2.xml#mond"}
+      ]}
+    },
+    {
+      "id": "wald",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseNameString": "Wald",
+      "variant": {"variantName": [
+        "Waldschlucht",
+        "Baum ",
+        "Bäume"
+      ]},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xmlwald"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#wald"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wald"},
+        {"href": "freischuetz1812.xml#wald"},
+        {"href": "freischuetz1813.xml#wald"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#wald"},
+        {"href": "1821_RieschFreischuetz.xml#wald"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#wald"},
+        {"href": "C_07_Handexemplar.xml#wald"},
+        {"href": "C_07_Kind_Druck_2.xml#wald"}
+      ]}
+    },
+    {
+      "id": "kreuzweg",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {
+        "baseNameString": "Kreuzweg",
+        "variant": {"variantName": [
+          "Creutz-Weg",
+          "Kreutzweg"
+        ]}
+      },
+      "declaration": {
+        "lb": null,
+        "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 5, 1932/33, Sp. 516., 519, 521)"
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kreuzweg"},
+        {"href": "freischuetz1812.xml#kreuzweg"},
+        {"href": "freischuetz1813.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kreuzweg"},
+        {"href": "1821_RieschFreischuetz.xml#kreuzweg"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kreuzweg"},
+        {"href": "C_07_Handexemplar.xml#kreuzweg"},
+        {"href": "C_07_Kind_Druck_2.xml#kreuzweg"}
+      ]}
+    },
+    {
+      "id": "kreis",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {"baseNameString": "Schutzkreis"},
+      "variant": {"variantName": [
+        "Zauberkreis",
+        "Kreis",
+        "Kreis von Steinen",
+        "Kreyß",
+        "Kreys "
+      ]},
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 5, 1932/33, Sp. 468-470)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#kreis"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kreis"},
+        {"href": "freischuetz1812.xml#kreis"},
+        {"href": "freischuetz1813.xml#kreis"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kreis"},
+        {"href": "1821_RieschFreischuetz.xml#kreis"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kreis"},
+        {"href": "C_07_Handexemplar.xml#kreis"},
+        {"href": "C_07_Kind_Druck_2.xml#kreis"}
+      ]}
+    },
+    {
+      "id": "glocke",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {"baseNameString": "Glockenschlag"},
+      "variant": {"variantName": [
+        "Glocke",
+        "Glock",
+        "Gloke",
+        "Todtenglocke",
+        "elf ",
+        "eilf ",
+        "ellf ",
+        "II Uhr ",
+        "zwölf ",
+        "Stunde schlägt"
+      ]},
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1930/31, Sp. 555)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#glocke"},
+        {"href": "freischuetz1812.xml#glocke"},
+        {"href": "freischuetz1813.xml#glocke"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#glocke"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#glocke"},
+        {"href": "1821_RieschFreischuetz.xml#glocke"},
+        {"href": "C_07_Handexemplar.xml#glocke"},
+        {"href": "C_07_Kind_Druck_2.xml#glocke"}
+      ]}
+    },
+    {
+      "id": "kugel",
+      "instanceOf": [
+        {"topicRef": {"href": "#object-of-use"}},
+        {"topicRef": {"href": "#fate"}}
+      ],
+      "baseName": {"baseNameString": "Freikugel"},
+      "variant": {"variantName": [
+        "Freykugel",
+        "freie Kugeln",
+        "Kugel",
+        "Zauberkugel",
+        "Glückskugel",
+        "Teufelskugel"
+      ]},
+      "declaration": {
+        "lb": null,
+        "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1930/31, Sp. 2ff.)"
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#kugel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kugel"},
+        {"href": "freischuetz1812.xml#kugel"},
+        {"href": "freischuetz1813.xml#kugel"},
+        {"href": "1821_RieschFreischuetz.xml#kugel"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kugel"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kugel"},
+        {"href": "C_07_Handexemplar.xml#kugel"},
+        {"href": "C_07_Kind_Druck_2.xml#kugel"}
+      ]}
+    },
+    {
+      "id": "sieben",
+      "instanceOf": [{"topicRef": {"href": "#kugel"}}],
+      "baseName": {"baseNameString": "sieben"},
+      "variant": {"variantName": ["siebente"]},
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#sieben"},
+        {"href": "C_07_Kind_Druck_2.xml#sieben"}
+      ]}
+    },
+    {
+      "id": "drei",
+      "instanceOf": [{"topicRef": {"href": "#kugel"}}],
+      "baseName": {"baseNameString": "drey"},
+      "variant": {"variantName": ["3"]},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#drei"},
+        {"href": "1821_RieschFreischuetz.xml#drei"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#drei"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#drei"},
+        {"href": "C_07_Handexemplar.xml#drei"},
+        {"href": "C_07_Kind_Druck_2.xml#drei"}
+      ]}
+    },
+    {
+      "id": "sechs",
+      "instanceOf": [{"topicRef": {"href": "#kugel"}}],
+      "baseName": {
+        "baseNameString": "sechs",
+        "variant": {"variantName": [
+          "sechse",
+          "6",
+          "60",
+          "sechzig"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#sechs"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#sechs"},
+        {"href": "1821_RieschFreischuetz.xml#sechs"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#sechs"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#sechs"},
+        {"href": "C_07_Handexemplar.xml#sechs"},
+        {"href": "C_07_Kind_Druck_2.xml#sechs"}
+      ]}
+    },
+    {
+      "id": "treffen",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseName": {
+        "baseNameString": "treffen",
+        "variant": {"variantName": ["treffenden"]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#treffen"},
+        {"href": "1821_RieschFreischuetz.xml#treffen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#treffen"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#treffen"},
+        {"href": "C_07_Handexemplar.xml#treffen"},
+        {"href": "C_07_Kind_Druck_2.xml#treffen"}
+      ]}
+    },
+    {
+      "id": "aeffen",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseName": {
+        "baseNameString": "äffen",
+        "variant": {"variantName": ["fehlen"]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#aeffen"},
+        {"href": "1821_RieschFreischuetz.xml#aeffen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#aeffen"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#aeffen"},
+        {"href": "C_07_Handexemplar.xml#aeffen"},
+        {"href": "C_07_Kind_Druck_2.xml#aeffen"}
+      ]}
+    },
+    {
+      "id": "probeschuss",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "scope": {"topicRef": {"href": "#fate"}},
+      "baseName": {
+        "baseNameString": "Probeschuß",
+        "variant": {"variantName": [
+          "Probschuss",
+          "Meisterschuß",
+          "Königschuße",
+          "Probe",
+          "Schuß",
+          "Schuss",
+          "Schuss gelingt",
+          "Probestück",
+          "Freischuss",
+          "Freyschuss"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#probeschuss"},
+        {"href": "1821_RieschFreischuetz.xml#probeschuss"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#probeschuss"},
+        {"href": "C_07_Handexemplar.xml#probeschuss"},
+        {"href": "C_07_Kind_Druck_2.xml#probeschuss"}
+      ]}
+    },
+    {
+      "id": "kugelguss",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseName": {
+        "baseNameString": "Kugelguß",
+        "variant": {"variantName": [
+          "Kugelgießen",
+          "Kugel gießen",
+          "Kugelseegen",
+          "gießen"
+        ]}
+      },
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1930/31, Sp. 2ff.)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kugelguss"},
+        {"href": "freischuetz1812.xml#kugelguss"},
+        {"href": "freischuetz1813.xml#kugelguss"},
+        {"href": "1821_RieschFreischuetz.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kugelguss"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kugelguss"},
+        {"href": "C_07_Handexemplar.xml#kugelguss"},
+        {"href": "C_07_Kind_Druck_2.xml#kugelguss"}
+      ]}
+    },
+    {
+      "id": "form",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Kugelform",
+        "variant": {"variantName": [
+          "Form",
+          "Gießform",
+          "Gießzeuge"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#form"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#form"},
+        {"href": "1821_RieschFreischuetz.xml#form"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#form"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#form"},
+        {"href": "C_07_Handexemplar.xml#form"},
+        {"href": "C_07_Kind_Druck_2.xml#form"}
+      ]}
+    },
+    {
+      "id": "kohlen",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Schmiedekohlen",
+        "variant": {"variantName": ["Kohlen"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#kohlen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kohlen"},
+        {"href": "1821_RieschFreischuetz.xml#kohlen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kohlen"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kohlen"},
+        {"href": "C_07_Handexemplar.xml#kohlen"},
+        {"href": "C_07_Kind_Druck_2.xml#kohlen"}
+      ]}
+    },
+    {
+      "id": "blei",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {"baseNameString": "Blei"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "1821_RieschFreischuetz.xml#blei"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#blei"},
+        {"href": "C_07_Handexemplar.xml#blei"},
+        {"href": "C_07_Kind_Druck_2.xml#blei"}
+      ]}
+    },
+    {
+      "id": "kelle",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Gießkelle",
+        "variant": {"variantName": [
+          "Gieß-Kelle",
+          "Kelle"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#kelle"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kelle"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#kelle"},
+        {"href": "C_07_Handexemplar.xml#kelle"},
+        {"href": "C_07_Kind_Druck_2.xml#kelle"}
+      ]}
+    },
+    {
+      "id": "hirschfaenger",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {"baseNameString": "Hirschfänger"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#hirschfaenger"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#hirschfaenger"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#hirschfaenger"},
+        {"href": "C_07_Handexemplar.xml#hirschfaenger"},
+        {"href": "C_07_Kind_Druck_2.xml#hirschfaenger"}
+      ]}
+    },
+    {
+      "id": "wind",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {
+        "baseNameString": "Wind",
+        "variant": {"variantName": [
+          "Sturmwinde",
+          "Sturm",
+          "böse Winde",
+          "Todtenwinde",
+          "Nordwind",
+          "Windstoß",
+          "Windbrüche"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wind"},
+        {"href": "1821_RieschFreischuetz.xml#wind"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#wind"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#wind"},
+        {"href": "C_07_Handexemplar.xml#wind"},
+        {"href": "C_07_Kind_Druck_2.xml#wind"}
+      ]}
+    },
+    {
+      "id": "erscheinungen",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {
+        "baseNameString": "Erscheinungen",
+        "variant": {"variantName": [
+          "Geist",
+          "Geister",
+          "Geisterstimmen",
+          "Geisterchor",
+          "Chor",
+          "Chöre",
+          "Simme(n)"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RD-tx3.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#erscheinungen"},
+        {"href": "freischuetz1812.xml#erscheinungen"},
+        {"href": "freischuetz1813.xml#erscheinungen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#erscheinungen"},
+        {"href": "C_07_Handexemplar.xml#erscheinungen"},
+        {"href": "C_07_Kind_Druck_2.xml#erscheinungen"}
+      ]}
+    },
+    {
+      "id": "gestalten",
+      "instanceOf": [{"topicRef": {"href": "#erscheinungen"}}],
+      "baseName": {
+        "baseNameString": "Nebelgestalten",
+        "variant": {"variantName": [
+          "Nebelbild",
+          "Gespenst\u2019ge Nebelbilder",
+          "nebliche Gestalten",
+          "grause Schreckensbilder",
+          "neblicht Ding",
+          "Gestalt",
+          "verschleierte Gestalt",
+          "Leichengestalt",
+          "Popanz"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#gestalten"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#gestalten"},
+        {"href": "1821_RieschFreischuetz.xml#gestalten"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#gestalten"},
+        {"href": "C_07_Handexemplar.xml#gestalten"},
+        {"href": "C_07_Kind_Druck_2.xml#gestalten"}
+      ]}
+    },
+    {
+      "id": "wildesHeer",
+      "instanceOf": [{"topicRef": {"href": "#erscheinungen"}}],
+      "baseName": {
+        "variantName": ["wilde Jagd"],
+        "variant": {"variantName": [
+          "wildes Heer",
+          "wütendes Heer",
+          "Heer",
+          "Heerschaaren",
+          "Jagdzug",
+          "eine wilde Jägerschaar",
+          "Trupp geharnischter Reuter"
+        ]}
+      },
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 9, 1938 Sp. 632f.; Bd. 9-Nachtrag, 1941, Sp. 929)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#wildesHeer"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wildesHeer"},
+        {"href": "freischuetz1812.xml#wildesHeer"},
+        {"href": "freischuetz1813.xml#wildesHeer"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#wildesHeer"},
+        {"href": "C_07_Handexemplar.xml#wildesHeer"},
+        {"href": "C_07_Kind_Druck_2.xml#wildesHeer"}
+      ]}
+    },
+    {
+      "id": "wild",
+      "instanceOf": [
+        {"topicRef": {"href": "#creature-in-play"}},
+        {"topicRef": {"href": "#erscheinungen"}}
+      ],
+      "baseName": {
+        "baseNameString": "Wild",
+        "variant": {"variantName": [
+          "Wildschwein",
+          "(schwarzer) Eber",
+          "wilde Bache",
+          "borstiges Unthier"
+        ]}
+      },
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 9, 1938, Sp. 621)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#wild"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#wild"},
+        {"href": "C_07_Handexemplar.xml#wild"},
+        {"href": "C_07_Kind_Druck_2.xml#wild"}
+      ]}
+    },
+    {
+      "id": "waldvoegel",
+      "instanceOf": [{"topicRef": {"href": "#creature-in-play"}}],
+      "baseName": {
+        "baseNameString": "Vögel",
+        "variant": {"variantName": [
+          "Waldvögel",
+          "Nachtvögel",
+          "Nachtgeflügel",
+          "Nachtgevögel",
+          "Todtenvögel"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#waldvoegel"},
+        {"href": "1821_RieschFreischuetz.xml#waldvoegel"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#waldvoegel"},
+        {"href": "C_07_Handexemplar.xml#waldvoegel"},
+        {"href": "C_07_Kind_Druck_2.xml#waldvoegel"}
+      ]}
+    },
+    {
+      "id": "rabe",
+      "instanceOf": [{"topicRef": {"href": "#creature-in-play"}}],
+      "baseName": {
+        "baseNameString": "Rabe",
+        "variant": {"variantName": [
+          "Raben",
+          "Nachtraben"
+        ]}
+      },
+      "declaration": "Der Rabe, des nordischen Odins Begleiter. Odin hat zwei Raben [\u2026]",
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#rabe"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#rabe"},
+        {"href": "freischuetz1812.xml#rabe"},
+        {"href": "freischuetz1813.xml#rabe"},
+        {"href": "C_07_Handexemplar.xml#rabe"},
+        {"href": "C_07_Kind_Druck_2.xml#rabe"}
+      ]}
+    },
+    {
+      "id": "eule",
+      "instanceOf": [
+        {"topicRef": {"href": "#creature-in-play"}},
+        {"topicRef": {"href": "#waldvoegel"}}
+      ],
+      "baseName": {
+        "baseNameString": "Eule",
+        "variant": {"variantName": [
+          "Felseneule ",
+          "Nachteule",
+          "Kautz"
+        ]}
+      },
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 3, 1929/30, Sp. 1073f.)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#eule"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#eule"},
+        {"href": "1821_RieschFreischuetz.xml#eule"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#eule"},
+        {"href": "C_07_Handexemplar.xml#eule"},
+        {"href": "C_07_Kind_Druck_2.xml#eule"}
+      ]}
+    },
+    {
+      "id": "ross",
+      "instanceOf": [{"topicRef": {"href": "#creature-in-play"}}],
+      "baseName": {
+        "baseNameString": "Roß",
+        "variant": {"variantName": [
+          "Pferd",
+          "schwarzes Pferd",
+          "Ross",
+          "schwarzes Ross",
+          "Rappe, Rapp\u2019"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#ross"},
+        {"href": "1821_RieschFreischuetz.xml#ross"},
+        {"href": "C_07_Handexemplar.xml#ross"},
+        {"href": "C_07_Kind_Druck_2.xml#ross"}
+      ]}
+    },
+    {
+      "id": "sammiel",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Sammiel"},
+      "variant": {"variantName": [
+        "Samiel",
+        {"ref": {
+          "href": "teufel",
+          "#text": "Luzifers"
+        }}
+      ]},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#sammiel"},
+        {"href": "1821_RieschFreischuetz.xml#sammiel"}
+      ]}
+    },
+    {
+      "id": "reiter",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "der schwarze Reiter",
+        "variant": {"variantName": [
+          "ein Reiter",
+          "Reuter",
+          "reiten",
+          "Mann von gar finstrem Ansehen auf einem magern schwarzen Roß",
+          "der Schwarze"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#reiter"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#reiter"},
+        {"href": "1821_RieschFreischuetz.xml#reiter"},
+        {"href": "C_07_Kind_Druck_2.xml#reiter"}
+      ]}
+    },
+    {
+      "id": "schwarzeJaeger",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "der schwarze Jäger",
+        "variant": {"variantName": ["der Schwarze"]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#schwarzeJaeger"},
+        {"href": "C_07_Kind_Druck_2.xml#schwarzeJaeger"}
+      ]}
+    },
+    {
+      "id": "fremde",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "der Fremde",
+        "variant": {"variantName": ["der fremde Waidmann"]}
+      },
+      "declaration": null
+    },
+    {
+      "id": "teufel",
+      "instanceOf": [{"topicRef": {"href": "#role"}}],
+      "baseName": {
+        "baseNameString": "Teufel",
+        "variant": [
+          {"variantName": ["höllische Proteus"]},
+          {"variantName": ["Satan"]},
+          {"variantName": ["Luzifer"]}
+        ],
+        "variantName": ["böse Feind"]
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#teufel"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#teufel"},
+        {"href": "1821_RieschFreischuetz.xml#teufel"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#teufel"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#teufel"},
+        {"href": "C_07_Handexemplar.xml#teufel"},
+        {"href": "C_07_Kind_Druck_2.xml#teufel"}
+      ]}
+    },
+    {
+      "id": "boese",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "roleDesc"}}
+      ],
+      "#text": ",\n    ",
+      "baseName": {
+        "baseNameString": "das Böse",
+        "variant": {"variantName": ["böse"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#boese"},
+        {"href": "C_07_Handexemplar.xml#boese"},
+        {"href": "C_07_Kind_Druck_2.xml#boese"}
+      ]}
+    },
+    {
+      "id": "abbadonna",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "name"}}
+      ],
+      "baseName": {
+        "baseNameString": "Abbadonna",
+        "variant": {"variantName": [
+          "Abbadona",
+          "Abadonna",
+          "Abbadoña"
+        ]}
+      },
+      "declaration": {"ref": {
+        "href": "#abdon",
+        "#text": "Abdonstag"
+      }},
+      "occurrence": {}
+    },
+    {
+      "id": "abdon",
+      "instanceOf": [
+        {"topicRef": {"href": "#setting"}}
+      ],
+      "baseName": {
+        "baseNameString": "Abdonstag",
+        "variant": {"variantName": [
+          "St. Abdons-Tag",
+          "30ten Julii"
+        ]}
+      },
+      "declaration": "[siehe Freikugel]",
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#abdon"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#abdon"}
+      ]}
+    },
+    {
+      "id": "hoelle",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {"baseNameString": "Hölle"},
+      "variant": {"variantName": [
+        "höllisch",
+        "Höllenpfuhl",
+        "Höllenfeuer"
+      ]},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#hoelle"},
+        {"href": "1821_RieschFreischuetz.xml#hoelle"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#hoelle"},
+        {"href": "C_07_Handexemplar.xml#hoelle"},
+        {"href": "C_07_Kind_Druck_2.xml#hoelle"}
+      ]}
+    },
+    {
+      "id": "max",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}}
+      ],
+      "baseName": {"baseNameString": "Max"}
+    },
+    {
+      "id": "jaeger",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Jäger",
+        "variant": {"variantName": [
+          "Jägerbursch",
+          "Jägerpursch",
+          "Jägerjunge",
+          "Jagdgesell",
+          "Jagdbube",
+          "Waidmann",
+          "Waidjunge",
+          "Weidmann",
+          "Pursch",
+          "Bursch",
+          "Schütz",
+          "Schütze",
+          "Schützen"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#jaeger"},
+        {"href": "1821_RieschFreischuetz.xml#jaeger"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#jaeger"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#jaeger"},
+        {"href": "C_07_Handexemplar.xml#jaeger"},
+        {"href": "C_07_Kind_Druck_2.xml#jaeger"}
+      ]}
+    },
+    {
+      "id": "jagd",
+      "instanceOf": [
+        {"topicRef": {"href": "#setting"}},
+        {"topicRef": {"href": "#action"}}
+      ],
+      "baseName": {
+        "baseNameString": "Jagd",
+        "variant": {"variantName": [
+          "Jägerei",
+          "Waidwerk",
+          "Jagdvergnügen",
+          "jagen",
+          "gejagt"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#jagd"},
+        {"href": "1821_RieschFreischuetz.xml#jagd"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#jagd"},
+        {"href": "freidi-referenceSource_RD-tx12.xml#jagd"},
+        {"href": "C_07_Handexemplar.xml#jagd"},
+        {"href": "C_07_Kind_Druck_2.xml#jagd"}
+      ]}
+    },
+    {
+      "id": "bauer",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Bauer",
+        "variant": {"variantName": [
+          "Bauern",
+          "Bauerknaben",
+          "Bäuerinnen",
+          "Bauervolk"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#bauer"},
+        {"href": "C_07_Handexemplar.xml#bauer"},
+        {"href": "C_07_Kind_Druck_2.xml#bauer"}
+      ]}
+    },
+    {
+      "id": "camerad",
+      "instanceOf": [{"topicRef": {"href": "#role"}}],
+      "baseName": {
+        "baseNameString": "Camerad",
+        "variant": {"variantName": [
+          "Freund",
+          "Kamerad"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#camerad"},
+        {"href": "C_07_Handexemplar.xml#camerad"},
+        {"href": "C_07_Kind_Druck_2.xml#camerad"}
+      ]}
+    },
+    {
+      "id": "foerster",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Förster",
+        "variant": {"variantName": ["Erbförster"]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#foerster"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#foerster"},
+        {"href": "C_07_Handexemplar.xml#foerster"},
+        {"href": "C_07_Kind_Druck_2.xml#foerster"}
+      ]}
+    },
+    {
+      "id": "wilhelm",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}}
+      ],
+      "baseName": {"baseNameString": "Wilhelm"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#wilhelm"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#wilhelm"},
+        {"href": "freischuetz1812.xml#wilhelm"},
+        {"href": "freischuetz1813.xml#wilhelm"}
+      ]}
+    },
+    {
+      "id": "georgschmid",
+      "instanceOf": [
+        {"topicRef": {"href": "#person"}},
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": null}
+      ],
+      "baseName": {
+        "baseNameString": "Georg Schmid",
+        "variant": {"variantName": [
+          "Schmidten",
+          "Georg"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#georgschmid"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#georgschmid"}
+      ]}
+    },
+    {
+      "id": "edward",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": null}
+      ],
+      "baseName": {"baseNameString": "Edward"},
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx3.xml#edward"}]}
+    },
+    {
+      "id": "benno",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": null}
+      ],
+      "baseName": {"baseNameString": "Benno"},
+      "occurrence": {"resourceRef": [{"href": "1821_Riesch, Freischuetz.xml#benno"}]}
+    },
+    {
+      "id": "schreiber",
+      "instanceOf": [{"topicRef": {"href": "#roleDesc"}}],
+      "baseName": {"baseNameString": "Amtsschreiber"},
+      "variant": {"variantName": [
+        "Schreiber",
+        "Amtschreiber",
+        "Amtsmann",
+        "Jüngling"
+      ]},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#schreiber"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#schreiber"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#schreiber"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#schreiber"}
+      ]}
+    },
+    {
+      "id": "braeutigam",
+      "instanceOf": [{"topicRef": {"href": "#role"}}],
+      "baseName": {
+        "baseNameString": "Bräutigam",
+        "variant": {"variantName": [
+          "Bräutgam",
+          "Freiersmann"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#braeutigam"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#braeutigam"},
+        {"href": "1821_RieschFreischuetz.xml#braeutigam"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#braeutigam"},
+        {"href": "C_07_Handexemplar.xml#braeutigam"},
+        {"href": "C_07_Kind_Druck_2.xml#braeutigam"}
+      ]}
+    },
+    {
+      "id": "freischuetz",
+      "instanceOf": [{"topicRef": {"href": "#role"}}],
+      "baseName": {
+        "baseNameString": "Freischütz",
+        "variant": {"variantName": [
+          "Freyschütz",
+          "Schütze"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#freischuetz"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#freischuetz"}
+      ]}
+    },
+    {
+      "id": "caspar",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}}
+      ],
+      "baseName": {"baseNameString": "Caspar"},
+      "occurrence": {"occurrence": "\n        [...]\n      "}
+    },
+    {
+      "id": "weib",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "das alte Weib",
+        "variant": {"variantName": [
+          "d.a.Weib",
+          "altes gebücktes Mütterchen",
+          "die Alte"
+        ]}
+      },
+      "occurrence": {"occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx1.xml#weib"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#weib"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#weib"}
+      ]}}
+    },
+    {
+      "id": "bergjaeger",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Bergjäger",
+        "variant": {"variantName": [
+          "der schwarzbraune Jäger",
+          "der Jäger",
+          "der schwarzbraune Jagdgenosse",
+          "Mann von schier bedenklichem Aussehen"
+        ]}
+      },
+      "occurrence": {"occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx1.xml#bergjaeger"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#bergjaeger"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#bergjaeger"},
+        {"href": "C_07_Handexemplar.xml#bergjaeger"},
+        {"href": "C_07_Kind_Druck_2.xml#bergjaeger"}
+      ]}}
+    },
+    {
+      "id": "stelzfuss",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Stelzfuß",
+        "variant": {"variantName": [
+          "Soldat mit Stelzfuß",
+          "Invalid",
+          "Pferd\u2019fuß"
+        ]}
+      },
+      "occurrence": {"occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#stelzfuss"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#stelzfuss"}
+      ]}}
+    },
+    {
+      "id": "robert",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": null}
+      ],
+      "baseName": {
+        "baseNameString": "Robert",
+        "occurrence": "\n        [...]\n      "
+      }
+    },
+    {
+      "id": "klaus",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}}
+      ],
+      "baseName": {"baseNameString": "Klaus"},
+      "variant": {"variantName": ["Der schwarze Klaus."]},
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RMs-tx11.xml#klaus"}]}
+    },
+    {
+      "id": "heinze",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": null}
+      ],
+      "baseName": {
+        "baseNameString": "Heinze",
+        "occurrence": {"resourceRef": [{"href": "1821_RieschFreischuetz.xml#heinze"}]}
+      }
+    },
+    {
+      "id": "braut",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Braut",
+        "variant": {"variantName": [
+          "Bräutchen",
+          "bräutlich",
+          "bräutlichen Leiche",
+          "Brautgang",
+          "Brautstand"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#braut"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#braut"},
+        {"href": "freischuetz1812.xml#braut"},
+        {"href": "freischuetz1813.xml#braut"},
+        {"href": "1821_RieschFreischuetz.xml#braut"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#braut"},
+        {"href": "C_07_Handexemplar.xml#braut"},
+        {"href": "C_07_Kind_Druck_2.xml#braut"}
+      ]}
+    },
+    {
+      "id": "brautjungfern",
+      "instanceOf": [
+        {"topicRef": {"href": "#role"}},
+        {"topicRef": {"href": "#roleDesc"}}
+      ],
+      "baseName": {
+        "baseNameString": "Brautjungfern",
+        "variant": {"variantName": [
+          "Brautjungfer",
+          "Mädchen"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freischuetz1812.xml#brautjungfern"},
+        {"href": "freischuetz1813.xml#brautjungfern"},
+        {"href": "C_07_Handexemplar.xml#brautjungfern"},
+        {"href": "C_07_Kind_Druck_2.xml#brautjungfern"}
+      ]}
+    },
+    {
+      "id": "schleier",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Schleier",
+        "variant": {"variantName": ["Schleyer"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#schleier"},
+        {"href": "1821_RieschFreischuetz.xml#schleier"},
+        {"href": "C_07_Kind_Druck_2.xml#schleier"}
+      ]}
+    },
+    {
+      "id": "hochzeit",
+      "instanceOf": [{"topicRef": {"href": "#setting"}}],
+      "baseName": {"baseNameString": "Hochzeit"},
+      "variant": {"variantName": ["Hochzeittag"]},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#hochzeit"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#hochzeit"},
+        {"href": "C_07_Handexemplar.xml#hochzeit"},
+        {"href": "C_07_Kind_Druck_2.xml#hochzeit"}
+      ]}
+    },
+    {
+      "id": "kranz",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Jungfernkranz",
+        "variant": {"variantName": [
+          "Kranz",
+          "Brautkranz",
+          "Todtenkranz",
+          "Totenkrone",
+          "Brautkrone",
+          "bekränzt"
+        ]}
+      },
+      "declaration": {
+        "lb": null,
+        "bibl": [
+          "Jungfernkranz: Handwörterbuch des deutschen Aberglaubens (Bd. 4, 1931/32, Sp. 846f.)",
+          "Totenkrone: Handwörterbuch des deutschen Aberglaubens (Bd. 8, 1936/37, Sp. 1078.)"
+        ]
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#kranz"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kranz"},
+        {"href": "freischuetz1812.xml#kranz"},
+        {"href": "freischuetz1813.xml#kranz"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kranz"},
+        {"href": "C_07_Handexemplar.xml#kranz"},
+        {"href": "1821_RieschFreischuetz.xml#kranz"},
+        {"href": "C_07_Kind_Druck_2.xml#kranz"}
+      ]}
+    },
+    {
+      "id": "seide",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Seide",
+        "variant": {"variantName": ["veilchenblaue Seide"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#seide"},
+        {"href": "C_07_Kind_Druck_2.xml#seide"}
+      ]}
+    },
+    {
+      "id": "rosmarin",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {"baseNameString": "Rosmarin"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#rosmarin"},
+        {"href": "freischuetz1812.xml#rosmarin"},
+        {"href": "freischuetz1813.xml#rosmarin"}
+      ]}
+    },
+    {
+      "id": "myrte",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {"baseNameString": "Myrte"},
+      "declaration": "Als Brautpflanze ist die Myrte erst im 16. Jh. nachzuweisen; \u2026",
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#myrte"},
+        {"href": "C_07_Handexemplar.xml#myrte"},
+        {"href": "C_07_Kind_Druck_2.xml#myrte"}
+      ]}
+    },
+    {
+      "id": "silber",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Silber",
+        "variant": {"variantName": ["silbern"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#silber"},
+        {"href": "C_07_Handexemplar.xml#silber"},
+        {"href": "C_07_Kind_Druck_2.xml#silber"}
+      ]}
+    },
+    {
+      "id": "lavendel",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {"baseNameString": "Lavendel"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#lavendel"},
+        {"href": "C_07_Kind_Druck_2.xml#lavendel"}
+      ]}
+    },
+    {
+      "id": "thymian",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {"baseNameString": "Thymian"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#thymian"},
+        {"href": "C_07_Handexemplar.xml#thymian"},
+        {"href": "C_07_Kind_Druck_2.xml#thymian"}
+      ]}
+    },
+    {
+      "id": "rosen",
+      "instanceOf": [{"topicRef": {"href": "object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Rosen",
+        "variant": {"variantName": [
+          "Blumen",
+          "weiße Blumen",
+          "Rosenstock"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#rosen"},
+        {"href": "C_07_Kind_Druck_2.xml#rosen"}
+      ]}
+    },
+    {
+      "id": "taube",
+      "instanceOf": [{"topicRef": {"href": "#creature-in-play"}}],
+      "baseName": {
+        "baseNameString": "Taube",
+        "variant": {"variantName": ["Turteltäubchen"]}
+      },
+      "declaration": {"bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 8, 1936/37, Sp. 696)"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#taube"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#taube"},
+        {"href": "freischuetz1812.xml#taube"},
+        {"href": "freischuetz1813.xml#taube"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#taube"},
+        {"href": "C_07_Handexemplar.xml#taube"},
+        {"href": "C_07_Kind_Druck_2.xml#taube"}
+      ]}
+    },
+    {
+      "id": "weiss",
+      "instanceOf": [{"topicRef": {"href": "#attribute"}}],
+      "baseName": {
+        "baseNameString": "weiß",
+        "variant": {"variantName": [
+          "weis",
+          "blendentweiß"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#weiss"},
+        {"href": "C_07_Handexemplar.xml#weiss"},
+        {"href": "C_07_Kind_Druck_2.xml#weiss"}
+      ]}
+    },
+    {
+      "id": "reigen",
+      "instanceOf": [
+        {"topicRef": {"href": "#action"}},
+        {"topicRef": {"href": "#tanz"}}
+      ],
+      "baseName": {
+        "baseNameString": "Reigen",
+        "variant": {"variantName": [
+          "Hochzeitsreigen",
+          "Hochzeitsreih\u2019n"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#reigen"},
+        {"href": "C_07_Handexemplar.xml#reigen"},
+        {"href": "freischuetz1812.xml#reigen"},
+        {"href": "freischuetz1813.xml#reigen"},
+        {"href": "1821_RieschFreischuetz.xml#reigen"}
+      ]}
+    },
+    {
+      "id": "tanz",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseName": {
+        "baseNameString": "Tanz",
+        "variant": {"variantName": [
+          "Tänze",
+          "tanzen",
+          "tanzend"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "1821_RieschFreischuetz.xml#tanz"},
+        {"href": "freischuetz1812.xml#tanz"},
+        {"href": "freischuetz1813.xml#tanz"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tanz"},
+        {"href": "C_07_Handexemplar.xml#tanz"},
+        {"href": "C_07_Kind_Druck_2.xml#tanz"}
+      ]}
+    },
+    {
+      "id": "traum",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseName": {
+        "baseNameString": "Traum",
+        "variant": {"variantName": [
+          "Träume",
+          "träumen",
+          "träumte",
+          "Schlaf",
+          "schlafen"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#traum"},
+        {"href": "1803_Schloß Aklam_Kind.xml#traum"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#traum"},
+        {"href": "1805_Malven.xml#traum"},
+        {"href": "freischuetz1812.xml#traum"},
+        {"href": "freischuetz1813.xml#traum"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#traum"},
+        {"href": "1821_RieschFreischuetz.xml#traum"},
+        {"href": "C_07_Handexemplar.xml#traum"},
+        {"href": "C_07_Kind_Druck_2.xml#traum"}
+      ]}
+    },
+    {
+      "id": "bild",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Bild",
+        "variant": {"variantName": [
+          "Ahnenbild",
+          "herabstürzendes Ahnenbild"
+        ]}
+      },
+      "declaration": {
+        "lb": null,
+        "bibl": "Handwörterbuch des deutschen Aberglaubens (Bd. 1, 1927, Sp. 1269)"
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#bild"},
+        {"href": "freischuetz1812.xml#bild"},
+        {"href": "freischuetz1813.xml#bild"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#bild"},
+        {"href": "C_07_Handexemplar.xml#bild"},
+        {"href": "C_07_Kind_Druck_2.xml#bild"}
+      ]}
+    },
+    {
+      "id": "opfer",
+      "instanceOf": [{"topicRef": {"href": "#role"}}],
+      "baseName": {
+        "baseNameString": "Opfer",
+        "variant": {"variantName": [
+          "opfern",
+          "Opferlamm"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#opfer"},
+        {"href": "freischuetz1812.xml#opfer"},
+        {"href": "freischuetz1813.xml#opfer"},
+        {"href": "1821_RieschFreischuetz.xml#opfer"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#opfer"},
+        {"href": "C_07_Handexemplar.xml#opfer"},
+        {"href": "C_07_Kind_Druck_2.xml#opfer"}
+      ]}
+    },
+    {
+      "id": "blut",
+      "instanceOf": [{"topicRef": {"href": "#attribute"}}],
+      "baseName": {
+        "baseNameString": "Blut",
+        "variant": {"variantName": [
+          "bluten",
+          "blutend",
+          "blutig"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#blut"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#blut"},
+        {"href": "freischuetz1812.xml#blut"},
+        {"href": "freischuetz1813.xml#blut"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#blut"},
+        {"href": "C_07_Handexemplar.xml#blut"},
+        {"href": "C_07_Kind_Druck_2.xml#blut"}
+      ]}
+    },
+    {
+      "id": "tot",
+      "instanceOf": [{"topicRef": {"href": "#attribute"}}],
+      "baseName": {
+        "baseNameString": "tot",
+        "variant": {"variantName": [
+          "todt",
+          "tod",
+          "Tod"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#tot"},
+        {"href": "1821_RieschFreischuetz.xml#tot"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tot"},
+        {"href": "C_07_Handexemplar.xml#tot"},
+        {"href": "C_07_Kind_Druck_2.xml#tot"}
+      ]}
+    },
+    {
+      "id": "tuch",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Tuch",
+        "variant": {"variantName": [
+          "Leichentuch",
+          "Leichenkleid",
+          "Todtenkleid"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#tuch"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tuch"},
+        {"href": "C_07_Handexemplar.xml#tuch"},
+        {"href": "C_07_Kind_Druck_2.xml#tuch"}
+      ]}
+    },
+    {
+      "id": "agathe",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {
+        "baseNameString": "Agathe",
+        "variant": {"variantName": []}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [{"href": "C_07_Handexemplar.xml#agathe"}]}
+    },
+    {
+      "id": "pauline",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Pauline"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freischuetz1812.xml#pauline"},
+        {"href": "freischuetz1813.xml#pauline"}
+      ]}
+    },
+    {
+      "id": "kaethchen",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {
+        "baseNameString": "Käthchen",
+        "variant": {"variantName": ["Kätchen"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kaethchen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#kaethchen"}
+      ]}
+    },
+    {
+      "id": "elfride",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Elfride"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx3.xml#elfride"}]}
+    },
+    {
+      "id": "juliane",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Juliane"},
+      "declaration": null,
+      "occurrence": {}
+    },
+    {
+      "id": "bertha",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Bertha"},
+      "declaration": null,
+      "occurrence": "\n      ...\n    "
+    },
+    {
+      "id": "annchen",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {
+        "baseNameString": "Annchen",
+        "variant": {"variantName": [
+          "Anne",
+          "Anna"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": "\n\n    "
+    },
+    {
+      "id": "ilse",
+      "instanceOf": [
+        {"topicRef": {"href": "#name"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Ilse"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [{"href": "1821_RieschFreischuetz.xml#ilse"}]}
+    },
+    {
+      "id": "mutter",
+      "instanceOf": [
+        {"topicRef": {"href": "#roleDesc"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {
+        "baseNameString": "Mutter",
+        "variant": {"variantName": ["Mutter Anne"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#mutter"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#mutter"},
+        {"href": "1821_RieschFreischuetz.xml#mutter"}
+      ]}
+    },
+    {
+      "id": "foersterin",
+      "instanceOf": [
+        {"topicRef": {"href": "#roleDesc"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Försterin"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#foersterin"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#foersterin"}
+      ]}
+    },
+    {
+      "id": "tochter",
+      "instanceOf": [
+        {"topicRef": {"href": "#roleDesc"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Tochter"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#tochter"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#tochter"},
+        {"href": "C_07_Handexemplar.xml#tochter"},
+        {"href": "C_07_Kind_Druck_2.xml#tochter"}
+      ]}
+    },
+    {
+      "id": "kind",
+      "instanceOf": [
+        {"topicRef": {"href": "#roleDesc"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Kind"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RMs-tx11.xml#kind"},
+        {"href": "C_07_Handexemplar.xml#kind"},
+        {"href": "C_07_Kind_Druck_2.xml#kind"}
+      ]}
+    },
+    {
+      "id": "maedchen",
+      "instanceOf": [
+        {"topicRef": {"href": "#roleDesc"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {
+        "baseNameString": "Mädchen",
+        "variant": {"variantName": [
+          "Mägdlein",
+          "Mädel"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#maedchen"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#maedchen"},
+        {"href": "1821_RieschFreischuetz.xml#maedchen"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#maedchen"},
+        {"href": "C_07_Handexemplar.xml#maedchen"},
+        {"href": "C_07_Kind_Druck_2.xml#maedchen"}
+      ]}
+    },
+    {
+      "id": "eremit",
+      "instanceOf": [
+        {"topicRef": {"href": "#roleDesc"}},
+        {"topicRef": {"href": "#role"}}
+      ],
+      "baseName": {"baseNameString": "Eremit"},
+      "declaration": null,
+      "occurrence": "\n      ...\n    "
+    },
+    {
+      "id": "schicksal",
+      "instanceOf": [{"topicRef": {"href": "#fate"}}],
+      "baseName": {
+        "baseNameString": "Schicksal",
+        "variant": {"variantName": [
+          "Verhängnis",
+          "Los",
+          "Schicksalsmacht",
+          "Vorsehung"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx3.xml#schicksal"},
+        {"href": "1805_Malven.xml#schicksal"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#schicksal"},
+        {"href": "Freischütz, Neuner, 1812.xml#schicksal"},
+        {"href": "Freischütz, Neuner, 1813.xml#schicksal"},
+        {"href": "1821_RieschFreischuetz.xml#schicksal"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#schicksal"},
+        {"href": "C_07_Handexemplar.xml#schicksal"},
+        {"href": "C_07_Kind_Druck_2.xml#schicksal"}
+      ]}
+    },
+    {
+      "id": "schwarzemaechte",
+      "instanceOf": [
+        {"topicRef": {"href": "#erscheinungen"}},
+        {"topicRef": {"href": "#fate"}}
+      ],
+      "baseName": {
+        "baseNameString": "schwarze Mächte",
+        "variant": {"variantName": [
+          "Macht",
+          "Mächte",
+          "unsichtbare Mächte",
+          "finstre Mächte",
+          "böse Mächte",
+          "geheime Kräfte"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#schwarzemaechte"},
+        {"href": "1821_RieschFreischuetz.xml#schwarzemaechte"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#schwarzemaechte"},
+        {"href": "C_07_Handexemplar.xml#schwarzemaechte"},
+        {"href": "C_07_Kind_Druck_2.xml#schwarzemaechte"}
+      ]}
+    },
+    {
+      "id": "glueck",
+      "scope": {"topicRef": {"href": "#fate"}},
+      "baseName": {"baseNameString": "Glück"},
+      "variant": {"variantName": [
+        "glücklich",
+        "Glücksrädchen",
+        "Glücksfall"
+      ]},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "1821_RieschFreischuetz.xml#glueck"},
+        {"href": "C_07_Handexemplar.xml#glueck"},
+        {"href": "C_07_Kind_Druck_2.xml#glueck"}
+      ]}
+    },
+    {
+      "id": "zauber",
+      "baseName": {
+        "baseNameString": "Zauber",
+        "variant": {"variantName": [
+          "Zauberei",
+          "Zauberwerk",
+          "Hexerei",
+          "hexen",
+          "behext"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#zauber"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#zauber"},
+        {"href": "1821_RieschFreischuetz.xml#zauber"},
+        {"href": "C_07_Handexemplar.xml#zauber"},
+        {"href": "C_07_Kind_Druck_2.xml#zauber"}
+      ]}
+    },
+    {
+      "id": "fluch",
+      "baseName": {
+        "baseNameString": "Fluch",
+        "variant": {"variantName": ["geflucht"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "1821_RieschFreischuetz.xml#fluch"},
+        {"href": "C_07_Handexemplar.xml#fluch"},
+        {"href": "C_07_Kind_Druck_2.xml#fluch"}
+      ]}
+    },
+    {
+      "id": "himmel",
+      "instanceOf": [{"topicRef": {"href": "#fate"}}],
+      "baseName": {
+        "baseNameString": "Himmelsmächte",
+        "variant": {"variantName": [
+          "Himmel",
+          "Himmelsschaaren"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#himmel"},
+        {"href": "1821_RieschFreischuetz.xml#himmel"},
+        {"href": "C_07_Handexemplar.xml#himmel"},
+        {"href": "C_07_Kind_Druck_2.xml#himmel"}
+      ]}
+    },
+    {
+      "id": "schuld",
+      "instanceOf": [{"topicRef": {"href": "#fate"}}],
+      "baseName": {"baseNameString": "Schuld"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#schuld"},
+        {"href": "1821_RieschFreischuetz.xml#schuld"},
+        {"href": "C_07_Handexemplar.xml#schuld"},
+        {"href": "C_07_Kind_Druck_2.xml#schuld"}
+      ]}
+    },
+    {
+      "id": "waidmann",
+      "instanceOf": [
+        {"topicRef": {"href": "#zauber"}},
+        {"topicRef": {"href": "#fluch"}}
+      ],
+      "baseName": {
+        "baseNameString": "Waidmann setzen",
+        "variant": {"variantName": [
+          "Weidemann setzen",
+          "Weidmannsetzen",
+          "den Waidmann stellen",
+          "kein Schuß gelingt",
+          "kein Schuß mehr glückt",
+          "Büchse wie verhext",
+          "Gewehr besprochen",
+          "Jagdunglück"
+        ]}
+      },
+      "declaration": {"bibl": "Bd. 4, 1931/32, Sp. 582"},
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#waidmann"},
+        {"href": "1821_RieschFreischuetz.xml#waidmann"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#waidmann"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#waidmann"},
+        {"href": "C_07_Handexemplar.xml#waidmann"},
+        {"href": "C_07_Kind_Druck_2.xml#waidmann"}
+      ]}
+    },
+    {
+      "id": "scheibe",
+      "instanceOf": [{"topicRef": {"href": "#object-of-use"}}],
+      "baseName": {
+        "baseNameString": "Scheibe",
+        "variant": {"variantName": [
+          "Sternscheibe",
+          "Schießscheibe ",
+          "Sternlein",
+          "Vogel von der Stange"
+        ]}
+      },
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#scheibe"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#scheibe"},
+        {"href": "1821_RieschFreischuetz.xml#scheibe"},
+        {"href": "C_07_Handexemplar.xml#scheibe"}
+      ]}
+    },
+    {
+      "id": "vorahnung",
+      "instanceOf": [{"topicRef": {"href": "#"}}],
+      "baseName": {"baseNameString": "Vorahnung"},
+      "variant": {"variantName": [
+        "Ahnung",
+        "ahnungsvoll"
+      ]},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "C_07_Handexemplar.xml#vorahnung"},
+        {"href": "C_07_Kind_Druck_2.xml#vorahnung"}
+      ]}
+    },
+    {
+      "id": "gebet",
+      "instanceOf": [{"topicRef": {"href": "#"}}],
+      "baseName": {
+        "baseNameString": "Gebet",
+        "variant": {"variantName": ["Beten"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#gebet"},
+        {"href": "1821_RieschFreischuetz.xml#gebet"},
+        {"href": "C_07_Handexemplar.xml#gebet"},
+        {"href": "C_07_Kind_Druck_2.xml#gebet"}
+      ]}
+    },
+    {
+      "id": "gott",
+      "instanceOf": [{"topicRef": {"href": "#himmel"}}],
+      "baseName": {
+        "baseNameString": "Gott",
+        "variant": {"variantName": [
+          "Gottheit",
+          "der Höchste",
+          "der Vater"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx1.xml#gott"},
+        {"href": "1821_RieschFreischuetz.xml#gott"},
+        {"href": "freidi-referenceSource_RMs-tx12.xml#gott"},
+        {"href": "C_07_Handexemplar.xml#gott"},
+        {"href": "C_07_Kind_Druck_2.xml#gott"}
+      ]}
+    },
+    {
+      "id": "guete",
+      "instanceOf": [{"topicRef": {"href": "#himmel"}}],
+      "baseName": {
+        "baseNameString": "Güte",
+        "variant": {"variantName": []}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#guete"},
+        {"href": "C_07_Handexemplar.xml#guete"},
+        {"href": "C_07_Kind_Druck_2.xml#guete"}
+      ]}
+    },
+    {
+      "id": "glauben",
+      "instanceOf": [{"topicRef": {"href": "#"}}],
+      "baseName": {"baseNameString": "Glauben"},
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#glauben"},
+        {"href": "C_07_Handexemplar.xml#glauben"},
+        {"href": "C_07_Handexemplar.xml#glauben"},
+        {"href": "C_07_Kind_Druck_2.xml#glauben"}
+      ]}
+    },
+    {
+      "id": "sterne",
+      "instanceOf": [{"topicRef": {"href": "#himmel"}}],
+      "baseName": {
+        "baseNameString": "Sterne",
+        "variant": {"variantName": ["Sternenkreise"]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#sterne"},
+        {"href": "C_07_Handexemplar.xml#sterne"},
+        {"href": "C_07_Kind_Druck_2.xml#sterne"}
+      ]}
+    },
+    {
+      "id": "fromm",
+      "instanceOf": [
+        {"topicRef": {"href": "#attribute"}},
+        {"topicRef": {"href": "#glauben"}}
+      ],
+      "baseName": {
+        "baseNameString": "fromm",
+        "variant": {"variantName": [
+          "gottesfürchtig",
+          "frommen"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#fromm"},
+        {"href": "1821_RieschFreischuetz.xml#fromm"},
+        {"href": "freidi-referenceSource_RMs-tx11.xml#fromm"},
+        {"href": "C_07_Handexemplar.xml#fromm"},
+        {"href": "C_07_Kind_Druck_2.xml#fromm"}
+      ]}
+    },
+    {
+      "id": "grillen",
+      "instanceOf": ["\n    "],
+      "baseName": {
+        "baseNameString": "Grillen",
+        "variant": {"variantName": [
+          "Sorgen",
+          "trübe Gedanken",
+          "düstre Stimmung"
+        ]}
+      },
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "1821_RieschFreischuetz.xml#grillen"},
+        {"href": "C_07_Handexemplar.xml#grillen"},
+        {"href": "C_07_Kind_Druck_2.xml#grillen"}
+      ]}
+    },
+    {
+      "id": "story_1",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseNameString": "Anfang der Stoffgeschichte: Georg Schmidten ",
+      "declaration": {"hi": {
+        "rend": "italic",
+        "#text": "Sagen der monathlichen Unterredung"
+      }},
+      "occurrence": {"resourceRef": [
+        {"href": "1730_Unterredung.xml"},
+        {"href": "freidi-referenceSource_RD-tx7.xml#story_1"},
+        {"href": "1819_DerSchwarzeJäger.xml"},
+        {"href": "1821_RieschFreischuetz.xml#story_1"}
+      ]}
+    },
+    {
+      "id": "story_2",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseNameString": "Geschichte des Probeschusses: Uraltvater Kuno",
+      "declaration": null,
+      "occurrence": {"resourceRef": [
+        {"href": "freidi-referenceSource_RD-tx7.xml#story_2"},
+        {"href": "1821_RieschFreischuetz.xml#story_2"}
+      ]}
+    },
+    {
+      "id": "story_4",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseNameString": "Ahnenbild",
+      "declaration": null,
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx7.xml#story_4"}]}
+    },
+    {
+      "id": "story_5",
+      "instanceOf": [{"topicRef": {"href": "#action"}}],
+      "baseNameString": "Traum",
+      "declaration": null,
+      "occurrence": {"resourceRef": [{"href": "freidi-referenceSource_RD-tx7.xml#story_5"}]}
+    }
+  ],
+  "association": [
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schwarzemaechte"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schicksal"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#himmel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schicksal"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#in-contrast-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#himmelsmaechte"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schwarzemaechte"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#zauber"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schwarzemaechte"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#nacht"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#mond"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#nacht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#wald"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#kreuzweg"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#kreis"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#kreis"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#zauber"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#kreis"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#glocke"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#glocke"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#mitternacht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#erscheinungen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#wildesHeer"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#wildesHeer"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#erscheinungen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#hackel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#wildesHeer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schwarzemaechte"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#erscheinungen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#wild"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#wildesHeer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#gestalten"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#erscheinungen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#gestalten"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wildesHeer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#wind"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#waldvoegel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#rabe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#waldvoegel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#eule"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#waldvoegel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#abdon"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#sommer"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#abdon"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#zauber"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kugel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#hoelle"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kugel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#zauber"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#probeschuss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schicksal"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#scheibe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#probeschuss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#waidmann"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#waidmann"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#fluch"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#zauber"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#waidmann"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#fluch"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#waidmann"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schuld"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#fate"}},
+          "topicRef": {"href": "#schuld"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#name"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#name"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#scene"}},
+          "topicRef": {"href": "#wolfsschlucht"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kugel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kugel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#kugel"}},
+          "topicRef": {"href": "#drei"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#kugel"}},
+          "topicRef": {"href": "#sieben"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#kugel"}},
+          "topicRef": {"href": "#drei"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#aeffen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#kugel"}},
+          "topicRef": {"href": "#sieben"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#aeffen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#performed-by"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#aeffen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#kugel"}},
+          "topicRef": {"href": "#sechs"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#treffen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kugel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#probeschuss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#person"}},
+          "topicRef": {"href": "#Max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#probeschuss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#form"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kohlen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#blei"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kelle"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#performed-by"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#performed-by"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#kugelguss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braeutigam"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#affectionate-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braeutigam"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#edward"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#georgschmid"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#affectionate-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#max"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braeutigam"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#affectionate-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#pauline"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#affectionate-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#kaethchen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#wilhelm"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#schreiber"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#edward"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#edward"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braeutigam"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#affectionate-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#edward"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#elfriede"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#georgschmid"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#georgschmid"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#schreiber"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#benno"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braeutigam"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#affectionate-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#benno"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#name"}},
+          "topicRef": {"href": "#bertha"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#camerad"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#in-contrast-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#bauer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#jagd"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#jaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#bergjaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#stelzfuss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#weib"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#robert"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#caspar"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#heinze"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#heinze"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#stelzfuss"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#fremde"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#teufel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#boese"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#reiter"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#schwarzemaechte"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#schwarzemaechte"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#teufel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#schwarzeJaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#abbadonna"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#klaus"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#sammiel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#klaus"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#roleDesc"}},
+          "topicRef": {"href": "#stelzfuss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#klaus"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#ross"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#schwarzeJaeger"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#ross"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#teufel"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#tochter"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#is-a"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#maedchen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#pauline"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#kaethchen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#elfride"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#leonore"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#juliane"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#bertha"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#opfer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#taube"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#grillen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#pauline"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#pauline"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#tochter"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#kaethchen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#blood-related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#kaethchen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#mutter"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#elfride"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#juliane"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#comparable-with"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#annchen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#mutter"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#friendly-related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#annchen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#mutter"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#foersterin"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#ilse"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#mutter"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#ilse"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#foersterin"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#schleier"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#friendly-related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#brautjungfern"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#hochzeit"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#braut"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#myrte"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#lavendel"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#seide"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#rosmarin"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#thymian"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#silber"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#used-for"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#winden"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#brautjungfern"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#kranz"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#attribute"}},
+          "topicRef": {"href": "#weiss"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#creature-in-play"}},
+          "topicRef": {"href": "#taube"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#same-as"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#reigen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#tanz"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#brautjungfern"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#reigen"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#reigen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#setting"}},
+          "topicRef": {"href": "#hochzeit"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#opfer"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#attribute"}},
+          "topicRef": {"href": "#tot"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#attribute"}},
+          "topicRef": {"href": "#blut"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#opfer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#tuch"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#opfer"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#traum"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#pauline"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#traum"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#juliane"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#traum"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#bertha"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#traum"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#elfride"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#traum"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#undergo"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#leonore"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#action"}},
+          "topicRef": {"href": "#traum"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#friendly-related-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#eremit"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#rosen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#eremit"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#belong-to"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#object-of-use"}},
+          "topicRef": {"href": "#rosen"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#agathe"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#gott"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#attribute"}},
+          "topicRef": {"href": "#guete"}
+        }
+      ]
+    },
+    {
+      "instanceOf": [{"topicRef": {"href": "#part-of"}}],
+      "member": [
+        {
+          "roleSpec": {"topicRef": {"href": "#role"}},
+          "topicRef": {"href": "#gott"}
+        },
+        {
+          "roleSpec": {"topicRef": {"href": "#himmelsmaechte"}},
+          "topicRef": {"href": "#himmel"}
+        }
+      ]
+    }
+  ]
+}
