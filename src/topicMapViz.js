@@ -32,7 +32,96 @@
 })();
 
 
-/*own functions*/
+//own functions
+
+/* function appendFilters
+ * append Filters in #filters on the basis of the rendered graph
+ * filters will be generated for:
+ *  - association classes
+ *  - topics
+ *  - topic classifications
+ */
+
+function appendFilters(data){
+  
+  var data = $('#graph svg');
+  //console.log(data);
+  var data_nodes = $('#graph svg g.node');
+  //console.log(data_nodes);
+  var nodeNames = new Array();
+  var data_associations = $('#graph svg line');
+  //console.log(data_associations);
+  var associationClasses = new Array();
+  
+  $.each(data_associations,
+    function(i, item){
+      var type = item.getAttribute('title');
+      console.log(type);
+      if($.inArray(type, associationClasses) == -1){
+        associationClasses.push(type);
+      }
+    }
+  );
+  console.log(associationClasses);
+  
+    $.each(data_nodes,
+    function(i, item){
+      var name = item.textContent;
+      console.log(name);
+      if($.inArray(name, nodeNames == -1)){
+        nodeNames.push(name);
+      }
+    }
+  );
+  
+  if(associationClasses.length > 0){
+    d3.select('#filters').append('div').attr('id','filters-classes')
+      .append('h4').text('Assoziationstypen');
+    
+    associationClasses.forEach(function(item, i){
+      var newEntry = d3.select('#filters-classes').append('div').classed('filter', true);
+      
+      newEntry.append('span').classed('filterLabel', true).text(item.substring(item.indexOf('#')+1));
+     
+      newEntry.append('a').attr('onclick',"mapHighlight('"+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
+    });
+  }
+  
+  if(nodeNames.length > 0){
+    d3.select('#filters').append('div').attr('id','filters-nodes')
+     .append('h4').text('Topics');
+  
+   nodeNames.forEach(function(item, i){
+       d3.select('#filters-nodes').append('div')
+         .text(item);
+   });
+  }
+ 
+
+}
+
+function clearFilters(){
+  $('#filters').empty();
+};
+
+/* function to highligh a class in the map
+ *
+ */
+function mapHighlight(identifier){
+  //TODO impement toggle
+  var obj = $($('#graph .'+identifier));
+  var highlight_status = obj.attr('class').indexOf('highlight') > -1;
+  console.log(highlight_status);
+  if(highlight_status){
+    obj.attr('class', obj.attr('class').replace(' highlight',''));
+  }else{
+    obj.attr('class', obj.attr('class') + ' highlight');
+  }
+};
+
+/* function drawGraph
+ * @param  localLinks 
+ */
 function drawGraph(localLinks){
   
   // Compute the distinct nodes from the links.
@@ -56,13 +145,14 @@ function drawGraph(localLinks){
    
    var svg = d3.select("#graph").append("svg")
        .attr("width", width)
-       .attr("height", height);
+       .attr("height", height)
+       .classed("col-md-12", true);
    
    var link = svg.selectAll(".link")
        .data(force.links())
        .enter().append("line")
-         .attr("class", function(d) { return d.type.substring(1) + " link"; })
-         .attr("title",function(d) { return d.type.substring(1); });
+         .attr("class", function(d) { return d.type.substring(d.type.indexOf('#')+1) + " link"; })
+         .attr("title",function(d) { return d.type.substring(d.type.indexOf('#')+1); });
    
    var node = svg.selectAll(".node")
        .data(force.nodes())
@@ -84,7 +174,7 @@ function drawGraph(localLinks){
           console.log(d.name.substring(1));
           var myData = filterById(topicsFiltered, d.name.substring(1));
           console.log(myData);
-          if(typeof myData[0] !== 'undefined'){return myData[0].baseName.baseNameString;}
+          if(typeof myData[0] !== 'undefined'){return myData[0].names[0].value;}
           else{return '[fallback]'+d.name}
        });
        
@@ -117,22 +207,23 @@ function drawGraph(localLinks){
     var id = node.property("id");
     selectTopic(id);
   }
-
+//use event mechanism?
+clearFilters();
+appendFilters($('#graph svg'));
 }
-/*functions*/
 
 function filterByMember (object, value) {
 
   // The real meat of the solution, you can use this directly if you want.
   var num = $.map(object, function (item, key) { 
-
+      var regEx = new RegExp(value, 'g');
       // this is where the check is done
-      if (item.member[0].topicRef.href === value || item.member[1].topicRef.href === value) {
+      if (item.roles[0].player.match(regEx) || item.roles[1].player.match(regEx)) {
 
         // if you want the index or property "0", "1", "2"... etc.
         // item._index = key;
 
-        return item; 
+        return item;
       }
     });
     
@@ -141,7 +232,7 @@ function filterByMember (object, value) {
 
 function filterById (object, value) {
 
-    console.log('filter by:');
+    console.log('filter by id:');
     console.log(value);
   // The real meat of the solution, you can use this directly if you want.
   /*return $.map(object, function (item, key) { 
@@ -158,47 +249,53 @@ function filterById (object, value) {
     });*/
     return $.grep(topicsFiltered, function(element, index){
       
-      if(element.id === value){
+      if(element.item_identifiers[0] === value){
         return element
       }
       
     });
 }
 
+function renderTopicDetail(detail){
+  
+}
+
 function getTopicDetails(topic, i){
   
   var newTopic = d3.select('#meta')
     .append('dl').classed('topicDetail dl-horizontal', true);
+    
     //topic
     newTopic.append('dt').classed('key', true)
     .text('Topic');
     newTopic.append('dd').classed('value', true)
-    .text(topic.baseName.baseNameString);
+    .text(topic.names[0].value);
     
     //variant(s)
-    if(topic.baseName.variant){
+    if(topic.names[0].variants && typeof topic.names[0].variants !== 'undefined'){
       newTopic.append('dt').classed('key', true)
         .text('Varianten');
-      for(i=0; i < topic.baseName.variant.variantName.length; i++){
+      for(i=0; i < topic.names[0].variants.length; i++){
         newTopic.append('dd').classed('value', true)
-          .text(topic.baseName.variant.variantName[i]);
+          .text(topic.names[0].variants[i].value);
       }
     };
     
+    //TODO: deprecated
     //declaration
-    if(topic.declaration){
+   /* if(topic.declaration){
       newTopic.append('dt').classed('key', true)
         .text('Definition');
       newTopic.append('dd').classed('value', true)
         .text(topic.declaration.bibl);
-    };
+    };*/
     
     //instanceOf
     newTopic.append('dt').classed('key', true)
       .text('Klassifizierung');
-    for(i=0; i < topic.instanceOf.length; i++){
+    for(i=0; i < topic.instance_of.length; i++){
       newTopic.append('dd').classed('value', true)
-        .text(topic.instanceOf[i].topicRef.href);
+        .text(topic.instance_of[i].substring(topic.instance_of[i].indexOf('#')+1));
     };
     
     //occurrence(s)
@@ -231,7 +328,7 @@ function selectTopic(id, i){
   var graphDepth = 2;
   
   $('.topicName').toggleClass('active',false);
-  $('#topic_'+id).toggleClass('active', true); //append class selected
+  $('#topic_'+id.substring(id.indexOf('#')+1)).toggleClass('active', true); //append class selected
   
   clearTopicDetail();
   topicLinks = getNodeLinks(id, distance);
@@ -245,26 +342,14 @@ function getNodeLinks(topicID,distance){
   console.log('determining nodes with parameters: ');
   console.log('topicID: '+topicID);
   console.log('distance: '+distance);
-  var filterTopicRef = '#' + topicID;
-  //console.log(filterTopicRef);
-  var nodes = filterByMember (associations, filterTopicRef);
+  var filterTopicRef = topicID;
+  console.log('filterTopics by ref to: '+ topicID);
+  var nodes = filterByMember (associations, topicID);
   if (nodes.length == 0){
     nodes.push(
-      {
-        "instanceOf": [{"topicRef": {"href": "#self"}}],
-        "member": [
-          {
-            "roleSpec": {"topicRef": {"href": "#self"}},
-            "topicRef": {"href": filterTopicRef}
-          },
-          {
-            "roleSpec": {"topicRef": {"href": "#self"}},
-            "topicRef": {"href": filterTopicRef}
-          }
-        ]
-      }
+      filterById(topicsFiltered, topicID)
     )
-  }
+  };
   console.log(nodes);
   
   if(distance==2){
@@ -275,11 +360,13 @@ function getNodeLinks(topicID,distance){
     $.each(nodes, function(i, item){
       //distantTopicRefs.push(item.member[0].topicRef.href);
       //distantTopicRefs.push(item.member[1].topicRef.href);
-      $.each(item.member, function(i, member){
-        var href = member.topicRef.href;
-        if($.inArray(href, distantTopicRefs) == -1 && href !== filterTopicRef){
-          distantTopicRefs.push(href);
-          var addNodes = filterByMember (associations, href);
+      console.log('enter each loop on nodes');
+      $.each(item.roles, function(i, role){
+        console.log('enter each loop on node.roles');
+        var topicRef = role.player;
+        if($.inArray(topicRef, distantTopicRefs) == -1 && topicRef !== filterTopicRef){
+          distantTopicRefs.push(topicRef);
+          var addNodes = filterByMember (associations, topicRef);
           console.log(addNodes);
           $.each(addNodes, function(i, item){nodes.push(item)});
         };
@@ -297,9 +384,9 @@ function getNodeLinks(topicID,distance){
     /*console.log('pos: ' + i);
     console.log(node);*/
     myLinks.push({ 
-        "source" : node.member[0].topicRef.href,
-        "target" : node.member[1].topicRef.href,
-        "type"   : node.instanceOf[0].topicRef.href 
+        "source" : node.roles[0].player.substring(node.roles[0].player.indexOf(':')),//TODO: function get ID
+        "target" : node.roles[1].player.substring(node.roles[1].player.indexOf(':')),
+        "type"   : node.type 
     });
   });
   
@@ -310,6 +397,10 @@ function getNodeLinks(topicID,distance){
 }
 
 /*End functions*/
+
+/* global variables
+ * 
+ */
 var links;
 var nodes = {};
 var json;
@@ -318,28 +409,32 @@ var topicsFiltered = new Array();
 var associations;
 var distance = 1;
 
-$.getJSON("data/FreiDi_topicMap.JSON", function(data){
+/*
+ * load data from filesystem as json using jquery ajax request
+ */
+$.getJSON("getJSONtopicMap.xql", function(data){
   json = data;
-  //console.log(json);
-  topics = data.topic;
-  associations = data.association;
+  console.log(json);
+  topics = data.topics;
+  associations = data.associations;
   //console.log(associations);
   
+  //
   for (i=0; i < topics.length; i++) {
     
-    if(topics[i].baseName && topics[i].instanceOf) {
+    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type') {//&& topics[i].instanceOf
       topicsFiltered.push(topics[i]);
     }
   };
   //console.log(topicsFiltered);
    
-  topicsFiltered.sortBy({prop: "id"});
+  topicsFiltered.sortBy({prop: "item_identifiers"});
   
   for (i=0; i < topicsFiltered.length; i++) {
     var topic = topicsFiltered[i];
-    var topicID = topicsFiltered[i].id;
+    var topicID = topicsFiltered[i].item_identifiers[0];
     var idString = "'"+topicID+"'";
-    var newLi =  $('#topicList').append('<a id="topic_'+topicID+'" class="list-group-item topicName" href="#" onclick="selectTopic('+idString+','+i+')">'+ topicsFiltered[i].baseName.baseNameString +'</a>');
+    var newLi =  $('#topicList').append('<a id="topic_'+topicID.substring(topicID.indexOf('#')+1)+'" class="list-group-item topicName" href="#" onclick="selectTopic('+idString+','+i+')">'+ topicsFiltered[i].names[0].value +'</a>');
     
     
     $('#topicList').btsListFilter('#searchinput', {
