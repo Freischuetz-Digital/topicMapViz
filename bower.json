@@ -25,6 +25,6 @@
     "bootstrap": "~3.2.0",
     "d3": "~3.4.13",
     "bootstrap-list-filter": "https://github.com/stefanocudini/bootstrap-list-filter/releases/tag/v0.1.7",
-    "tm-converter": "svn+http://topic-maps.googlecode.com/svn/ topic-maps-read-only"
+    "tm-converter": "svn+http://topic-maps.googlecode.com/svn/tm-converter/"
   }
 }
