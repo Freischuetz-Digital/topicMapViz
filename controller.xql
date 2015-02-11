@@ -16,8 +16,8 @@ else if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="index.html"/>
     </dispatch>
-(:else if (ends-with($exist:resource, ".html")) then
-    (\: the html page is run through view.xql to expand templates :\)
+else if (ends-with($exist:resource, ".html")) then
+    (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
@@ -26,7 +26,7 @@ else if ($exist:path eq "/") then
 			<forward url="{$exist:controller}/error-page.html" method="get"/>
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
-    </dispatch>:)
+    </dispatch>
 (: Resource paths starting with $shared are loaded from the shared-resources app :)
 (:else if (contains($exist:path, "/$data/")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

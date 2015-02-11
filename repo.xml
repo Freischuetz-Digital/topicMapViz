@@ -10,5 +10,5 @@
     <target>topicMapViz</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
-    <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="freidi" user="freidi" group="freidi" mode="rw-rw-r--"/>
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="freidi" user="freidi" group="freidi" mode="rwxrwxr--"/>
 </meta>
