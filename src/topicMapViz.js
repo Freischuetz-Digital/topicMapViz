@@ -412,7 +412,7 @@ var distance = 1;
 /*
  * load data from filesystem as json using jquery ajax request
  */
-$.getJSON("getJSONtopicMap.xql", function(data){
+$.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   json = data;
   console.log(json);
   topics = data.topics;
