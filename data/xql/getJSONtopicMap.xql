@@ -1,6 +1,6 @@
 xquery version "3.0";
 
-import module namespace config="http://freischuetz-digital.de/topicMapViz/config" at "../../modules/config.xqm";
+import module namespace config="http://www.freischuetz-digital.de/topicMapViz/config" at "../../modules/config.xqm";
 
 declare option exist:serialize "method=text media-type=text/plain omit-xml-declaration=yes";
 
