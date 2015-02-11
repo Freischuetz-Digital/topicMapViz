@@ -5,6 +5,10 @@ node_modules
 #dist folder 
 dist
 
+# temporary work data
+TODOs.txt
+tools
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
