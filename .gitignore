@@ -4,6 +4,7 @@ node_modules
 
 #dist folder 
 dist
+build
 
 # temporary work data
 TODOs.txt
