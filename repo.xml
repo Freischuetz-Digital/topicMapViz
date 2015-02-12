@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>FreiDi:topicMapViz</description>
+    <author>Benjamin W. Bohl</author>
+    <website>https://github.com/Freischuetz-Digital/topicMapViz</website>
+    <status>alpha</status>
+    <license>GNU GPL-3</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>topicMapViz</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="freidi" user="freidi" group="freidi" mode="rwxrwxr--"/>
+</meta>

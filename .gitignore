@@ -4,6 +4,12 @@ node_modules
 
 #dist folder 
 dist
+build
+data/tm-converter
+
+# temporary work data
+TODOs.txt
+tools
 
 # Windows image file caches
 Thumbs.db
