@@ -7,7 +7,7 @@ declare option exist:serialize "method=text media-type=text/plain omit-xml-decla
  let $doc := xmldb:document($config:app-root||'/topicMaps/FreiDi_TopicMap_2.xml')
  let $xslt := xmldb:document($config:app-root||'/data/tm-converter/xtm2tojtm1.xsl')
  
- let $jtm := transform:transform($doc, $xslt, ())
+ let $jtm := transform:transform($doc, $xslt, <parameters><param name="jtm_version" value="1.1"/></parameters>)
  
  return
   $jtm
