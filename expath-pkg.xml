@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://expath.org/ns/pkg" name="http://freischuetz-digital.de/topicMapViz" abbrev="topicMapViz" version="0.5.0-alpha" spec="1.0">
+<package xmlns="http://expath.org/ns/pkg" name="http://freischuetz-digital.de/topicMapViz" abbrev="topicMapViz" version="0.7.0-beta" spec="1.0">
     <title>FreiDi:topicMapViz</title>
 </package>
