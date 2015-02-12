@@ -1,4 +1,4 @@
-Freischütz Digital topicMap Visualization
+Freischütz Digital Topic Map Visualization
 =========================================
 
 FreiDi:topicMapViz can run independently as mere HTML and Javascript application and thus be served with almost no needs to a server.
