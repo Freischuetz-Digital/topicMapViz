@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="xar" name="proofMEIdata">
   
-  <property name="project.version" value="0.5.0-alpha"/>
+  <property name="project.version" value="0.7.0-beta"/>
   <property name="project.app" value="FreiDi-topicMapViz"/>
   <property name="build.dir" value="build"/>
   
