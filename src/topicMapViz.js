@@ -158,7 +158,7 @@ function drawGraph(localLinks){
        .data(force.nodes())
       .enter().append("g")
         .attr("class", "node")
-        .attr("id", function(d) { return d.name.substring(1); })
+        .attr("id", function(d) {return "node_" + d.name.substring(d.name.indexOf('#')+1); })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
         .on("click", onclick)
@@ -212,6 +212,12 @@ clearFilters();
 appendFilters($('#graph svg'));
 }
 
+// helper functions
+
+/* 
+ * filter jquery association objects by contained player
+ */
+
 function filterByMember (object, value) {
 
   // The real meat of the solution, you can use this directly if you want.
@@ -230,6 +236,10 @@ function filterByMember (object, value) {
     return num
 }
 
+/*
+ * filter json topic objects by id
+ */
+ 
 function filterById (object, value) {
 
     console.log('filter by id:');
@@ -259,6 +269,10 @@ function filterById (object, value) {
 function renderTopicDetail(detail){
   
 }
+
+/*
+ * render topic details to detail area
+ */
 
 function getTopicDetails(topic, i){
   
@@ -309,6 +323,10 @@ function getTopicDetails(topic, i){
     }
     
 }
+
+/*
+ * clear Detail area
+ */
 
 function clearTopicDetail(){
   $('#meta').empty();
