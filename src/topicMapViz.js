@@ -67,9 +67,10 @@ function appendFilters(data){
     $.each(data_nodes,
     function(i, item){
       var name = item.textContent;
+      var id = item.id;
       console.log(name);
       if($.inArray(name, nodeNames == -1)){
-        nodeNames.push(name);
+        nodeNames.push({"name": name, "id": id});
       }
     }
   );
@@ -83,7 +84,7 @@ function appendFilters(data){
       
       newEntry.append('span').classed('filterLabel', true).text(item.substring(item.indexOf('#')+1));
      
-      newEntry.append('a').attr('onclick',"mapHighlight('"+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
+      newEntry.append('a').attr('onclick',"mapHighlight('."+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
     });
   }
   
@@ -92,8 +93,13 @@ function appendFilters(data){
      .append('h4').text('Topics');
   
    nodeNames.forEach(function(item, i){
-       d3.select('#filters-nodes').append('div')
-         .text(item);
+       var newEntry = d3.select('#filters-nodes').append('div').classed('filter', true);
+      
+      newEntry.append('span').classed('filterLabel', true).text(item.name);
+     
+      newEntry.append('a').attr('onclick',"mapHighlight('#"+item.id+"')").classed('filter_highlight', true).text('highlight');
+       
+       
    });
   }
  
@@ -109,7 +115,7 @@ function clearFilters(){
  */
 function mapHighlight(identifier){
   //TODO impement toggle
-  var obj = $($('#graph .'+identifier));
+  var obj = $($('#graph '+identifier));
   var highlight_status = obj.attr('class').indexOf('highlight') > -1;
   console.log(highlight_status);
   if(highlight_status){
