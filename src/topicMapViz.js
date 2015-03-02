@@ -319,12 +319,12 @@ function getTopicDetails(topic, i){
     };
     
     //occurrence(s)
-    if(topic.occurrence && topic.occurrence.resourceRef){
+    if(topic.occurrences && topic.occurrences.length > 0){
       newTopic.append('dt').classed('key', true)
         .text('Nachweise');
-      for(i=0; i < topic.occurrence.resourceRef.length; i++){
+      for(i=0; i < topic.occurrences.length; i++){
         newTopic.append('dd').classed('value', true)
-          .text(topic.occurrence.resourceRef[i].href);
+          .text(topic.occurrences[i].value);
       }
     }
     
