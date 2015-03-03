@@ -435,7 +435,7 @@ var distance = 1;
 var currentTopic;
 
 /*
- * load data from filesystem as json using jquery ajax request
+ * load data from filesystem as json using jquery ajax request and populate topicList
  */
 $.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   json = data;
@@ -447,7 +447,7 @@ $.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   //
   for (i=0; i < topics.length; i++) {
     
-    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type') {//&& topics[i].instanceOf
+    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type' && topics[i].instance_of !='ii:#variant-type') {
       topicsFiltered.push(topics[i]);
     }
   };
