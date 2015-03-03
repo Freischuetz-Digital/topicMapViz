@@ -225,12 +225,13 @@ appendFilters($('#graph svg'));
  */
 
 function filterByMember (object, value) {
-
+    console.log('filterByMember: ' +value);
   // The real meat of the solution, you can use this directly if you want.
   var num = $.map(object, function (item, key) { 
       var regEx = new RegExp(value, 'g');
+
       // this is where the check is done
-      if (item.roles[0].player.match(regEx) || item.roles[1].player.match(regEx)) {
+      if (item.roles[0].player.substring(item.roles[0].player.indexOf(':')+1) == value || item.roles[1].player.substring(item.roles[1].player.indexOf(':')+1) == value) {
 
         // if you want the index or property "0", "1", "2"... etc.
         // item._index = key;
