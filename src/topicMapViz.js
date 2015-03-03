@@ -432,6 +432,7 @@ var topics;
 var topicsFiltered = new Array();
 var associations;
 var distance = 1;
+var currentTopic;
 
 /*
  * load data from filesystem as json using jquery ajax request
