@@ -42,7 +42,7 @@
  *  - topic classifications
  */
 
-function appendFilters(data){
+function appendFilters(data1){
   
   var data = $('#graph svg');
   //console.log(data);
@@ -62,6 +62,7 @@ function appendFilters(data){
       }
     }
   );
+  console.log('appendFilters: associationClasses:');
   console.log(associationClasses);
   
     $.each(data_nodes,
@@ -102,13 +103,15 @@ function appendFilters(data){
        
    });
   }
- 
-
 }
 
+/* function clearFilters
+ *
+ * empties #filters
+ */
 function clearFilters(){
   $('#filters').empty();
-};
+}
 
 /* function to highligh a class in the map
  *
@@ -123,10 +126,12 @@ function mapHighlight(identifier){
   }else{
     obj.attr('class', obj.attr('class') + ' highlight');
   }
-};
+}
 
 /* function drawGraph
- * @param  localLinks 
+ * @param  localLinks
+ *
+ * draws a force graph using d3.js
  */
 function drawGraph(localLinks){
   console.log('init: drawGraph');
@@ -221,8 +226,11 @@ appendFilters($('#graph svg'));
 
 // helper functions
 
-/* 
- * filter jquery association objects by contained player
+/* function filterById
+ * @param object   the JSON array to be searched
+ * @param value    the value to be retrieved from any roles.player
+ *
+ * returns JSON array
  */
 
 function filterByMember (object, value) {
@@ -244,10 +252,12 @@ function filterByMember (object, value) {
     return num
 }
 
-/*
- * filter json topic objects by id
+/* function filterById
+ * @param object   the JSON array to be searched
+ * @param value    the ID value to be retrieved
+ *
+ * returns JSON object
  */
- 
 function filterById (object, value) {
 
     console.log('filter by id:');
@@ -274,11 +284,19 @@ function filterById (object, value) {
     });
 }
 
+/* function renderTopicDetail
+ * @param detail
+ *
+ * TODO: this function shoud be a general function for rendering arbitrary details to detail view in order to promote a more data driven and object oriented setup of this app
+ */
 function renderTopicDetail(detail){
   
 }
 
-/*
+/* function getTopicDetails
+ * @param topic
+ * @param i
+ *
  * render topic details to detail area
  */
 
@@ -332,10 +350,9 @@ function getTopicDetails(topic, i){
     
 }
 
-/*
+/* function clearTopicDetail
  * clear Detail area
  */
-
 function clearTopicDetail(){
   $('#meta').empty();
   $('#graph').empty();
@@ -344,6 +361,18 @@ function clearTopicDetail(){
   nodes = emptyArray;
 }
 
+/* function selectTopic
+ * @param  id
+ * @param  i
+ *
+ * this function is the onclick fnuction for items in the topicList
+ * it retrieves the corrsponding JSON object
+ * sets the corresponding list entry 'active'
+ * clears the detail view from previous topics details
+ * retrieves the links for the graph
+ * fires drawGraph
+ * fires getTopicDetails
+ */
 function selectTopic(id, i){
   console.log('start selectTopic');
   console.log('submitted i: '+ i);
@@ -354,7 +383,7 @@ function selectTopic(id, i){
   var graphDepth = 2;
   
   $('.topicName').toggleClass('active',false);
-  $('#topic_'+id.substring(id.indexOf('#')+1)).toggleClass('active', true); //append class selected
+  $('#topic_'+id.substring(id.indexOf('#')+1)).toggleClass('active', true);
   
   clearTopicDetail();
   topicLinks = getNodeLinks(id, distance);
@@ -364,6 +393,12 @@ function selectTopic(id, i){
   
 }
 
+/* function  getNodeLinks
+ * @param    topicID  ID of the topic that should be origin of the graph
+ * @param    distance maximum number of node steps between topicID and other nodes
+ *
+ * this function returns the links d3 needs to render the graph
+ */
 function getNodeLinks(topicID,distance){
   console.log('determining nodes with parameters: ');
   console.log('topicID: '+topicID);
