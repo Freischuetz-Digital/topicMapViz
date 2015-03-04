@@ -144,13 +144,13 @@ function drawGraph(localLinks){
   console.log(nodes);
   
    var width = 600,
-       height = 300;
+       height = 400;
    
    var force = d3.layout.force()
        .nodes(d3.values(nodes))
        .links(localLinks) //refer data
        .size([width, height])
-       .linkDistance(60)
+       .linkDistance(100)
        .charge(-100)
        .on("tick", tick)
        .start();
@@ -217,7 +217,7 @@ function drawGraph(localLinks){
     var node = d3.select(this);
     var text = node.select("text").text();
     var id = node.property("id");
-    selectTopic(id);
+    selectTopic('#'+id.substring(id.indexOf('_')+1));
   }
 //use event mechanism?
 clearFilters();
