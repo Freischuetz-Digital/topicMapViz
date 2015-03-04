@@ -1,3 +1,18 @@
+/* global variables
+ * 
+ */
+var links;
+var nodes = {};
+var json;
+var topics;
+var topicsFiltered = new Array();
+var associations;
+var distance = 1;
+var currentTopic = {};
+
+/* prototype extensions
+ *
+ */
 (function() {
     var toString = Object.prototype.toString,
         //default parser
@@ -224,6 +239,15 @@ clearFilters();
 appendFilters($('#graph svg'));
 }
 
+
+$("#sel_distance").change(function() {
+  var val = $("#sel_distance option:selected").val();
+  console.log(val);
+  distance = val;
+  selectTopic(currentTopic[0].item_identifiers[0]);
+  //selectTopic(currentTopic.id);
+});
+
 // helper functions
 
 /* function filterById
@@ -377,7 +401,7 @@ function selectTopic(id, i){
   console.log('selectTopic: init');
   console.log('submitted i: '+ i);
   console.log('submitted id: '+ id);
-  var currentTopic = filterById(topicsFiltered, id);
+  currentTopic = filterById(topicsFiltered, id);
   console.log('current topic object:');
   console.log(currentTopic);
   var graphDepth = 2;
@@ -509,17 +533,7 @@ type	"ii:#same-as"
 
 /*End functions*/
 
-/* global variables
- * 
- */
-var links;
-var nodes = {};
-var json;
-var topics;
-var topicsFiltered = new Array();
-var associations;
-var distance = 1;
-var currentTopic;
+
 
 /*
  * load data from filesystem as json using jquery ajax request and populate topicList

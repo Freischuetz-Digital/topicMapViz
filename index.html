@@ -20,6 +20,8 @@
      
      #graph-container {
       height:400px;
+     // background-image:-moz-linear-gradient(left center , rgba(60, 60, 60, 0.2), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(60, 60, 60, 0.2));
+      border-radius:10px;
      }
      
      #meta-container {
@@ -140,17 +142,30 @@ text {
                     <div class="row">
                         <div class="col-md-9">
                             <div id="graph-container">
-                                <h3>Graph</h3>
+                                <h2>Graph</h2>
                                 <div id="graph"/>
                             </div>
                             <div id="meta-container">
-                                <h3>Details</h3>
+                                <h2>Details</h2>
                                 <div id="meta"/>
                             </div>
                         </div>
-                        <div class="col-md-3" id="filters-container">
-                            <h3>Filters</h3>
-                            <div id="filters"/>
+                        <div class="col-md-3">
+                            <h2>Graph Control</h2>
+                            <div>
+                                <h3>Settings</h3>
+                                <div class="form-group">
+                                    <label for="sel_distance">Node distance:</label>
+                                    <select class="form-control" id="sel_distance">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="filters-container">
+                                <h3>Highlighting</h3>
+                                <div id="filters"/>
+                            </div>
                         </div>
                     </div>
                 </div>
