@@ -374,7 +374,7 @@ function clearTopicDetail(){
  * fires getTopicDetails
  */
 function selectTopic(id, i){
-  console.log('start selectTopic');
+  console.log('selectTopic: init');
   console.log('submitted i: '+ i);
   console.log('submitted id: '+ id);
   var currentTopic = filterById(topicsFiltered, id);
@@ -387,6 +387,8 @@ function selectTopic(id, i){
   
   clearTopicDetail();
   topicLinks = getNodeLinks(id, distance);
+  console.log('selectTopic: topicLinks');
+  console.log(topicLinks);
   links = topicLinks;
   drawGraph(links);
   getTopicDetails(currentTopic[0], i);
@@ -407,8 +409,36 @@ function getNodeLinks(topicID,distance){
   console.log('filterTopics by ref to: '+ topicID);
   var nodes = filterByMember (associations, topicID);
   if (nodes.length === 0){
+    selfTopic = filterById(topicsFiltered, topicID);
+console.log(selfTopic);
     nodes.push(
-      filterById(topicsFiltered, topicID)
+    /*
+        reifier null
+roles	[Object { type="ii:#role", player="ii:#mutter", reifier=null}, Object { type="ii:#role", player="ii:#foersterin", reifier=null}]
+0	Object { type="ii:#role", player="ii:#mutter", reifier=null}
+player	"ii:#mutter"
+reifier	null
+type	"ii:#role"
+1	Object { type="ii:#role", player="ii:#foersterin", reifier=null}
+player	"ii:#foersterin"
+reifier	null
+type	"ii:#role"
+type	"ii:#same-as"
+    */    
+    {
+      "reifier" : null,
+      "roles" : [
+          {"player" : 'ii:'+selfTopic[0].item_identifiers,
+           "reifier" : null,
+           "type" : selfTopic[0].instance_of
+          },
+          {"player" : 'ii:'+selfTopic[0].item_identifiers,
+           "reifier" : null,
+           "type" : selfTopic[0].instance_of
+          }
+      ],
+      "type" : 'self'
+    }
     )
   }
   console.log('nodes:');
@@ -420,7 +450,8 @@ function getNodeLinks(topicID,distance){
   if(distance==2){
     console.log('distance=2, start topic loop');
     $.each(nodes, function(i, item){
-      console.log('init retrieve association for '+item);
+      console.log('init retrieve association for ');
+      console.log(item);
       console.log('enter each loop on nodes');
       $.each(item.roles, function(i, role){
         console.log('enter each loop on node.roles');
@@ -500,13 +531,12 @@ $.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   associations = data.associations;
   //console.log(associations);
   
-  //
   for (i=0; i < topics.length; i++) {
     
     if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type' && topics[i].instance_of !='ii:#variant-type') {
       topicsFiltered.push(topics[i]);
     }
-  };
+  }
   //console.log(topicsFiltered);
    
   topicsFiltered.sortBy({prop: "item_identifiers"});
