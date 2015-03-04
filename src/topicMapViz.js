@@ -129,12 +129,13 @@ function mapHighlight(identifier){
  * @param  localLinks 
  */
 function drawGraph(localLinks){
-  
+  console.log('init: drawGraph');
   // Compute the distinct nodes from the links.
   links.forEach(function(link) {//refer data
-   link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
-   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+   link.source = nodes[link.source] || (nodes[link.source] = {name: link.source, distance: link.distance});
+   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target, distance: link.distance});
   });
+  console.log('drawGraph:nodes');
   console.log(nodes);
   
    var width = 600,
@@ -163,11 +164,11 @@ function drawGraph(localLinks){
    var node = svg.selectAll(".node")
        .data(force.nodes())
       .enter().append("g")
-        .attr("class", "node")
+        .attr("class", function(d) {return "node " + "distance_"+d.distance; })
         .attr("id", function(d) {return "node_" + d.name.substring(d.name.indexOf('#')+1); })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
-        .on("click", onclick)
+        .on("dblclick", onclick)
         .call(force.drag);
    
    node.append("circle")
@@ -370,38 +371,44 @@ function getNodeLinks(topicID,distance){
   var filterTopicRef = topicID;
   console.log('filterTopics by ref to: '+ topicID);
   var nodes = filterByMember (associations, topicID);
-  if (nodes.length == 0){
+  if (nodes.length === 0){
     nodes.push(
       filterById(topicsFiltered, topicID)
     )
-  };
+  }
+  console.log('nodes:');
   console.log(nodes);
   
+  var distantTopicRefs = new Array();
+  var addNodes = [];
+  
   if(distance==2){
-    var distantTopicRefs = new Array();
-    //distantTopicRefs.push(filterTopicRef);
-    //console.log(filterTopicRef);
-    console.log('start topic loop');
+    console.log('distance=2, start topic loop');
     $.each(nodes, function(i, item){
-      //distantTopicRefs.push(item.member[0].topicRef.href);
-      //distantTopicRefs.push(item.member[1].topicRef.href);
+      console.log('init retrieve association for '+item);
       console.log('enter each loop on nodes');
       $.each(item.roles, function(i, role){
         console.log('enter each loop on node.roles');
-        var topicRef = role.player;
+        var topicRef = role.player.substring(role.player.indexOf(':')+1);
         if($.inArray(topicRef, distantTopicRefs) == -1 && topicRef !== filterTopicRef){
+          
           distantTopicRefs.push(topicRef);
-          var addNodes = filterByMember (associations, topicRef);
+          topicRefNodes = filterByMember (associations, topicRef);
+          $.each(topicRefNodes, function(i,item){
+              addNodes.push(item);
+          })
+          console.log('ADD NODES: '+ topicRef)
           console.log(addNodes);
-          $.each(addNodes, function(i, item){nodes.push(item)});
         };
-        
       });
     });
-    
+    console.log('distantTopicRefs:');
     console.log(distantTopicRefs);
-    console.log(nodes);
   }
+  console.log('addNodes:');
+  console.log(addNodes);
+  
+  //create links Array
   var myLinks = new Array();
   
   $.each(nodes,function(i, node){
@@ -411,10 +418,23 @@ function getNodeLinks(topicID,distance){
     myLinks.push({ 
         "source" : node.roles[0].player.substring(node.roles[0].player.indexOf(':')),//TODO: function get ID
         "target" : node.roles[1].player.substring(node.roles[1].player.indexOf(':')),
-        "type"   : node.type 
+        "type"   : node.type,
+        "distance" : 1
     });
   });
-  
+  console.log('myLinks, distance=1:');
+  console.log(myLinks);
+  if(distance==2){
+    $.each(addNodes, function(i, node){
+        myLinks.push({ 
+        "source" : node.roles[0].player.substring(node.roles[0].player.indexOf(':')),//TODO: function get ID
+        "target" : node.roles[1].player.substring(node.roles[1].player.indexOf(':')),
+        "type"   : node.type,
+        "distance" : 2
+    });
+    });  
+  }
+  console.log('myLinks: distance=2');
   console.log(myLinks);
   
   return myLinks;
