@@ -430,28 +430,16 @@ function getNodeLinks(topicID,distance){
   console.log('topicID: '+topicID);
   console.log('distance: '+distance);
   var filterTopicRef = topicID;
+  var associations_secondary = new Array();
   console.log('filterTopics by ref to: '+ topicID);
-  var nodes = filterByMember (associations, topicID);
-  if (nodes.length === 0){
+  var associations_filtered = filterByMember (associations, topicID);
+  if (associations_filtered.length === 0){
     selfTopic = filterById(topicsFiltered, topicID);
 console.log(selfTopic);
-    nodes.push(
-    /*
-        reifier null
-roles	[Object { type="ii:#role", player="ii:#mutter", reifier=null}, Object { type="ii:#role", player="ii:#foersterin", reifier=null}]
-0	Object { type="ii:#role", player="ii:#mutter", reifier=null}
-player	"ii:#mutter"
-reifier	null
-type	"ii:#role"
-1	Object { type="ii:#role", player="ii:#foersterin", reifier=null}
-player	"ii:#foersterin"
-reifier	null
-type	"ii:#role"
-type	"ii:#same-as"
-    */    
-    {
-      "reifier" : null,
-      "roles" : [
+    associations_filtered.push(
+      {
+        "reifier" : null,
+        "roles" : [
           {"player" : 'ii:'+selfTopic[0].item_identifiers,
            "reifier" : null,
            "type" : selfTopic[0].instance_of
@@ -460,23 +448,45 @@ type	"ii:#same-as"
            "reifier" : null,
            "type" : selfTopic[0].instance_of
           }
-      ],
-      "type" : 'self'
-    }
+        ],
+        "type" : 'self'
+      }
     )
+  }else{
+    var players = new Array();
+    $.each(associations_filtered, function(i,association){
+      console.log(association);
+      $.each(association.roles, function(i,role){
+        if(role.player.substring(role.player.indexOf(':')+1) !== topicID){
+          players.push(role.player);
+        }
+      })
+    })
+    console.log('players');
+    console.log(players);
+    $.each(associations, function(i, association){
+        console.log($.inArray(players, association.roles[0].player));
+      if($.inArray(association.roles[0].player, players) != -1 && $.inArray(association.roles[1].player, players) !== -1){
+          associations_secondary.push(association);
+          associations_filtered.push(association);
+      }
+    })
   }
-  console.log('nodes:');
-  console.log(nodes);
+  console.log('associations_filtered:');
+  console.log(associations_filtered);
+  console.log('associations_secondary:');
+  console.log(associations_secondary);
+  //if(associations_secondary.length > 0){window.alert('now')}
   
   var distantTopicRefs = new Array();
   var addNodes = [];
   
   if(distance==2){
     console.log('distance=2, start topic loop');
-    $.each(nodes, function(i, item){
+    $.each(associations_filtered, function(i, item){
       console.log('init retrieve association for ');
       console.log(item);
-      console.log('enter each loop on nodes');
+      console.log('enter each loop on associations_filtered');
       $.each(item.roles, function(i, role){
         console.log('enter each loop on node.roles');
         var topicRef = role.player.substring(role.player.indexOf(':')+1);
@@ -501,10 +511,8 @@ type	"ii:#same-as"
   //create links Array
   var myLinks = new Array();
   
-  $.each(nodes,function(i, node){
-    //{"source": "nacht", "target": "wolfsschluchtszene", "type": "part-of"}
-    /*console.log('pos: ' + i);
-    console.log(node);*/
+  $.each(associations_filtered,function(i, node){
+
     myLinks.push({ 
         "source" : node.roles[0].player.substring(node.roles[0].player.indexOf(':')),//TODO: function get ID
         "target" : node.roles[1].player.substring(node.roles[1].player.indexOf(':')),
