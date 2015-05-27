@@ -1,8 +1,8 @@
 /* global variables
  * 
  */
-var links;
-var nodes = {};
+var links = new Array();
+var nodes = new Array();
 var json;
 var topics;
 var topicsFiltered = new Array();
@@ -22,7 +22,7 @@ var currentTopic = {};
             return this.parser((toString.call(x) == "[object Object]" && x[this.prop]) || x);
         };
     // Creates a sort method in the Array prototype
-    Object.defineProperty(Array.prototype, "sortBy", {
+    Object.defineProperty(Array.prototype, "sortBySortName", {
         configurable: false,
         enumerable: false,
         // @o.prop: property name (if it is an Array of objects)
@@ -37,8 +37,8 @@ var currentTopic = {};
             //if @o.desc is true: set -1, else 1
             o.desc = [1, -1][+!!o.desc];
             return this.sort(function (a, b) {
-                a = getItem.call(o, a);
-                b = getItem.call(o, b);
+                a = getItem.call(o, a.names[0].variants[0].value.toLowerCase());
+                b = getItem.call(o, b.names[0].variants[0].value.toLowerCase());
                 return o.desc * ((a > b) - (b > a));
               //return o.desc * (a > b ? 1 : (a < b ? -1 : 0));
             });
@@ -466,7 +466,7 @@ console.log(selfTopic);
     console.log(players);
     $.each(associations, function(i, association){
         console.log($.inArray(players, association.roles[0].player));
-      if($.inArray(association.roles[0].player, players) != -1 && $.inArray(association.roles[1].player, players) !== -1){
+      if($.inArray(association.roles[0].player, players) !== -1 && $.inArray(association.roles[1].player, players) !== -1){
           associations_secondary.push(association);
           associations_filtered.push(association);
       }
@@ -508,8 +508,9 @@ console.log(selfTopic);
   console.log('addNodes:');
   console.log(addNodes);
   
-  //create links Array
-  var myLinks = new Array();
+  console.log('start create myLinks');
+  var myLinks = [];
+  console.log();
   
   $.each(associations_filtered,function(i, node){
 
@@ -534,9 +535,8 @@ console.log(selfTopic);
   }
   console.log('myLinks: distance=2');
   console.log(myLinks);
-  
-  return myLinks;
 
+  return myLinks;
 }
 
 /*End functions*/
@@ -561,7 +561,7 @@ $.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   }
   //console.log(topicsFiltered);
    
-  topicsFiltered.sortBy({prop: "item_identifiers"});
+  topicsFiltered.sortBySortName();//{prop: "item_identifiers"}
   
   for (i=0; i < topicsFiltered.length; i++) {
     var topic = topicsFiltered[i];
