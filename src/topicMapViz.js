@@ -367,11 +367,42 @@ function getTopicDetails(topic, i){
       newTopic.append('dt').classed('key', true)
         .text('Nachweise');
       for(i=0; i < topic.occurrences.length; i++){
-        newTopic.append('dd').classed('value', true)
-          .text(topic.occurrences[i].value);
+      var ref = topic.occurrences[i].value;
+      var context = 'occurrence' + i;
+      console.log(context);
+      newTopic.append('dd').classed('value', true).attr('id', context);
+          /*.append('a').attr('href', topic.occurrences[i].value)
+          .text(topic.occurrences[i].value);*/
+            //var content;
+      var text = getOccurrenceDetail(topic.occurrences[i].value,context);
+
       }
     }
     
+}
+
+function getOccurrenceDetail(href, context){
+var text;
+var request = $.get("data/xql/getOccurrenceDetail.xql",{'href': href},
+  function(data, status){
+  console.log('function called');
+  console.log(status);
+  console.log('#'+context );
+  $('#'+context).append(data);
+  });
+/*var text = new String();
+$.ajax({
+    url: "data/xql/getOccurrenceDetail.xql",
+    method: "GET",
+    data: {'href': href},
+    dataType: 'text',
+    //context: document.body
+    success: function(result){text=result.responseText}
+    });
+    console.log(text);
+    return $.parseHTML(text);*/
+    console.log(text);
+
 }
 
 /* function clearTopicDetail
