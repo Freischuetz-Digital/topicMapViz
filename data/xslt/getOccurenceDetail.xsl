@@ -28,8 +28,9 @@
         <div class="meta">
           <!--<xsl:value-of select="$pos"/>
           <xsl:text>) </xsl:text>-->
-            <xsl:value-of select="//tei:teiHeader//tei:title[1]"/>
-            <xsl:text>; </xsl:text>
+            <xsl:value-of select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = 'desc')]"/>
+            <xsl:text>: </xsl:text>
+          <xsl:value-of select="//tei:sourceDesc/tei:analytic/tei:title" separator=". "></xsl:value-of>
             <xsl:text>Akt </xsl:text>
             <xsl:number count="tei:div[@type='act']" level="any" format="I"/>
             <xsl:text>, Szene </xsl:text>
