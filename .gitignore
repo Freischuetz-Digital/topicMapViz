@@ -5,7 +5,7 @@ node_modules
 #dist folder 
 dist
 build
-data/tm-converter
+data/xslt/tmxsl
 
 # temporary work data
 TODOs.txt

@@ -75,6 +75,13 @@ module.exports = (grunt) ->
     copy:
       src:
         files: [{expand: true, flatten: true, cwd: 'src/', src: ['**'], dest: 'dist/'}]
+      dependencies:
+        files: [{
+          cwd: 'bower_components/tmxsl',  # set working folder / root to copy
+          src: '**/*',           # copy all files and subfolders
+          dest: 'data/xslt/tmxsl',    # destination folder
+          expand: true           # required when using cwd
+        }]
       #fonts:
        # files: [{expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: 'fonts/'}]
 

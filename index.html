@@ -8,7 +8,18 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen"/>
         <script type="text/javascript" src="dist/bower.js" charset="utf-8"/>
         <style type="text/css">
+        
+        
+    
       /*bootstrap framework*/
+      
+      #meta-container .value .meta {
+        font-weight:bold;
+      }
+      
+      #meta-container .value li {
+        margin: 4px 0;
+      }
       
      #topicList {
       height: 700px;
@@ -17,13 +28,23 @@
      
      #graph-container {
       height:400px;
+     // background-image:-moz-linear-gradient(left center , rgba(60, 60, 60, 0.2), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(60, 60, 60, 0.2));
+      border-radius:10px;
      }
      
      #meta-container {
       height: 400px;
      }
      
+     #meta {
+         font-size:1.2em;
+     }
      
+     
+    #filters-classes-list, #filters-nodes-list {
+         height: 300px;
+         overflow: auto;
+     }
      .filters-classes,.filters-nodes {
          display:table;
      }
@@ -48,25 +69,50 @@
 }
 
 .link.highlight {
-    stroke: #900;
+    stroke: #3af;
 }
 
 .node circle {
-  fill: #ccc;
-  stroke: #fff;
+  fill: #aaa;
+  stroke: #bbb;
   stroke-width: 1.5px;
 }
 
+.node.highlight circle {
+    fill: #18d;
+}
+
+.node.distance_1{}
+
+.node.distance_2 circle{
+    fill: #ccc;
+}
+
+.node.distance_2.highlight circle {
+    fill: #3af;
+}
+
 text {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
   pointer-events: none;
 }
       /* topicDetail*/
       
       #meta .key{
-        font-size: 1.2em;
-        font-weight:bold;
+          font-weight:bold;
       }
+      dl.topicDetail {
+          display: table;
+      }
+      
+    
+      dl.topicDetail dt, dt+dd {
+          margin-top: 12px;
+      }
+
+      
+      
+      
     </style>
     </head>
     <body>
@@ -106,19 +152,39 @@ text {
                 </div>
                 <div class="col-md-10">
                     <div class="row">
-                        <div class="col-md-9">
-                            <div id="graph-container">
-                                <h3>Graph</h3>
-                                <div id="graph"/>
-                            </div>
-                            <div id="meta-container">
-                                <h3>Details</h3>
-                                <div id="meta"/>
+                        <div id="title"/>
+                        </div>
+                <div class="row top-buffer">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div id="graph-container" class="col-md-12" style="resize:both; overflow:auto;">
+<!--                                <h2>Graph</h2>-->
+                                    <div id="graph"/>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3" id="filters-container">
-                            <h3>Filters</h3>
-                            <div id="filters"/>
+                        <div class="col-md-6">
+                            <div id="filters-container">
+<!--                            <h3>Highlighting</h3>-->
+                                <div class="row" id="filters"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="sel_distance">Node distance:</label>
+                                <select class="form-control" id="sel_distance">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="sources" class="col-md-12">
+<!--                        <h2>Fundstellen</h2>-->
+<!--                        <div id="sources"/>-->
                         </div>
                     </div>
                 </div>
@@ -126,11 +192,12 @@ text {
         </div>
         <script type="text/javascript">
       //demo graphs
-      var links5 = [{"source": "nacht", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "mond", "target": "nacht", "type": "part-of"},{"source": "mond", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kugelguss", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "wald", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kreuzweg", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "max", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "sammiel", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "caspar", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "form", "target": "kugelguss", "type": "used-for"},{"source": "kohlen", "target": "kugelguss", "type": "used-for"},{"source": "blei", "target": "kugelguss", "type": "used-for"},{"source": "max", "target": "jaeger", "type": "same-as"},{"source": "max", "target": "wilhelm", "type": "comparable-with"},{"source": "max", "target": "agathe", "type": "related-to"},{"source": "wilhelm", "target": "jaeger", "type": "same-as"},{"source": "wilhelm", "target": "pauline", "type": "related-to"}];
-      var links6 = [{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "kranz", "target": "braut", "type": "#belong-to"}];
-      var links7 = [{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "max", "target": "braeutigam", "type": "#is-a"},{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "wilhelm", "target": "braeutigam", "type": "#is-a"},{"source": "edward", "target": "braeutigam", "type": "#is-a"},{"source": "benno", "target": "braeutigam", "type": "#same-as"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "max", "target": "agathe", "type": "#affectionate-to"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "agathe", "target": "tochter", "type": "#is-a"},{"source": "agathe", "target": "maedchen", "type": "#is-a"},{"source": "agathe", "target": "pauline", "type": "#comparable-with"},{"source": "agathe", "target": "kaethchen", "type": "#comparable-with"},{"source": "agathe", "target": "elfride", "type": "#comparable-with"},{"source": "agathe", "target": "leonore", "type": "#comparable-with"},{"source": "agathe", "target": "juliane", "type": "#comparable-with"},{"source": "agathe", "target": "bertha", "type": "#comparable-with"},{"source": "agathe", "target": "opfer", "type": "#same-as"},{"source": "agathe", "target": "taube", "type": "#same-as"},{"source": "agathe", "target": "grillen", "type": "#undergo"},{"source": "annchen", "target": "agathe", "type": "#friendly-related-to"},{"source": "kranz", "target": "agathe", "type": "#belong-to"},{"source": "agathe", "target": "traum", "type": "#undergo"},{"source": "eremit", "target": "agathe", "type": "#friendly-related-to"},{"source": "rosen", "target": "agathe", "type": "#belong-to"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "wilhelm", "target": "pauline", "type": "#affectionate-to"},{"source": "agathe", "target": "pauline", "type": "#comparable-with"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "pauline", "target": "tochter", "type": "#same-as"},{"source": "pauline", "target": "traum", "type": "#undergo"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "wilhelm", "target": "kaethchen", "type": "#affectionate-to"},{"source": "agathe", "target": "kaethchen", "type": "#comparable-with"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "agathe", "target": "elfride", "type": "#comparable-with"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "traum", "type": "#undergo"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "agathe", "target": "juliane", "type": "#comparable-with"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "juliane", "target": "traum", "type": "#undergo"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "kranz", "target": "brautjungfern", "type": "#belong-to"},{"source": "brautjungfern", "target": "reigen", "type": "#undergo"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "reigen", "target": "hochzeit", "type": "#part-of"},{"source": "kranz", "target": "braut", "type": "#belong-to"},{"source": "kranz", "target": "braut", "type": "#belong-to"},{"source": "myrte", "target": "kranz", "type": "#part-of"},{"source": "lavendel", "target": "kranz", "type": "#part-of"},{"source": "seide", "target": "kranz", "type": "#part-of"},{"source": "rosmarin", "target": "kranz", "type": "#part-of"},{"source": "thymian", "target": "kranz", "type": "#part-of"},{"source": "silber", "target": "kranz", "type": "#part-of"},{"source": "kranz", "target": "winden", "type": "#used-for"},{"source": "kranz", "target": "brautjungfern", "type": "#belong-to"},{"source": "kranz", "target": "agathe", "type": "#belong-to"}];
+ //     var links5 = [{"source": "nacht", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "mond", "target": "nacht", "type": "part-of"},{"source": "mond", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kugelguss", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "wald", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kreuzweg", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "max", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "sammiel", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "caspar", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "form", "target": "kugelguss", "type": "used-for"},{"source": "kohlen", "target": "kugelguss", "type": "used-for"},{"source": "blei", "target": "kugelguss", "type": "used-for"},{"source": "max", "target": "jaeger", "type": "same-as"},{"source": "max", "target": "wilhelm", "type": "comparable-with"},{"source": "max", "target": "agathe", "type": "related-to"},{"source": "wilhelm", "target": "jaeger", "type": "same-as"},{"source": "wilhelm", "target": "pauline", "type": "related-to"}];
+ //     var links6 = [{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "kranz", "target": "braut", "type": "#belong-to"}];
+ //     var links7 = [{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "max", "target": "braeutigam", "type": "#is-a"},{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "wilhelm", "target": "braeutigam", "type": "#is-a"},{"source": "edward", "target": "braeutigam", "type": "#is-a"},{"source": "benno", "target": "braeutigam", "type": "#same-as"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "max", "target": "agathe", "type": "#affectionate-to"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "agathe", "target": "tochter", "type": "#is-a"},{"source": "agathe", "target": "maedchen", "type": "#is-a"},{"source": "agathe", "target": "pauline", "type": "#comparable-with"},{"source": "agathe", "target": "kaethchen", "type": "#comparable-with"},{"source": "agathe", "target": "elfride", "type": "#comparable-with"},{"source": "agathe", "target": "leonore", "type": "#comparable-with"},{"source": "agathe", "target": "juliane", "type": "#comparable-with"},{"source": "agathe", "target": "bertha", "type": "#comparable-with"},{"source": "agathe", "target": "opfer", "type": "#same-as"},{"source": "agathe", "target": "taube", "type": "#same-as"},{"source": "agathe", "target": "grillen", "type": "#undergo"},{"source": "annchen", "target": "agathe", "type": "#friendly-related-to"},{"source": "kranz", "target": "agathe", "type": "#belong-to"},{"source": "agathe", "target": "traum", "type": "#undergo"},{"source": "eremit", "target": "agathe", "type": "#friendly-related-to"},{"source": "rosen", "target": "agathe", "type": "#belong-to"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "wilhelm", "target": "pauline", "type": "#affectionate-to"},{"source": "agathe", "target": "pauline", "type": "#comparable-with"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "pauline", "target": "tochter", "type": "#same-as"},{"source": "pauline", "target": "traum", "type": "#undergo"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "wilhelm", "target": "kaethchen", "type": "#affectionate-to"},{"source": "agathe", "target": "kaethchen", "type": "#comparable-with"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "agathe", "target": "elfride", "type": "#comparable-with"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "traum", "type": "#undergo"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "agathe", "target": "juliane", "type": "#comparable-with"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "juliane", "target": "traum", "type": "#undergo"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "kranz", "target": "brautjungfern", "type": "#belong-to"},{"source": "brautjungfern", "target": "reigen", "type": "#undergo"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "reigen", "target": "hochzeit", "type": "#part-of"},{"source": "kranz", "target": "braut", "type": "#belong-to"},{"source": "kranz", "target": "braut", "type": "#belong-to"},{"source": "myrte", "target": "kranz", "type": "#part-of"},{"source": "lavendel", "target": "kranz", "type": "#part-of"},{"source": "seide", "target": "kranz", "type": "#part-of"},{"source": "rosmarin", "target": "kranz", "type": "#part-of"},{"source": "thymian", "target": "kranz", "type": "#part-of"},{"source": "silber", "target": "kranz", "type": "#part-of"},{"source": "kranz", "target": "winden", "type": "#used-for"},{"source": "kranz", "target": "brautjungfern", "type": "#belong-to"},{"source": "kranz", "target": "agathe", "type": "#belong-to"}];
     </script>
         <script type="text/javascript" src="src/topicMapViz.js"/>
         <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"/>
+<!--      <script type="text/javascript" src="src/demo.js" charset="utf-8"/>-->
     </body>
 </html>
