@@ -91,25 +91,14 @@ function appendFilters(data1){
     }
   );
   
-  if(associationClasses.length > 0){
-    d3.select('#filters').append('div').attr('id','filters-classes')
-      .append('h4').text('Assoziationstypen');
-    
-    associationClasses.forEach(function(item, i){
-      var newEntry = d3.select('#filters-classes').append('div').classed('filter', true);
-      
-      newEntry.append('span').classed('filterLabel', true).text(item.substring(item.indexOf('#')+1));
-     
-      newEntry.append('a').attr('onclick',"mapHighlight('."+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
-    });
-  }
-  
-  if(nodeNames.length > 0){
-    d3.select('#filters').append('div').attr('id','filters-nodes')
+    if(nodeNames.length > 0){
+    d3.select('#filters').append('div').attr('id','filters-nodes').classed('col-md-6', true)
      .append('h4').text('Topics');
+     
+   d3.select('#filters-nodes').append('div').attr('id','filters-nodes-list');
   
    nodeNames.forEach(function(item, i){
-       var newEntry = d3.select('#filters-nodes').append('div').classed('filter', true);
+       var newEntry = d3.select('#filters-nodes-list').append('div').classed('filter', true);
       
       newEntry.append('span').classed('filterLabel', true).text(item.name);
      
@@ -118,6 +107,23 @@ function appendFilters(data1){
        
    });
   }
+  
+  if(associationClasses.length > 0){
+    d3.select('#filters').append('div').attr('id','filters-classes').classed('col-md-6', true)
+      .append('h4').text('Relationen');
+    
+    d3.select('#filters-classes').append('div').attr('id','filters-classes-list');
+    
+    associationClasses.forEach(function(item, i){
+      var newEntry = d3.select('#filters-classes-list').append('div').classed('filter', true);
+      console.log('building filter for');
+      console.log(item);
+      newEntry.append('span').classed('filterLabel', true).text(filterById(topics,'#'+item)[0].names[0].value);
+     
+      newEntry.append('a').attr('onclick',"mapHighlight('."+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
+    });
+  }
+  
 }
 
 /* function clearFilters
@@ -158,8 +164,8 @@ function drawGraph(localLinks){
   console.log('drawGraph:nodes');
   console.log(nodes);
   
-   var width = 600,
-       height = 400;
+   var width = $('#graph').width(),
+       height = 300;
    
    var force = d3.layout.force()
        .nodes(d3.values(nodes))
@@ -299,7 +305,7 @@ function filterById (object, value) {
       }
       
     });*/
-    return $.grep(topicsFiltered, function(element, index){
+    return $.grep(object, function(element, index){
       
       if(element.item_identifiers[0] === value){
         return element
@@ -325,25 +331,42 @@ function renderTopicDetail(detail){
  */
 
 function getTopicDetails(topic, i){
-  
-  var newTopic = d3.select('#meta')
-    .append('dl').classed('topicDetail dl-horizontal', true);
+
+  var newTitle = d3.select('#title')
+    .append('h1').text(topic.names[0].value);
     
-    //topic
-    newTopic.append('dt').classed('key', true)
-    .text('Topic');
-    newTopic.append('dd').classed('value', true)
-    .text(topic.names[0].value);
+        if(topic.instance_of && typeof topic.instance_of !== 'undefined'){
+  newTitle.append('span').classed('small', true).text(' (');
+    for(i=0; i < topic.instance_of.length; i++){
+      newTitle.append('span').classed('small', true)
+        .text(topic.instance_of[i].substring(topic.instance_of[i].indexOf('#')+1)
+           + ((i === topic.instance_of.length-1) ? '' : ', ')
+        );
+    }
+  newTitle.append('span').classed('small', true).text(')');
+  }
     
     //variant(s)
     if(topic.names[0].variants && typeof topic.names[0].variants !== 'undefined'){
-      newTopic.append('dt').classed('key', true)
-        .text('Varianten');
-      for(i=0; i < topic.names[0].variants.length; i++){
-        newTopic.append('dd').classed('value', true)
-          .text(topic.names[0].variants[i].value);
+     // newTitle.append('span').classed('small', true)
+     //   .text('Varianten');
+     newTitle.append('div')
+      for(i=1; i < topic.names[0].variants.length; i++){
+         newTitle.append('span').classed('small', true).classed('muted', true)
+          .text(topic.names[0].variants[i].value + ((i === topic.names[0].variants.length-1) ? '' : ', '));
       }
-    };
+//console.log('variants');
+//console.log(variants);
+};
+  
+  var newTopic = d3.select('#sources');
+    //.append('dl').classed('topicDetail dl-horizontal', true);
+    
+    //topic DEPRECATED
+   /* newTopic.append('dt').classed('key', true)
+    .text('Topic');
+    newTopic.append('dd').classed('value', true)
+    .text(topic.names[0].value);*/
     
     //TODO: deprecated
     //declaration
@@ -354,23 +377,23 @@ function getTopicDetails(topic, i){
         .text(topic.declaration.bibl);
     };*/
     
-    //instanceOf
-    newTopic.append('dt').classed('key', true)
+    //instanceOf DEPRECATED
+   /* newTopic.append('dt').classed('key', true)
       .text('Klassifizierung');
     for(i=0; i < topic.instance_of.length; i++){
       newTopic.append('dd').classed('value', true)
         .text(topic.instance_of[i].substring(topic.instance_of[i].indexOf('#')+1));
-    };
+    };*/
     
     //occurrence(s)
     if(topic.occurrences && topic.occurrences.length > 0){
-      newTopic.append('dt').classed('key', true)
-        .text('Nachweise');
+      newTopic.append('h2')
+        .text('Fundstellen');
       for(i=0; i < topic.occurrences.length; i++){
       var ref = topic.occurrences[i].value;
       var context = 'occurrence' + i;
       console.log(context);
-      newTopic.append('dd').classed('value', true).attr('id', context);
+      newTopic.append('div').attr('id', context);
           /*.append('a').attr('href', topic.occurrences[i].value)
           .text(topic.occurrences[i].value);*/
             //var content;
@@ -409,6 +432,7 @@ $.ajax({
  * clear Detail area
  */
 function clearTopicDetail(){
+  $('#title').empty();
   $('#meta').empty();
   $('#graph').empty();
   var emptyArray = new Array();
