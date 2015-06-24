@@ -435,6 +435,7 @@ function clearTopicDetail(){
   $('#title').empty();
   $('#meta').empty();
   $('#graph').empty();
+  $('#sources').empty();
   var emptyArray = new Array();
   links = emptyArray;
   nodes = emptyArray;
