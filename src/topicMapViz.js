@@ -346,12 +346,12 @@ function getTopicDetails(topic, i){
   var newTitle = d3.select('#title')
     .append('h1').text(topic.names[0].value);
     
-        if(topic.instance_of && typeof topic.instance_of !== 'undefined'){
-  newTitle.append('span').classed('small', true).text(' (');
+  if(topic.instance_of && typeof topic.instance_of !== 'undefined'){
+    newTitle.append('span').classed('small', true).text(' (');
     for(i=0; i < topic.instance_of.length; i++){
+      var textValue = filterById(topics,topic.instance_of[i].substring(topic.instance_of[i].indexOf(':')+1))[0].names[0].value;
       newTitle.append('span').classed('small', true)
-        .text(topic.instance_of[i].substring(topic.instance_of[i].indexOf('#')+1)
-           + ((i === topic.instance_of.length-1) ? '' : ', ')
+        .text(textValue + ((i === topic.instance_of.length-1) ? '' : ', ')
         );
     }
   newTitle.append('span').classed('small', true).text(')');
