@@ -175,7 +175,10 @@ function drawGraph(localLinks){
        .charge(-100)
        .on("tick", tick)
        .start();
-   
+
+    var drag = force.drag()
+        .on("dragstart", dragstart);
+    
    var svg = d3.select("#graph").append("svg")
        .attr("width", width)
        .attr("height", height)
@@ -194,8 +197,8 @@ function drawGraph(localLinks){
         .attr("id", function(d) {return "node_" + d.name.substring(d.name.indexOf('#')+1); })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
-        .on("dblclick", onclick)
-        .call(force.drag);
+        .on("dblclick", dblclick)
+        .call(drag);
    
    node.append("circle")
        .attr("r", 8);
@@ -234,11 +237,19 @@ function drawGraph(localLinks){
        .attr("r", 8);
   }
   
-  function onclick() {
+  function dblclick() {
     var node = d3.select(this);
     var text = node.select("text").text();
     var id = node.property("id");
     selectTopic('#'+id.substring(id.indexOf('_')+1));
+  }
+  
+  function onclick(d) {
+    d3.select(this).classed("fixed", d.fixed = false);
+  }
+
+  function dragstart(d) {
+    d3.select(this).classed("fixed", d.fixed = true);
   }
 //use event mechanism?
 clearFilters();
