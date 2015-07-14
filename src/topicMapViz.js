@@ -118,7 +118,7 @@ function appendFilters(data1){
       var newEntry = d3.select('#filters-classes-list').append('div').classed('filter', true);
       console.log('building filter for');
       console.log(item);
-      newEntry.append('span').classed('filterLabel', true).text(filterById(topics,'#'+item)[0].names[0].value);
+      newEntry.append('span').classed('filterLabel', true).text((filterById(topics,'#'+item)[0].names[0].value !== 'undefined') ? filterById(topics,'#'+item)[0].names[0].value : 'fallback:'+item );
      
       newEntry.append('a').attr('onclick',"mapHighlight('."+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
     });
@@ -349,6 +349,7 @@ function getTopicDetails(topic, i){
   if(topic.instance_of && typeof topic.instance_of !== 'undefined'){
     newTitle.append('span').classed('small', true).text(' (');
     for(i=0; i < topic.instance_of.length; i++){
+      console.log(topic.instance_of[i]);
       var textValue = filterById(topics,topic.instance_of[i].substring(topic.instance_of[i].indexOf(':')+1))[0].names[0].value;
       newTitle.append('span').classed('small', true)
         .text(textValue + ((i === topic.instance_of.length-1) ? '' : ', ')
