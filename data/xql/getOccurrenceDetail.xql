@@ -13,7 +13,7 @@ declare option exist:serialize "method=xhtml media-type=text/html omit-xml-decla
 declare variable $href := request:get-parameter('href','freidi-referenceSource_RD-tx12.xml#abdon');
 declare variable $docName := substring-before($href, '#');
 declare variable $topicID := substring-after($href, '#');
-declare variable $collectionURI := if(contains($docName, 'librettoSource'))then()else($freidi-tmv:text-root);
+declare variable $collectionURI := if(contains($docName, 'librettoSource'))then('/db/contents/texts/')else($freidi-tmv:text-root);
 declare variable $table :=request:get-parameter('table', 'no');
 declare variable $truncate :=request:get-parameter('truncate', '60');
 
@@ -44,7 +44,7 @@ order by ft:score($hit) descending:)
 
 return (
     element a {
-        attribute class {'btn'},
+        attribute class {'btn btn-default'},
         attribute data-toggle {'collapse'},
         attribute href {concat('#collapse_',$doc//tei:TEI/@xml:id)},
         attribute aria-expand {'false'},
@@ -53,7 +53,12 @@ return (
             attribute class {'caret'},
             fn:string(' ')
         },
-        fn:normalize-space($doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = 'desc')])
+        fn:normalize-space($doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = 'desc')]),
+        string(' '),
+        element span {
+            attribute class {'badge'},
+            count(doc($collectionURI||$docName)//*[range:eq(@key, $topicID)])
+        }
     },
     element div {
         attribute id {concat('collapse_',$doc//tei:TEI/@xml:id)},
