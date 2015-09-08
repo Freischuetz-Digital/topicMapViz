@@ -47,10 +47,12 @@
      }
      
      #nodeDistance {
-      position:relative;
+      position:absolute;
+      float:left;
       width: 73px;
-      top: -95px;
+      /*top: -95px;*/
       font-size: 10px;
+      margin: 3px 0 0 3px;
      }
      #nodeDistance .form-control {
         font-size: 10px;
@@ -88,6 +90,11 @@
      
      .filter_highlight{}
       
+     mark, .mark {
+         padding: 0 !important;
+         background: none !important;
+         background-color: none !important;
+     }
       
 /*d3 graph*/
 .link {
@@ -189,6 +196,15 @@ text {
 <!--                                <h2>Graph</h2>-->
                                     <div id="graph"/>
                                 </div>
+                                <div id="nodeDistance">
+                                    <div class="form-group">
+                                        <label for="sel_distance">Node distance:</label>
+                                        <select class="form-control" id="sel_distance">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -199,15 +215,6 @@ text {
                         </div>
                     </div>
 <!--                    <div class="row">-->
-                    <div id="nodeDistance">
-                        <div class="form-group">
-                            <label for="sel_distance">Node distance:</label>
-                            <select class="form-control" id="sel_distance">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
-                        </div>
-                    </div>
                     <!--</div>-->
                     <div class="row">
                         <div id="sources" class="col-md-12">
