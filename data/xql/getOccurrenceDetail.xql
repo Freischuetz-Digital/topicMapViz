@@ -10,7 +10,7 @@ declare option exist:serialize "method=xhtml media-type=text/html omit-xml-decla
 (: declare option exist:serialize "method=text media-type=text/plain omit-xml-declaration=yes"; :)
 
 
-declare variable $href := request:get-parameter('href','FreiDi_TopicMap_Handbuch.xml#nacht');
+declare variable $href := request:get-parameter('href','freidi-librettoSource_KA-tx4.xml#agathe');
 declare variable $docName := substring-before($href, '#');
 declare variable $topicID := substring-after($href, '#');
 declare variable $collectionURI := if(contains($docName, 'librettoSource'))then('/db/contents/texts/')else($freidi-tmv:text-root);
@@ -169,8 +169,9 @@ element root {
                     }
                 )else(
                     element ol {
-                        for $hit at $i in kwic:get-matches($withMatches)
-                        let $context := $hit/ancestor::*[local-name()=('p','stage','div')][1]
+                        for $hit at $i in $withMatches//exist:match (:kwic:get-matches($withMatches):)
+                        let $expanded := util:expand($hit, "expand-xincludes=no")
+                        let $context := $hit/ancestor::*[local-name()=('sp','lg','l','p','stage','div')][1]
                         let $summary := kwic:get-summary($context, $hit, <config width="{$truncate}" table="{$table}" link="http://www.freischuetz-digital.de/edition/"/>)
                         return
                             element li {
