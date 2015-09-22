@@ -40,3 +40,8 @@ You need ant insalled on your system
 ```shell
 ant
 ```
+
+License
+-------
+
+This package is available under the terms of [GNU GPL-3 License](https://www.gnu.org/licenses/gpl.html) a copy of the license can be found in the repository [gpl-3.0.txt](gpl-3.0.txt).
