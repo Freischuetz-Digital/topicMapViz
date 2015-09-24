@@ -6,7 +6,7 @@ It is intended for vizualizing JTM topic maps.
 
 For development purposes it can be built and served with bower and grunt, a respective test topic map is included as the application is tailored to our data.
 
-Moreover a ant script for building a eXist-db application is included. In the eXist based setup the tmxsl stylesheets by Lars Heuer (published at https://github.com/heuer/tmxsl under Apache License 2.0) will be used for transfroming XTM 2.0 topic maps to JTM 1.1 specification. In order to include theses script you need SVN installed as the repository will be checked out via bower install.
+Moreover a ant script for building a eXist-db application is included. In the eXist based setup the tmxsl stylesheets by Lars Heuer (published at https://github.com/heuer/tmxsl under BSD 3-Clause License) will be used for transfroming XTM 2.0 topic maps to JTM 1.1 specification. In order to include theses script you need SVN installed as the repository will be checked out via bower install.
 
 Setup
 -----
@@ -40,3 +40,8 @@ You need ant insalled on your system
 ```shell
 ant
 ```
+
+License
+-------
+
+This package is available under the terms of [GNU GPL-3 License](https://www.gnu.org/licenses/gpl.html) a copy of the license can be found in the repository [gpl-3.0.txt](gpl-3.0.txt).

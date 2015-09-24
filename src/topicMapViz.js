@@ -118,7 +118,7 @@ function appendFilters(data1){
       var newEntry = d3.select('#filters-classes-list').append('div').classed('filter', true);
       console.log('building filter for');
       console.log(item);
-      newEntry.append('span').classed('filterLabel', true).text(filterById(topics,'#'+item)[0].names[0].value);
+      newEntry.append('span').classed('filterLabel', true).text((filterById(topics,'#'+item)[0].names[0].value !== 'undefined') ? filterById(topics,'#'+item)[0].names[0].value : 'fallback:'+item );
      
       newEntry.append('a').attr('onclick',"mapHighlight('."+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
     });
@@ -175,7 +175,10 @@ function drawGraph(localLinks){
        .charge(-100)
        .on("tick", tick)
        .start();
-   
+
+    var drag = force.drag()
+        .on("dragstart", dragstart);
+    
    var svg = d3.select("#graph").append("svg")
        .attr("width", width)
        .attr("height", height)
@@ -194,8 +197,8 @@ function drawGraph(localLinks){
         .attr("id", function(d) {return "node_" + d.name.substring(d.name.indexOf('#')+1); })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
-        .on("dblclick", onclick)
-        .call(force.drag);
+        .on("dblclick", dblclick)
+        .call(drag);
    
    node.append("circle")
        .attr("r", 8);
@@ -234,11 +237,19 @@ function drawGraph(localLinks){
        .attr("r", 8);
   }
   
-  function onclick() {
+  function dblclick() {
     var node = d3.select(this);
     var text = node.select("text").text();
     var id = node.property("id");
     selectTopic('#'+id.substring(id.indexOf('_')+1));
+  }
+  
+  function onclick(d) {
+    d3.select(this).classed("fixed", d.fixed = false);
+  }
+
+  function dragstart(d) {
+    d3.select(this).classed("fixed", d.fixed = true);
   }
 //use event mechanism?
 clearFilters();
@@ -335,12 +346,13 @@ function getTopicDetails(topic, i){
   var newTitle = d3.select('#title')
     .append('h1').text(topic.names[0].value);
     
-        if(topic.instance_of && typeof topic.instance_of !== 'undefined'){
-  newTitle.append('span').classed('small', true).text(' (');
+  if(topic.instance_of && typeof topic.instance_of !== 'undefined'){
+    newTitle.append('span').classed('small', true).text(' (');
     for(i=0; i < topic.instance_of.length; i++){
+      console.log(topic.instance_of[i]);
+      var textValue = filterById(topics,topic.instance_of[i].substring(topic.instance_of[i].indexOf(':')+1))[0].names[0].value;
       newTitle.append('span').classed('small', true)
-        .text(topic.instance_of[i].substring(topic.instance_of[i].indexOf('#')+1)
-           + ((i === topic.instance_of.length-1) ? '' : ', ')
+        .text(textValue + ((i === topic.instance_of.length-1) ? '' : ', ')
         );
     }
   newTitle.append('span').classed('small', true).text(')');
@@ -435,6 +447,7 @@ function clearTopicDetail(){
   $('#title').empty();
   $('#meta').empty();
   $('#graph').empty();
+  $('#sources').empty();
   var emptyArray = new Array();
   links = emptyArray;
   nodes = emptyArray;
@@ -610,7 +623,7 @@ $.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   
   for (i=0; i < topics.length; i++) {
     
-    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type' && topics[i].instance_of !='ii:#variant-type') {
+    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type' && topics[i].instance_of !='ii:#variant-type' &&topics[i].item_identifiers != '#topic-description') {
       topicsFiltered.push(topics[i]);
     }
   }

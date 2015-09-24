@@ -13,6 +13,10 @@
     
       /*bootstrap framework*/
       
+      #title {
+        min-height:80px;
+      }
+      
       #meta-container .value .meta {
         font-weight:bold;
       }
@@ -27,9 +31,32 @@
      }
      
      #graph-container {
-      height:400px;
+      min-height:300px;
      // background-image:-moz-linear-gradient(left center , rgba(60, 60, 60, 0.2), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(60, 60, 60, 0.2));
       border-radius:10px;
+      border: 1px solid #eee;
+     }
+        
+     #sources span.badge {
+      float:right;
+     }
+     
+     #sources a.btn {
+     width:50%;
+      text-align:left;
+     }
+     
+     #nodeDistance {
+      position:absolute;
+      float:left;
+      width: 73px;
+      /*top: -95px;*/
+      font-size: 10px;
+      margin: 3px 0 0 3px;
+     }
+     #nodeDistance .form-control {
+        font-size: 10px;
+        height: 24px;
      }
      
      #meta-container {
@@ -40,6 +67,9 @@
          font-size:1.2em;
      }
      
+     #filters-container {
+      min-height:340px;
+     }
      
     #filters-classes-list, #filters-nodes-list {
          height: 300px;
@@ -60,6 +90,11 @@
      
      .filter_highlight{}
       
+     mark, .mark {
+         padding: 0 !important;
+         background: none !important;
+         background-color: none !important;
+     }
       
 /*d3 graph*/
 .link {
@@ -153,13 +188,22 @@ text {
                 <div class="col-md-10">
                     <div class="row">
                         <div id="title"/>
-                        </div>
-                <div class="row top-buffer">
+                    </div>
+                    <div class="row top-buffer">
                         <div class="col-md-6">
                             <div class="row">
-                                <div id="graph-container" class="col-md-12" style="resize:both; overflow:auto;">
+                                <div id="graph-container" class="col-md-12" style="overflow:auto;">
 <!--                                <h2>Graph</h2>-->
                                     <div id="graph"/>
+                                </div>
+                                <div id="nodeDistance">
+                                    <div class="form-group">
+                                        <label for="sel_distance">Node distance:</label>
+                                        <select class="form-control" id="sel_distance">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -170,17 +214,8 @@ text {
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="sel_distance">Node distance:</label>
-                                <select class="form-control" id="sel_distance">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="row">-->
+                    <!--</div>-->
                     <div class="row">
                         <div id="sources" class="col-md-12">
 <!--                        <h2>Fundstellen</h2>-->
