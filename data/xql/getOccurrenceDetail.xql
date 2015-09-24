@@ -10,12 +10,14 @@ declare option exist:serialize "method=xhtml media-type=text/html omit-xml-decla
 (: declare option exist:serialize "method=text media-type=text/plain omit-xml-declaration=yes"; :)
 
 
-declare variable $href := request:get-parameter('href','freidi-librettoSource_KA-tx4.xml#agathe');
+declare variable $href := request:get-parameter('href','freidi-referenceSource_KA-tx4.xml#agathe');
 declare variable $docName := substring-before($href, '#');
 declare variable $topicID := substring-after($href, '#');
-declare variable $collectionURI := if(contains($docName, 'librettoSource'))then('/db/contents/texts/')else($freidi-tmv:text-root);
+declare variable $collectionURI := if(contains($docName, 'librettoSource'))then($freidi-tmv:librettoSource-root)else($freidi-tmv:referenceSource-root);
 declare variable $table :=request:get-parameter('table', 'no');
 declare variable $truncate :=request:get-parameter('truncate', '60');
+
+declare variable $containingElements := ('sp','lg','l','p','stage','div');
 
 let $doc := doc($collectionURI||$docName)
 let $xslt := doc($config:app-root||'/data/xslt/getOccurenceDetail.xsl')
@@ -152,7 +154,7 @@ element root {
                     element table {
                         attribute class {'table table-striped table-hover table-responsive'},
                         for $hit at $i in kwic:get-matches($withMatches)
-                        let $context := $hit/ancestor::*[local-name()=('p','stage','div')][1]
+                        let $context := $hit/ancestor::*[local-name()=$containingElements][1]
                         let $summary := kwic:get-summary($context, $hit, <config width="{$truncate}" table="{$table}" link="http://www.freischuetz-digital.de/edition/"/>)
                         return
                             element tr {
@@ -170,8 +172,8 @@ element root {
                 )else(
                     element ol {
                         for $hit at $i in $withMatches//exist:match (:kwic:get-matches($withMatches):)
-                        let $expanded := util:expand($hit, "expand-xincludes=no")
-                        let $context := $hit/ancestor::*[local-name()=('sp','lg','l','p','stage','div')][1]
+                        let $expanded := util:expand($hit, "expand-xincluldes=no")
+                        let $context := $hit/ancestor::*[local-name()=$containingElements][1]
                         let $summary := kwic:get-summary($context, $hit, <config width="{$truncate}" table="{$table}" link="http://www.freischuetz-digital.de/edition/"/>)
                         return
                             element li {

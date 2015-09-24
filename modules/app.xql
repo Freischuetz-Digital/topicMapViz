@@ -4,8 +4,14 @@ module namespace freidi-tmv="http://www.freischuetz-digital.de/topicMapViz/app";
 
 import module namespace templates="http://exist-db.org/xquery/templates" ;
 import module namespace config="http://www.freischuetz-digital.de/topicMapViz/config" at "config.xqm";
+import module namespace expath="http://expath.org/ns/pkg" at "expath.xqm";
 
-declare variable $freidi-tmv:text-root := "/db/contents/referenceTexts/";
+declare variable $freidi-tmv:referenceSource-root := if(expath:pkg-installed('http://www.freischuetz-digital.de/xars/referenceSources'))
+                                                   then(expath:pkg-get-root('http://www.freischuetz-digital.de/xars/referenceSources'))
+                                                   else('please make sure FreiDi:referenceSources are installed properly');
+declare variable $freidi-tmv:librettoSource-root := if(expath:pkg-installed('http://www.freischuetz-digital.de/xars/librettoSources'))
+                                                  then(expath:pkg-get-root('http://www.freischuetz-digital.de/xars/librettoSources'))
+                                                  else('please make sure FreiDi:librettoSources are installed properly');
 
 (:~
  : This is a sample templating function. It will be called by the templating module if
