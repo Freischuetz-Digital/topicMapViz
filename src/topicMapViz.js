@@ -623,7 +623,7 @@ $.getJSON("data/xql/getJSONtopicMap.xql", function(data){
   
   for (i=0; i < topics.length; i++) {
     
-    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type' && topics[i].instance_of !='ii:#variant-type') {
+    if(topics[i].names && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/association-type' && topics[i].instance_of !='ii:http://psi.ontopia.net/ontology/topic-type' && topics[i].instance_of !='ii:#variant-type' &&topics[i].item_identifiers != '#topic-description') {
       topicsFiltered.push(topics[i]);
     }
   }
