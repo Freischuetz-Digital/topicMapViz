@@ -139,7 +139,7 @@ element root {
                     attribute class {'caret'},
                     fn:string(' ')
                 },
-                fn:normalize-space($doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = 'desc')]),
+                for $title in $doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = ('desc','sub'))] return fn:normalize-space($title//text()),
                 string(' '),
                 element span {
                     attribute class {'badge'},
