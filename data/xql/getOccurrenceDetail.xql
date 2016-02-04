@@ -3,6 +3,8 @@ xquery version "3.0";
 import module namespace config="http://www.freischuetz-digital.de/topicMapViz/config" at "../../modules/config.xqm";
 import module namespace freidi-tmv="http://www.freischuetz-digital.de/topicMapViz/app" at "../../modules/app.xql";
 import module namespace kwic="http://exist-db.org/xquery/kwic";
+import module namespace expath="http://expath.org/ns/pkg";
+
 
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 
@@ -10,13 +12,17 @@ declare option exist:serialize "method=xhtml media-type=text/html omit-xml-decla
 (: declare option exist:serialize "method=text media-type=text/plain omit-xml-declaration=yes"; :)
 
 
-declare variable $href := request:get-parameter('href','freidi-referenceSource_KA-tx4.xml#agathe');
+declare variable $href := request:get-parameter('href','');
 declare variable $docName := substring-before($href, '#');
 declare variable $topicID := substring-after($href, '#');
 declare variable $collectionURI := if(contains($docName, 'librettoSource'))then($freidi-tmv:librettoSource-root)else($freidi-tmv:referenceSource-root);
 declare variable $table :=request:get-parameter('table', 'no');
 declare variable $truncate :=request:get-parameter('truncate', '60');
-
+declare variable $freidi-EO-root := if(expath:pkg-installed('http://www.edirom.de/apps/EdiromOnline'))
+                                    then(expath:pkg-get-root('http://www.edirom.de/apps/EdiromOnline'))
+                                    else();
+declare variable $requestUrl := request:get-url();
+declare variable $freidi-EO-url := substring-before($requestUrl,'apps/') || 'apps/' || substring-after($freidi-EO-root,'apps/');
 declare variable $containingElements := ('sp','lg','l','p','stage','div');
 
 let $doc := doc($collectionURI||$docName)
@@ -97,9 +103,9 @@ element root {
                                     element mark {
                                         element a {
                                             attribute target {'_blank'},
-                                            attribute class {},
-                                            attribute href {'http://www.freischuetz-digital.de/edition/'},
-                                            $hit
+                                            attribute class {}, (:http://rubin.upb.de:8092:)
+                                        attribute href {$freidi-EO-url || '?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id}, 
+                                            string($hit)
                                         }
                                     },
                                    element span{
@@ -153,17 +159,22 @@ element root {
                 if($table = 'yes') then(
                     element table {
                         attribute class {'table table-striped table-hover table-responsive'},
-                        for $hit at $i in kwic:get-matches($withMatches)
+                        for $hit at $i in $withMatches//exist:match (:kwic:get-matches($withMatches):)
                         let $context := $hit/ancestor::*[local-name()=$containingElements][1]
                         let $summary := kwic:get-summary($context, $hit, <config width="{$truncate}" table="{$table}" link="http://www.freischuetz-digital.de/edition/"/>)
                         return
                             element tr {
                                 element td {$i},
                                 $summary//td[@class = 'previous'],
-                                element td {
+                                element td {(:TODO link to Edirom:)
                                     attribute class {'info'},
                                     element mark {
-                                        $summary//td[@class = 'hi']/node()
+                                        element a {
+                                            attribute target {'_blank'},
+                                            $summary//a/@class, (: http://rubin.upb.de:8092 :)
+                                            attribute href {'/exist/apps/EdiromOnline/?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
+                                            string($hit)
+                                        }
                                     }
                                 },
                                 $summary//td[@class = 'following']
@@ -181,9 +192,8 @@ element root {
                                 element mark {
                                     element a {
                                         attribute target {'_blank'},
-                                        $summary//a/@class,
-                                        $summary//a/@href,
-                                        $summary//a/node()
+                                        $summary//a/@class, (: http://rubin.upb.de:8092 :)
+                                        attribute href {'/exist/apps/EdiromOnline/?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id}, string($hit)
                                     }
                                 },
                                 $summary//span[@class='following']
