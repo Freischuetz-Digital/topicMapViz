@@ -69,7 +69,8 @@ module.exports = (grunt) ->
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
               'bower_components/bootstrap/js/tab.js',
               'bower_components/d3/d3.min.js',
-              'bower_components/bootstrap-list-filter/bootstrap-list-filter.min.js']
+              'bower_components/bootstrap-list-filter/bootstrap-list-filter.min.js',
+              'bower_components/spectrum/spectrum.js']
         dest: 'dist/bower.js'
 
     copy:
