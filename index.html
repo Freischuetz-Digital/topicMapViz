@@ -7,9 +7,26 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen"/>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen"/>
         <script type="text/javascript" src="dist/bower.js" charset="utf-8"/>
+        <!-- TODO -->
+    <script type="text/javascript">
+            $.fn.spectrum.load = false;
+        </script>
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/bgrins/spectrum/master/spectrum.css"/>
+        <!-- / TODO -->
         <style type="text/css">
         
-        
+            body {
+                padding-bottom: 50px;
+            }
+
+            #filters-nodes-list button.btn, #filters-classes-list button.btn{
+                text-align:left !important;
+            }
+            
+            #filters-nodes-list button input, #filters-classes-list button input {
+                float:right;
+                margin-left: 6px;
+            }        
     
       /*bootstrap framework*/
       
@@ -73,7 +90,7 @@
      
     #filters-classes-list, #filters-nodes-list {
          height: 300px;
-         overflow: auto;
+         overflow-y: scroll;
      }
      .filters-classes,.filters-nodes {
          display:table;
@@ -233,6 +250,5 @@ text {
     </script>
         <script type="text/javascript" src="src/topicMapViz.js"/>
         <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"/>
-<!--      <script type="text/javascript" src="src/demo.js" charset="utf-8"/>-->
-    </body>
+</body>
 </html>
