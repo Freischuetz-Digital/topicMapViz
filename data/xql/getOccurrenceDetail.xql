@@ -82,11 +82,17 @@ element root {
                                     element td {
                                         attribute class {'info'},
                                         element mark {
-                                            $hit
+                                            element a {
+                                                attribute target {'_blank'},
+                                                attribute class {},
+                                                attribute href {$freidi-EO-url || '?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/@xml:id}, 
+                                                string($hit/tei:seg)
+                                            }
                                         }
                                     },
                                     element td {
-                                        attribute class {'following'}
+                                        attribute class {'following'},
+                                        substring(substring-after($hit,$hit/tei:seg),0, $truncate), '...'
                                     }
                                 }
                         }
@@ -104,12 +110,13 @@ element root {
                                         element a {
                                             attribute target {'_blank'},
                                             attribute class {}, (:http://rubin.upb.de:8092:)
-                                        attribute href {$freidi-EO-url || '?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id}, 
-                                            string($hit)
+                                        attribute href {$freidi-EO-url || '?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/@xml:id}, 
+                                            string($hit/tei:seg)
                                         }
                                     },
                                    element span{
-                                       attribute class {'following'}
+                                        attribute class {'following'},
+                                        substring(substring-after($hit,$hit/tei:seg),0, $truncate), '...'
                                    }
                                 }
                         }
