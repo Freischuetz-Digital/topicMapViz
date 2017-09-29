@@ -8,8 +8,6 @@
   
   <target name="xar">
     <mkdir dir="${build.dir}"/>
-    <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar"
-      excludes="**/bower_components/*"
-      includes="templates/*, about.html, controller.xql, modules/*, error-page.html, repo.xml, expath-pkg.xml, index.html, data/**, src/**,bower_components/bootstrap/dist/css/bootstrap.min.css,bower_components/bootstrap/dist/css/bootstrap-theme.min.css,dist/**, bower_components/bootstrap/dist/js/bootstrap.min.js, topicMaps/FreiDi_TopicMap_2.xml"/>
+    <zip basedir="${build.dir}" destfile="${xar.dir}/${project.app}-${project.version}.xar"/>
   </target>
 </project>
