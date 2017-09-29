@@ -6,8 +6,9 @@
   <property name="build.dir" value="build"/>
   <property name="xar.dir" value="${build.dir}-xar"/>
   
-  <target name="xar">
     <mkdir dir="${build.dir}"/>
+  <target name="xar" depends="build">
+    <mkdir dir="${xar.dir}"/>
     <zip basedir="${build.dir}" destfile="${xar.dir}/${project.app}-${project.version}.xar"/>
   </target>
 </project>
