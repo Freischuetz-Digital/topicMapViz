@@ -4,15 +4,16 @@
         <title>FreiDi-topicMapViz</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen"/>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen"/>
-        <script type="text/javascript" src="dist/bower.js" charset="utf-8"/>
+        <link rel="stylesheet" href="resources/bootstrap.min.css" media="screen"/>
+        <link rel="stylesheet" href="resources/bootstrap-theme.min.css" media="screen"/>
+        <script type="text/javascript" src="resources/bower.js" charset="utf-8"/>
         <!-- TODO -->
-    <script type="text/javascript">
+        <script type="text/javascript">
             $.fn.spectrum.load = false;
         </script>
         <link rel="stylesheet" href="https://raw.githubusercontent.com/bgrins/spectrum/master/spectrum.css"/>
         <!-- / TODO -->
+
         <style type="text/css">
         
             body {
@@ -28,143 +29,140 @@
                 margin-left: 6px;
             }        
     
-      /*bootstrap framework*/
-      
-      #title {
-        min-height:80px;
-      }
-      
-      #meta-container .value .meta {
-        font-weight:bold;
-      }
-      
-      #meta-container .value li {
-        margin: 4px 0;
-      }
-      
-     #topicList {
-      height: 700px;
-      overflow-y: scroll;
-     }
-     
-     #graph-container {
-      min-height:300px;
-     // background-image:-moz-linear-gradient(left center , rgba(60, 60, 60, 0.2), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(60, 60, 60, 0.2));
-      border-radius:10px;
-      border: 1px solid #eee;
-     }
-        
-     #sources span.badge {
-      float:right;
-     }
-     
-     #sources a.btn {
-     width:50%;
-      text-align:left;
-     }
-     
-     #nodeDistance {
-      position:absolute;
-      float:left;
-      width: 73px;
-      /*top: -95px;*/
-      font-size: 10px;
-      margin: 3px 0 0 3px;
-     }
-     #nodeDistance .form-control {
-        font-size: 10px;
-        height: 24px;
-     }
-     
-     #meta-container {
-      height: 400px;
-     }
-     
-     #meta {
-         font-size:1.2em;
-     }
-     
-     #filters-container {
-      min-height:340px;
-     }
-     
-    #filters-classes-list, #filters-nodes-list {
-         height: 300px;
-         overflow-y: scroll;
-     }
-     .filters-classes,.filters-nodes {
-         display:table;
-     }
-     
-     .filter{
-         display:table-row;
-     }
+            /*bootstrap framework*/
+            
+            #title {
+                min-height:80px;
+            }
+            
+            #meta-container .value .meta {
+                font-weight:bold;
+            }
+            
+            #meta-container .value li {
+                margin: 4px 0;
+            }
+            
+            #topicList {
+                height: 700px;
+                overflow-y: scroll;
+            }
+            
+            #graph-container {
+                min-height:300px;
+                // background-image:-moz-linear-gradient(left center , rgba(60, 60, 60, 0.2), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(60, 60, 60, 0.2));
+                border-radius:10px;
+                border: 1px solid #eee;
+            }
+            
+            #sources span.badge {
+                float:right;
+            }
+            
+            #sources a.btn {
+                width:50%;
+                text-align:left;
+            }
+            
+            #nodeDistance {
+                position:absolute;
+                float:left;
+                width: 73px;
+                /*top: -95px;*/
+                font-size: 10px;
+                margin: 3px 0 0 3px;
+            }
+            #nodeDistance .form-control {
+                font-size: 10px;
+                height: 24px;
+            }
+            
+            #meta-container {
+                height: 400px;
+            }
+            
+            #meta {
+                font-size:1.2em;
+            }
+            
+            #filters-container {
+                min-height:340px;
+            }
+            
+            #filters-classes-list, #filters-nodes-list {
+                height: 300px;
+                overflow-y: scroll;
+            }
+            .filters-classes,.filters-nodes {
+                display:table;
+            }
+            
+            .filter{
+                display:table-row;
+            }
+            
+            .filterLabel,.filter_highlight{
+                display: table-cell;
+                padding: 0 6px;
+            }
+            
+            .filter_highlight{}
+            
+            mark, .mark {
+                padding: 0 !important;
+                background: none !important;
+                background-color: none !important;
+            }
 
-     .filterLabel,.filter_highlight{
-         display: table-cell;
-         padding: 0 6px;
-     }
-     
-     .filter_highlight{}
-      
-     mark, .mark {
-         padding: 0 !important;
-         background: none !important;
-         background-color: none !important;
-     }
-      
-/*d3 graph*/
-.link {
-  fill: none;
-  stroke: #666;
-  stroke-width: 1.5px;
-}
-
-.link.highlight {
-    stroke: #3af;
-}
-
-.node circle {
-  fill: #aaa;
-  stroke: #bbb;
-  stroke-width: 1.5px;
-}
-
-.node.highlight circle {
-    fill: #18d;
-}
-
-.node.distance_1{}
-
-.node.distance_2 circle{
-    fill: #ccc;
-}
-
-.node.distance_2.highlight circle {
-    fill: #3af;
-}
-
-text {
-  font: 12px sans-serif;
-  pointer-events: none;
-}
-      /* topicDetail*/
-      
-      #meta .key{
-          font-weight:bold;
-      }
-      dl.topicDetail {
-          display: table;
-      }
-      
-    
-      dl.topicDetail dt, dt+dd {
-          margin-top: 12px;
-      }
-
-      
-      
-      
+            /*d3 graph*/
+            .link {
+                fill: none;
+                stroke: #666;
+                stroke-width: 1.5px;
+            }
+            
+            .link.highlight {
+                stroke: #3af;
+            }
+            
+            .node circle {
+                fill: #aaa;
+                stroke: #bbb;
+                stroke-width: 1.5px;
+            }
+            
+            .node.highlight circle {
+                fill: #18d;
+            }
+            
+            .node.distance_1{}
+            
+            .node.distance_2 circle{
+                fill: #ccc;
+            }
+            
+            .node.distance_2.highlight circle {
+                fill: #3af;
+            }
+            
+            text {
+                font: 12px sans-serif;
+                pointer-events: none;
+            }
+            /* topicDetail*/
+            
+            #meta .key{
+                font-weight:bold;
+            }
+            
+            dl.topicDetail {
+                display: table;
+            }
+            
+            
+            dl.topicDetail dt, dt+dd {
+                margin-top: 12px;
+            }
     </style>
     </head>
     <body>
@@ -247,8 +245,9 @@ text {
  //     var links5 = [{"source": "nacht", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "mond", "target": "nacht", "type": "part-of"},{"source": "mond", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kugelguss", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "wald", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "kreuzweg", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "max", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "sammiel", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "caspar", "target": "wolfsschluchtszene", "type": "part-of"},{"source": "form", "target": "kugelguss", "type": "used-for"},{"source": "kohlen", "target": "kugelguss", "type": "used-for"},{"source": "blei", "target": "kugelguss", "type": "used-for"},{"source": "max", "target": "jaeger", "type": "same-as"},{"source": "max", "target": "wilhelm", "type": "comparable-with"},{"source": "max", "target": "agathe", "type": "related-to"},{"source": "wilhelm", "target": "jaeger", "type": "same-as"},{"source": "wilhelm", "target": "pauline", "type": "related-to"}];
  //     var links6 = [{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "kranz", "target": "braut", "type": "#belong-to"}];
  //     var links7 = [{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "max", "target": "braeutigam", "type": "#is-a"},{"source": "braeutigam", "target": "braut", "type": "#affectionate-to"},{"source": "wilhelm", "target": "braeutigam", "type": "#is-a"},{"source": "edward", "target": "braeutigam", "type": "#is-a"},{"source": "benno", "target": "braeutigam", "type": "#same-as"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "max", "target": "agathe", "type": "#affectionate-to"},{"source": "agathe", "target": "braut", "type": "#is-a"},{"source": "agathe", "target": "tochter", "type": "#is-a"},{"source": "agathe", "target": "maedchen", "type": "#is-a"},{"source": "agathe", "target": "pauline", "type": "#comparable-with"},{"source": "agathe", "target": "kaethchen", "type": "#comparable-with"},{"source": "agathe", "target": "elfride", "type": "#comparable-with"},{"source": "agathe", "target": "leonore", "type": "#comparable-with"},{"source": "agathe", "target": "juliane", "type": "#comparable-with"},{"source": "agathe", "target": "bertha", "type": "#comparable-with"},{"source": "agathe", "target": "opfer", "type": "#same-as"},{"source": "agathe", "target": "taube", "type": "#same-as"},{"source": "agathe", "target": "grillen", "type": "#undergo"},{"source": "annchen", "target": "agathe", "type": "#friendly-related-to"},{"source": "kranz", "target": "agathe", "type": "#belong-to"},{"source": "agathe", "target": "traum", "type": "#undergo"},{"source": "eremit", "target": "agathe", "type": "#friendly-related-to"},{"source": "rosen", "target": "agathe", "type": "#belong-to"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "wilhelm", "target": "pauline", "type": "#affectionate-to"},{"source": "agathe", "target": "pauline", "type": "#comparable-with"},{"source": "pauline", "target": "braut", "type": "#same-as"},{"source": "pauline", "target": "tochter", "type": "#same-as"},{"source": "pauline", "target": "traum", "type": "#undergo"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "wilhelm", "target": "kaethchen", "type": "#affectionate-to"},{"source": "agathe", "target": "kaethchen", "type": "#comparable-with"},{"source": "kaethchen", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "agathe", "target": "elfride", "type": "#comparable-with"},{"source": "elfride", "target": "braut", "type": "#same-as"},{"source": "elfride", "target": "traum", "type": "#undergo"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "agathe", "target": "juliane", "type": "#comparable-with"},{"source": "juliane", "target": "braut", "type": "#same-as"},{"source": "juliane", "target": "traum", "type": "#undergo"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "schleier", "target": "braut", "type": "#belong-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "brautjungfern", "target": "braut", "type": "#friendly-related-to"},{"source": "kranz", "target": "brautjungfern", "type": "#belong-to"},{"source": "brautjungfern", "target": "reigen", "type": "#undergo"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "braut", "target": "hochzeit", "type": "#undergo"},{"source": "reigen", "target": "hochzeit", "type": "#part-of"},{"source": "kranz", "target": "braut", "type": "#belong-to"},{"source": "kranz", "target": "braut", "type": "#belong-to"},{"source": "myrte", "target": "kranz", "type": "#part-of"},{"source": "lavendel", "target": "kranz", "type": "#part-of"},{"source": "seide", "target": "kranz", "type": "#part-of"},{"source": "rosmarin", "target": "kranz", "type": "#part-of"},{"source": "thymian", "target": "kranz", "type": "#part-of"},{"source": "silber", "target": "kranz", "type": "#part-of"},{"source": "kranz", "target": "winden", "type": "#used-for"},{"source": "kranz", "target": "brautjungfern", "type": "#belong-to"},{"source": "kranz", "target": "agathe", "type": "#belong-to"}];
-    </script>
-        <script type="text/javascript" src="src/topicMapViz.js"/>
-        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"/>
-</body>
+        </script>
+        <script type="text/javascript" src="resources/FreiDi.topicMapViz.js"/>
+        <!--<script type="text/javascript" src="resources/bootstrap.min.js"/>-->
+<!--      <script type="text/javascript" src="src/demo.js" charset="utf-8"/>-->
+    </body>
 </html>
