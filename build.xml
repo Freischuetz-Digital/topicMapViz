@@ -6,6 +6,10 @@
   <property name="build.dir" value="build"/>
   <property name="xar.dir" value="${build.dir}-xar"/>
   
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+  
     <mkdir dir="${build.dir}"/>
   <target name="xar" depends="build">
     <mkdir dir="${xar.dir}"/>
