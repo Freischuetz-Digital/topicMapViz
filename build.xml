@@ -10,7 +10,28 @@
     <delete dir="${build.dir}"/>
   </target>
   
+  <target name="build" depends="clean">
     <mkdir dir="${build.dir}"/>
+    <copy encoding="UTF-8" todir="${build.dir}">
+      <!--<fileset dir="templates/"/>
+      <fileset dir="modules/"/>
+      <fileset dir="data/"/>-->
+      <fileset dir="." excludes="${build.dir}, bower_components/**, build-xar/**, Gruntfile.coffee, package.json, node_modules/**, bower.json, build.xml, readme.md, tools/**, dist/**, src/**"/>
+<!--      <fileset dir="." includes="dist/**"/>-->
+    </copy>
+    <mkdir dir="${build.dir}/resources"/>
+    <copy todir="${build.dir}/resources">
+      <file file="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <file file="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+      <file file="bower_components/bootstrap/dist/js/bootstrap.min.js"/>
+      <file file="bower_components/jquery/dist/jquery.min.map"/>
+      <file file="dist/FreiDi.topicMapViz.js"/>
+      <file file="dist/FreiDi.topicMapViz.min.js"/>
+      <file file="dist/bower.js"/>
+    </copy>
+    <!-- ,bower_components/bootstrap/jquery/dist/jquery.min.js -->
+  </target>
+  
   <target name="xar" depends="build">
     <mkdir dir="${xar.dir}"/>
     <zip basedir="${build.dir}" destfile="${xar.dir}/${project.app}-${project.version}.xar"/>
