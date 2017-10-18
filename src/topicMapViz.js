@@ -95,32 +95,66 @@ function appendFilters(data1){
     d3.select('#filters').append('div').attr('id','filters-nodes').classed('col-md-6', true)
      .append('h4').text('Topics');
      
-   d3.select('#filters-nodes').append('div').attr('id','filters-nodes-list');
+   d3.select('#filters-nodes').append('div').attr('id','filters-nodes-list').classed('btn-group-vertical', true);
   
    nodeNames.forEach(function(item, i){
-       var newEntry = d3.select('#filters-nodes-list').append('div').classed('filter', true);
-      
-      newEntry.append('span').classed('filterLabel', true).text(item.name);
-     
-      newEntry.append('a').attr('onclick',"mapHighlight('#"+item.id+"')").classed('filter_highlight', true).text('highlight');
+      var newEntry = d3.select('#filters-nodes-list');
        
+      var col =('00000' + (Math.floor(Math.random()*(1<<24)|0)+100000).toString(16)).slice(-6);
+      
+      newEntry.append('button')
+                    .attr('id', 'button-'+item.id)
+                    .classed('btn', true)
+                    .classed('btn-default', true)
+                    .text(item.name)
+                    .append('input').attr('type', 'color')
+                        .classed('basic', true)
+                        .classed('spectrum', true)
+                        .attr('id',item.id + 'input')
+                        .attr('value','#'+ col)
+                        .attr('disabled', true);
+        //TODO reflect color-change in highlight
+       //$(#picker).spectrum("get");
        
    });
+    $('#filters-nodes-list button').click(function(){
+        var ident = this.id.substring(this.id.indexOf('-')+1);
+        console.log(this);
+        var col = $('#'+ this.id +' .spectrum')[0].attributes.value.value;
+        console.log(col);
+        mapHighlight('#'+ident);
+    });
   }
   
   if(associationClasses.length > 0){
     d3.select('#filters').append('div').attr('id','filters-classes').classed('col-md-6', true)
       .append('h4').text('Relationen');
     
-    d3.select('#filters-classes').append('div').attr('id','filters-classes-list');
+    d3.select('#filters-classes').append('div').attr('id','filters-classes-list').classed('btn-group-vertical', true);
     
     associationClasses.forEach(function(item, i){
-      var newEntry = d3.select('#filters-classes-list').append('div').classed('filter', true);
-      console.log('building filter for');
-      console.log(item);
-      newEntry.append('span').classed('filterLabel', true).text((filterById(topics,'#'+item)[0].names[0].value !== 'undefined') ? filterById(topics,'#'+item)[0].names[0].value : 'fallback:'+item );
-     
-      newEntry.append('a').attr('onclick',"mapHighlight('."+item.substring(item.indexOf('#')+1)+"')").classed('filter_highlight', true).text('highlight');
+      var newEntry = d3.select('#filters-classes-list')
+        var col = ('00000' + (Math.floor(Math.random()*(1<<24)|0)+100000).toString(16)).slice(-6);
+
+      newEntry.append('button')
+                    .attr('id', 'button-'+item)
+                    .classed('btn', true)
+                    .classed('btn-default', true)
+                    .text((filterById(topics,'#'+item)[0].names[0].value !== 'undefined') ? filterById(topics,'#'+item)[0].names[0].value : 'fallback:'+item )
+                    .append('input').attr('type', 'color')
+                        .classed('basic', true)
+                        .classed('spectrum', true)
+                        .attr('id',item + 'input')
+                        .attr('value','#'+ col)
+                        .attr('disabled', true);
+    });
+    
+    $('#filters-classes-list button').click(function(){
+        var ident = this.id.substring(this.id.indexOf('-')+1);
+        console.log(ident);
+        var col = $('#'+ this.id +' .spectrum')[0].attributes.value.value;
+        console.log(col);
+        mapHighlight("."+ident);
     });
   }
   
@@ -139,13 +173,33 @@ function clearFilters(){
  */
 function mapHighlight(identifier){
   //TODO impement toggle
+  console.log(identifier);
+  var color = $('#button-'+ identifier.substring(1) +' .spectrum')[0].attributes.value.value;
   var obj = $($('#graph '+identifier));
+  console.log(color);
   var highlight_status = obj.attr('class').indexOf('highlight') > -1;
   console.log(highlight_status);
   if(highlight_status){
     obj.attr('class', obj.attr('class').replace(' highlight',''));
+    
+    $.each(obj, function(index,item){
+        if(identifier.substring(0,1) === '#'){
+            item.childNodes[0].style.fill = '';
+        } else {
+            item.style.stroke = '';
+        }
+});
+    
   }else{
+  console.log(identifier.substring(0,1));
     obj.attr('class', obj.attr('class') + ' highlight');
+    $.each(obj, function(index,item){
+        if(identifier.substring(0,1) === '#'){
+            item.childNodes[0].style.fill = color;
+        } else {
+            item.style.stroke = color;
+        }
+    });
   }
 }
 
