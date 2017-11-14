@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="xar" name="proofMEIdata">
+<project default="xar" name="FreiDi.topicMapViz">
   
   <property name="project.version" value="0.9.2-beta"/>
-  <property name="project.app" value="FreiDi-topicMapViz"/>
+  <property name="project.app" value="FreiDi.topicMapViz"/>
   <property name="build.dir" value="build"/>
+  <property name="xar.dir" value="${build.dir}-xar"/>
   
-  <target name="xar">
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+  
+  <target name="build" depends="clean">
     <mkdir dir="${build.dir}"/>
-    <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar"
-      excludes="**/bower_components/*"
-      includes="templates/*, about.html, controller.xql, modules/*, error-page.html, repo.xml, expath-pkg.xml, index.html, data/**, src/**,bower_components/bootstrap/dist/css/bootstrap.min.css,bower_components/bootstrap/dist/css/bootstrap-theme.min.css,dist/**, bower_components/bootstrap/dist/js/bootstrap.min.js, topicMaps/FreiDi_TopicMap_2.xml"/>
+    <copy encoding="UTF-8" todir="${build.dir}">
+      <!--<fileset dir="templates/"/>
+      <fileset dir="modules/"/>
+      <fileset dir="data/"/>-->
+      <fileset dir="." excludes="${build.dir}, bower_components/**, build-xar/**, Gruntfile.coffee, package.json, node_modules/**, bower.json, build.xml, readme.md, tools/**, dist/**, src/**"/>
+<!--      <fileset dir="." includes="dist/**"/>-->
+    </copy>
+    <mkdir dir="${build.dir}/resources"/>
+    <copy todir="${build.dir}/resources">
+      <file file="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <file file="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+      <file file="bower_components/bootstrap/dist/js/bootstrap.min.js"/>
+      <file file="bower_components/jquery/dist/jquery.min.map"/>
+      <file file="dist/FreiDi.topicMapViz.js"/>
+      <file file="dist/FreiDi.topicMapViz.min.js"/>
+      <file file="dist/bower.js"/>
+    </copy>
+    <!-- ,bower_components/bootstrap/jquery/dist/jquery.min.js -->
+  </target>
+  
+  <target name="xar" depends="build">
+    <mkdir dir="${xar.dir}"/>
+    <zip basedir="${build.dir}" destfile="${xar.dir}/${project.app}-${project.version}.xar"/>
   </target>
 </project>

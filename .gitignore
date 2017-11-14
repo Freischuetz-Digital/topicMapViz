@@ -5,6 +5,7 @@ node_modules
 #dist folder 
 dist
 build
+build-xar
 data/xslt/tmxsl
 
 # temporary work data
