@@ -42,6 +42,20 @@
       <file file="node_modules/d3/dist/d3.min.js"/>
       <file file="src/FreiDi.topicMapViz.js"/>
     </copy>
+    <antcall target="uglifyjs">
+        <param name="input" value="${temp.dir}/resources/js/*.js"></param>
+        <param name="output" value="${basedir}/${build.dir}/resources/js/resources.js"></param>
+    </antcall>
+  </target>
+    
+  <target name="uglifyjs">
+      <dirname property="output.dir" file="${output}"/>
+      <echo message="output.dir: ${output.dir}"></echo>
+      <mkdir dir="${output.dir}"/>
+      <exec executable="bash" failonerror="true">
+          <arg value="-c"/>
+          <arg value="${basedir}/node_modules/uglify-js/bin/uglifyjs ${input} --source-map --output ${output}"/>
+      </exec>
   </target>
   
   <target name="xar" depends="build">
