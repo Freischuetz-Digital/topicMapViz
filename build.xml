@@ -8,7 +8,14 @@
   <property name="dist.dir" value="dist"/>
   
   <target name="clean">
-    <delete dir="${build.dir}"/>
+    <delete includeemptydirs="true">
+        <fileset dir="${build.dir}" defaultexcludes="no">
+            <include name="**/*"/>
+        </fileset>
+        <fileset dir="${temp.dir}" defaultexcludes="no">
+            <include name="**/*"/>
+        </fileset>
+    </delete>
   </target>
   
   <target name="build" depends="clean">
