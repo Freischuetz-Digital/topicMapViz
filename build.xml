@@ -4,8 +4,8 @@
   <property name="project.version" value="0.9.2-beta"/>
   <property name="project.app" value="FreiDi.topicMapViz"/>
   <property name="build.dir" value="build"/>
-  <property name="xar.dir" value="${build.dir}-xar"/>
   <property name="temp.dir" value="temp"/>
+  <property name="dist.dir" value="dist"/>
   
   <target name="clean">
     <delete dir="${build.dir}"/>
@@ -45,7 +45,7 @@
   </target>
   
   <target name="xar" depends="build">
-    <mkdir dir="${xar.dir}"/>
-    <zip basedir="${build.dir}" destfile="${xar.dir}/${project.app}-${project.version}.xar"/>
+    <mkdir dir="${dist.dir}"/>
+    <zip basedir="${build.dir}" destfile="${dist.dir}/${project.app}-${project.version}.xar"/>
   </target>
 </project>
