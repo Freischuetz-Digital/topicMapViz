@@ -14,7 +14,7 @@
   "homepage": "http://www.freischuetz-digital.de",
   "private": true,
   "dependencies": {
-    "bootstrap": "3.2.0",
+    "bootstrap": "3.4.1",
     "bootstrap-list-filter": "^0.3.4",
     "d3": "^3.4.13",
     "grunt": "^1.6.1",
