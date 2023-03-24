@@ -18,7 +18,7 @@
     "bootstrap-list-filter": "^0.3.4",
     "d3": "^3.4.13",
     "grunt": "^1.6.1",
-    "jquery": "2.1.1",
+    "jquery": "3.6.4",
     "spectrum-colorpicker": "^1.8.1",
     "uglify-js": "^3.17.4"
   }
