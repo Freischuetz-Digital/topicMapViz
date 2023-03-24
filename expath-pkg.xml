@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://expath.org/ns/pkg" name="http://freischuetz-digital.de/topicMapViz" abbrev="topicMapViz" version="0.9.2-beta" spec="1.0">
     <title>FreiDi:topicMapViz</title>
+    <?TODO make dependencies available ?>
+    <dependency package="http://www.freischuetz-digital.de/xars/librettoSources"/>
+    <dependency package="http://www.freischuetz-digital.de/xars/referenceSources"/>
+    <dependency package="http://exist-db.org/apps/shared"/><?TODO check if shared-resources is really needed ?>
 </package>
