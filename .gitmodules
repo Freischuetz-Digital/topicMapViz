@@ -1,0 +1,4 @@
+[submodule "tmxsl"]
+	path = git_modules/tmxsl
+	url = https://github.com/heuer/tmxsl.git
+	branch = master
