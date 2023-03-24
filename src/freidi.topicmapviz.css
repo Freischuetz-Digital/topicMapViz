@@ -1,0 +1,166 @@
+body {
+    padding-bottom: 50px;
+}
+
+#filters-nodes-list button.btn,
+#filters-classes-list button.btn {
+    text-align: left !important;
+}
+
+#filters-nodes-list button input,
+#filters-classes-list button input {
+    float: right;
+    margin-left: 6px;
+}
+
+/*bootstrap framework*/
+
+#title {
+    min-height: 80px;
+}
+
+#meta-container .value .meta {
+    font-weight: bold;
+}
+
+#meta-container .value li {
+    margin: 4px 0;
+}
+
+#topicList {
+    height: 700px;
+    overflow-y: scroll;
+}
+
+#graph-container {
+    min-height: 300px;
+    /*background-image:-moz-linear-gradient(left center , rgba(60, 60, 60, 0.2), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(60, 60, 60, 0.2));*/
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+#sources span.badge {
+    float: right;
+}
+
+#sources a.btn {
+    width: 100%;
+    text-align: left;
+}
+
+#nodeDistance {
+    position: absolute;
+    float: left;
+    width: 73px;
+    /*top: -95px;*/
+    font-size: 10px;
+    margin: 3px 0 0 3px;
+}
+#nodeDistance .form-control {
+    font-size: 10px;
+    height: 24px;
+}
+
+#meta-container {
+    height: 400px;
+}
+
+#meta {
+    font-size: 1.2em;
+}
+
+#filters-container {
+    min-height: 340px;
+}
+
+#filters-classes-list,
+#filters-nodes-list {
+    height: 300px;
+    overflow-y: scroll;
+}
+.filters-classes,
+.filters-nodes {
+    display: table;
+}
+
+.filter {
+    display: table-row;
+}
+
+.filterLabel,
+.filter_highlight {
+    display: table-cell;
+    padding: 0 6px;
+}
+
+.filter_highlight {
+}
+
+mark,
+.mark {
+    padding: 0 !important;
+    background: none !important;
+    background-color: none !important;
+}
+
+/*d3 graph*/
+.link {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+}
+
+.link.highlight {
+    stroke: #3af;
+}
+
+.node circle {
+    fill: #aaa;
+    stroke: #bbb;
+    stroke-width: 1.5px;
+}
+
+.node.highlight circle {
+    fill: #18d;
+}
+
+.node.distance_1 {
+}
+
+.node.distance_2 circle {
+    fill: #ccc;
+}
+
+.node.distance_2.highlight circle {
+    fill: #3af;
+}
+
+text {
+    font: 12px sans-serif;
+    pointer-events: none;
+}
+/* topicDetail*/
+
+#meta .key {
+    font-weight: bold;
+}
+
+dl.topicDetail {
+    display: table;
+}
+
+
+dl.topicDetail dt,
+dt + dd {
+    margin-top: 12px;
+}
+
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+footer img {
+    height: 100%;   
+}
