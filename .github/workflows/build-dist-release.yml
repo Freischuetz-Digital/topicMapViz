@@ -9,8 +9,8 @@ on:
     types: [ opened, edited, reopened ]
 
 jobs:
-  pre-release:
-    name: "Pre Release"
+  build-dist-release:
+    name: "Build, dist, and release"
     runs-on: ubuntu-latest
     permissions:
       contents: write
