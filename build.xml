@@ -4,36 +4,69 @@
   <property name="project.version" value="0.9.2-beta"/>
   <property name="project.app" value="FreiDi.topicMapViz"/>
   <property name="build.dir" value="build"/>
-  <property name="xar.dir" value="${build.dir}-xar"/>
+  <property name="temp.dir" value="temp"/>
+  <property name="dist.dir" value="dist"/>
   
   <target name="clean">
-    <delete dir="${build.dir}"/>
+    <delete includeemptydirs="true">
+        <fileset dir="${build.dir}" defaultexcludes="no">
+            <include name="**/*"/>
+        </fileset>
+        <fileset dir="${temp.dir}" defaultexcludes="no">
+            <include name="**/*"/>
+        </fileset>
+    </delete>
   </target>
   
   <target name="build" depends="clean">
     <mkdir dir="${build.dir}"/>
     <copy encoding="UTF-8" todir="${build.dir}">
-      <!--<fileset dir="templates/"/>
-      <fileset dir="modules/"/>
-      <fileset dir="data/"/>-->
-      <fileset dir="." excludes="${build.dir}, bower_components/**, build-xar/**, Gruntfile.coffee, package.json, node_modules/**, bower.json, build.xml, readme.md, tools/**, dist/**, src/**"/>
-<!--      <fileset dir="." includes="dist/**"/>-->
+      <fileset dir="${basedir}">
+        <include name="controller.xql" />
+        <include name="data/*"/>
+        <include name="expath-pkg.xml" />
+        <include name="gpl-3.0.txt"/>
+        <include name="modules/*" />
+        <include name="pre-install.xql"/>
+        <include name="repo.xml" />
+        <include name="templates/*" />
+        <include name="*.html" />
+      </fileset>
     </copy>
     <mkdir dir="${build.dir}/resources"/>
-    <copy todir="${build.dir}/resources">
-      <file file="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-      <file file="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
-      <file file="bower_components/bootstrap/dist/js/bootstrap.min.js"/>
-      <file file="bower_components/jquery/dist/jquery.min.map"/>
-      <file file="dist/FreiDi.topicMapViz.js"/>
-      <file file="dist/FreiDi.topicMapViz.min.js"/>
-      <file file="dist/bower.js"/>
+    <copy todir="${build.dir}/resources/css">
+      <file file="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+      <file file="node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
     </copy>
-    <!-- ,bower_components/bootstrap/jquery/dist/jquery.min.js -->
+      <mkdir dir="${temp.dir}/resources"/>
+    <copy todir="${temp.dir}/resources/js">
+      <file file="node_modules/bootstrap/dist/js/bootstrap.min.js"/>
+      <file file="node_modules/bootstrap/js/tab.js"/><?TODO really needed? ?>
+      <file file="node_modules/bootstrap-list-filter/bootstrap-list-filter.min.js"/>
+      <file file="node_modules/spectrum-colorpicker/spectrum.js"/>
+      <file file="node_modules/jquery/dist/jquery.min.js"/>
+      <file file="node_modules/jquery/dist/jquery.min.map"/>
+      <file file="node_modules/d3/dist/d3.min.js"/>
+      <file file="src/FreiDi.topicMapViz.js"/>
+    </copy>
+    <antcall target="uglifyjs">
+        <param name="input" value="${temp.dir}/resources/js/*.js"></param>
+        <param name="output" value="${basedir}/${build.dir}/resources/js/resources.js"></param>
+    </antcall>
+  </target>
+    
+  <target name="uglifyjs">
+      <dirname property="output.dir" file="${output}"/>
+      <echo message="output.dir: ${output.dir}"></echo>
+      <mkdir dir="${output.dir}"/>
+      <exec executable="bash" failonerror="true">
+          <arg value="-c"/>
+          <arg value="${basedir}/node_modules/uglify-js/bin/uglifyjs ${input} --source-map --output ${output}"/>
+      </exec>
   </target>
   
   <target name="xar" depends="build">
-    <mkdir dir="${xar.dir}"/>
-    <zip basedir="${build.dir}" destfile="${xar.dir}/${project.app}-${project.version}.xar"/>
+    <mkdir dir="${dist.dir}"/>
+    <zip basedir="${build.dir}" destfile="${dist.dir}/${project.app}-${project.version}.xar"/>
   </target>
 </project>
