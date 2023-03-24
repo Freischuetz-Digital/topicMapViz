@@ -60,11 +60,11 @@ jobs:
       
       - name: create dev XAR with ANT
         if: ${{ github.event_name == 'push' && github.ref_name == 'develop' }} 
-        run: ant -noinput -buildfile build.xml dist -Dproject.version=${{ github.sha }}
+        run: ant -noinput -buildfile build.xml -Dproject.version=${{ github.sha }}
       
       - name: create release XAR with ANT
         if: ${{ github.event_name == 'push' && github.ref_name == 'main' }} 
-        run: ant -noinput -buildfile build.xml dist -Dproject.version=${{ env.version }}
+        run: ant -noinput -buildfile build.xml -Dproject.version=${{ env.version }}
 #      - name: create release
 #        uses: "marvinpinto/action-automatic-releases@v1.2.1"
 #        with:
