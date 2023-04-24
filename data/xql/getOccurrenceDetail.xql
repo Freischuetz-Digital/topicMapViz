@@ -22,7 +22,7 @@ declare variable $freidi-EO-root := if(expath:pkg-installed('http://www.edirom.d
                                     then(expath:pkg-get-root('http://www.edirom.de/apps/EdiromOnline'))
                                     else();
 declare variable $requestUrl := request:get-url();
-declare variable $freidi-EO-url := substring-before($requestUrl,'apps/') || 'apps/' || substring-after($freidi-EO-root,'apps/');
+declare variable $freidi-EO-url := request:get-scheme() || '://' || 'edition.freischuetz-digital.de';
 declare variable $containingElements := ('sp','lg','l','p','stage','div');
 
 let $doc := doc($collectionURI||$docName)
