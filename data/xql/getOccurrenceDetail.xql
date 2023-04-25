@@ -179,7 +179,7 @@ element root {
                                         element a {
                                             attribute target {'_blank'},
                                             $summary//a/@class,
-                                            attribute href {$freidi-EO-url || ?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
+                                            attribute href {$freidi-EO-url || '?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
                                             string($hit)
                                         }
                                     }
@@ -200,7 +200,7 @@ element root {
                                     element a {
                                         attribute target {'_blank'},
                                         $summary//a/@class,
-                                        attribute href {$freidi-EO-url || ?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
+                                        attribute href {$freidi-EO-url || '?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
                                         string($hit)
                                     }
                                 },
