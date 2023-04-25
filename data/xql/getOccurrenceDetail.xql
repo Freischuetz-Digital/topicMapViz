@@ -178,8 +178,8 @@ element root {
                                     element mark {
                                         element a {
                                             attribute target {'_blank'},
-                                            $summary//a/@class, (: http://rubin.upb.de:8092 :)
-                                            attribute href {'/exist/apps/EdiromOnline/?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
+                                            $summary//a/@class,
+                                            attribute href {$freidi-EO-url || ?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
                                             string($hit)
                                         }
                                     }
@@ -199,8 +199,9 @@ element root {
                                 element mark {
                                     element a {
                                         attribute target {'_blank'},
-                                        $summary//a/@class, (: http://rubin.upb.de:8092 :)
-                                        attribute href {'/exist/apps/EdiromOnline/?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id}, string($hit)
+                                        $summary//a/@class,
+                                        attribute href {$freidi-EO-url || ?uri=xmldb:exist://' || $collectionURI || $docName ||'#'|| $hit/parent::*/@xml:id},
+                                        string($hit)
                                     }
                                 },
                                 $summary//span[@class='following']
